@@ -1,0 +1,45 @@
+/* Estilos para la sección de política de privacidad */
+.cj-content_politica {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .content_politica {
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  
+  /* Estilos para el contenido de la política de privacidad */
+  .content_politica p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+  
+  /* Estilos para los títulos de sección */
+  .content_politica h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  /* Estilos para los enlaces */
+  .content_politica a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  /* Estilos responsivos */
+  @media screen and (max-width: 600px) {
+    .content_politica {
+      padding: 10px;
+    }
+  
+    .content_politica h2 {
+      font-size: 20px;
+    }
+    
+  }
+  

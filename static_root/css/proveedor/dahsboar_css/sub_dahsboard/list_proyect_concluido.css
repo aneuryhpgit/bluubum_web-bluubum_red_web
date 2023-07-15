@@ -1,0 +1,122 @@
+/* Estilos para la sección de encabezado de contenido */
+.content_head_pedidos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0084ff;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .cj_btn_regresar {
+    margin-right: 10px;
+  }
+  
+  .btn_regres {
+    display: inline-block;
+    font-size: 1.5em;
+    color: #f0f0f0;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .btn_regres:hover {
+    color: #c1c1c1;
+  }
+  
+  .contain_title_head_pedidos h2 {
+    font-size: 2em;
+    margin: 0;
+    color: #f5f5f5
+  }
+  
+  .sub_title_head {
+    font-size: 1.2em;
+    color: #fefefe;
+    margin: 0;
+  }
+  
+  /* Estilos para la tabla de proyectos */
+  .content_dashboar_pedidos {
+    overflow-x: auto;
+  }
+  
+  .sub_dashboar_pedidos {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .dashboar_pedidos {
+    width: 100%;
+    min-width: 800px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9em;
+    text-align: center;
+  }
+  
+  th {
+    background-color: #ddd;
+    padding: 10px;
+  }
+  
+  th,
+  td {
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  /* Estilos para filas alternas */
+  tr:nth-child(even) {
+    background-color: #f5f5f5;
+  }
+  
+  /* Estilos para columnas específicas */
+  .nombre_proyecto_td {
+    text-align: left;
+  }
+  
+  .btn_whats {
+    display: inline-flex;
+    align-items: center;
+    color: #fcfcfc;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+    background-color: rgb(0, 176, 0);
+    padding: 0.3rem;
+    border-radius: 5px;
+  }
+  
+  .btn_whats:hover {
+    color: #666;
+  }
+  
+  .btn_delete {
+    display: inline-flex;
+    align-items: center;
+    color: #ff6200;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .btn_delete:hover {
+    color: #dd8800;
+  }
+  
+  /* Estilos para pantallas pequeñas */
+  @media only screen and (max-width: 800px) {
+    .dashboar_pedidos {
+      min-width: auto;
+    }
+    
+    th,
+    td {
+      font-size: 0.8em;
+      padding: 8px;
+    }
+  }
+  

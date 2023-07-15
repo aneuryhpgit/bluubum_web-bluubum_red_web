@@ -1,0 +1,209 @@
+/* Estilos generales */
+
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Encabezado */
+  
+  .header {
+    background-color: #0eaa00;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .dash_titulo h1 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+  
+  .admin {
+    display: flex;
+    align-items: center;
+  }
+  
+  .cj_img_perfil {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+  
+  .img_perfil {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .nombr_user {
+    margin: 0;
+    font-size: 1rem;
+  }
+  
+
+  .codigo_user {
+    margin: 0;
+    font-size: 0.8rem;
+  }
+
+  .nombre_tienda{
+    font-size: 1rem;
+  }
+  
+  /* Media Queries para pantallas de hasta 768px */
+  @media only screen and (max-width: 768px) {
+    .header {
+      flex-direction: column;
+      padding: 10px;
+    }
+  
+    .admin {
+      margin-top: 10px;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .cj_img_perfil {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  
+    /* Agregamos un contenedor adicional para la imagen y el título */
+    .img_titulo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+  
+    /* Ajustamos los márgenes y paddings */
+    .dash_titulo {
+      margin: 0;
+      padding: 0 20px;
+      text-align: center;
+    }
+  }
+  
+  /* Media Queries para pantallas de hasta 480px */
+  @media only screen and (max-width: 480px) {
+    .dash_titulo h1 {
+      font-size: 1.5rem;
+    }
+  
+    .nombr_user,
+    .codigo_user {
+      font-size: 1rem;
+    }
+  }
+  
+  
+  
+/* Galería */
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .gallery-item {
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    margin: 10px;
+    background-color: #f94c4c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .gallery-item:hover {
+    transform: translateY(-5px);
+  }
+
+  .gallery-item:nth-child(1n) {
+    background-color: #7c0053;
+  }
+ 
+  .gallery-item:nth-child(2n) {
+    background-color: #004b7c;
+  }
+  
+  .gallery-item:nth-child(3n) {
+    background-color: #88029f;
+  }
+  
+  .gallery-item:nth-child(4n) {
+    background-color: #ff5722;
+  }
+  
+  .gallery-item:nth-child(5n) {
+    background-color: #03b409;
+  }
+  
+  .gallery-item:nth-child(6n) {
+    background-color: #006aff;
+  }
+  
+  .gallery-item:nth-child(7n) {
+    background-color: #3a3c3c;
+  }
+  
+  .gallery-item:nth-child(8n) {
+    background-color: #b41200;
+  }
+  
+  .gallery-item:nth-child(9n) {
+    background-color: #ff9900;
+  }
+  
+  .gallery-item:nth-child(10n) {
+    background-color: #f33d00;
+  }
+  
+  .gallery-item:nth-child(11n) {
+    background-color: #0c3410;
+  }
+
+  .gallery-item:nth-child(12n) {
+    background-color: #fe6e00;
+  }
+
+  .gallery-item:nth-child(13n) {
+    background-color: #0a3233;
+  }
+  
+  .gallery-item a {
+    color: #fff;
+    font-size: 1.5rem;
+    text-decoration: none;
+    text-align: center;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .gallery {
+      justify-content: flex-start;
+    }
+    
+    .gallery-item {
+      width: calc(50% - 20px);
+    }
+    
+    .gallery-item:nth-child(2n) {
+      margin-left: 0;
+    }
+  }
+  

@@ -1,0 +1,337 @@
+/* Estilos generales */
+.conten_pasos_user {
+    display: flex;
+    flex-direction: column;
+    -moz-border-radius: 0 50% / 0 100%;
+    -webkit-border-radius: 0 50% / 0 100%;
+    border-radius: 10% 30% / 25% 100%;
+    background-color: rgb(7, 1, 78);
+    border: 5px solid #3cff00;
+}
+  
+.cj-title_one_pasos {
+  display: block;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #f5f5f5;
+}
+  
+.title_one_pasos {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  margin-top: 1rem;   
+}
+  
+.sub_title_one_pasos {
+  font-size: 1.3rem;
+  color: rgb(216, 214, 214);
+  font-weight: 300;
+  margin: 0 auto;
+}
+  
+  .carousel-container {
+    max-width: 600px;
+    height: 500px;
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    margin-bottom: 20px;
+    margin: 0 auto;
+  }
+  
+  .carousel-step {
+    max-width: 450px;
+    flex: 0 0 100%;
+    padding: 10px;
+    background-color: #8ada30;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-right: 10px;
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+  }
+  
+  .carousel-step.active {
+    opacity: 1;
+  }
+  
+  .sub_title_pasos {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: rgb(16, 72, 1);
+  }
+  
+  .descripcion_pasos {
+    font-size: 1.6rem;
+    color: rgb(1, 18, 94);
+    margin: auto auto;
+    font-weight: 400;
+    line-height: 1.4;
+  }
+  
+  .carousel-navigation {
+    display: flex;
+
+  }
+  
+  .carousel-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 1.5rem auto;
+    font-weight: bold;
+    font-size: 1.4rem;
+
+  }
+  
+  .carousel-button.prev {
+    margin-right: 50px;
+  }
+  
+  .carousel-button.next {
+    margin-left: 50px;
+  }
+
+
+
+@media screen and (max-width: 1367px) {
+
+  .title_one_pasos {
+    font-size: 1.5rem;
+  }
+
+  .sub_title_one_pasos {
+    font-size: 1.1rem;
+  }
+
+  .carousel-container {
+    max-width: 430px;
+    height: 360px;
+  }
+
+  .carousel-step {
+    max-width: 380px;
+
+  }
+
+  .descripcion_pasos {
+    font-size: 1.2rem;
+
+  }
+
+
+  .carousel-button {
+    font-size: 1.2rem;
+
+  }
+
+}
+
+
+@media screen and (max-width: 1280px) {
+
+
+  .conten_pasos_user {
+    border: 3px solid #3cff00;
+  }
+
+  .title_one_pasos {
+    font-size: 1.3rem;
+  }
+
+  .sub_title_one_pasos {
+    font-size: 1rem;
+  }
+
+  .carousel-container {
+    max-width: 400px;
+    height: 280px;
+  }
+
+  .carousel-step {
+    max-width: 360px;
+  }
+
+  .sub_title_pasos {
+    font-size: 1.2rem;
+  }
+  
+
+  .descripcion_pasos {
+    font-size: 1rem;
+  }
+
+  .carousel-button {
+    font-size: 1.1rem;
+  }
+
+}
+
+  
+
+/* Ocultar overflow en pantallas grandes */
+@media screen and (min-width: 768px) {
+
+
+
+    .carousel-container {
+      overflow-x: hidden;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .title_one_pasos {
+        width: 60%;
+        font-size: 1.4rem;
+    }
+      
+    .sub_title_one_pasos {
+        font-size: 0.9rem;
+        width: 70%;
+
+    }
+
+}
+
+
+@media screen and (max-width: 668px) {
+
+
+    .carousel-container {
+        max-width: 400px;
+        height: 320px;
+      }
+
+
+
+    .carousel-step {
+        max-width: 300px;
+        max-height: 320px;
+
+    }
+
+
+    .descripcion_pasos {
+        font-size: 1rem;
+        line-height: 1.3;
+    }
+
+   
+
+}
+
+
+
+
+
+@media screen and (max-width: 500px) {
+
+
+    .title_one_pasos {
+        width: 75%;
+        font-size: 1.4rem;
+    }
+      
+    .sub_title_one_pasos {
+        font-size: 0.9rem;
+        width: 75%;
+
+    }
+
+
+    .carousel-container {
+        max-width: 300px;
+        height: 320px;
+      }
+
+
+
+    .carousel-step {
+        max-width: 300px;
+        max-height: 320px;
+        opacity: 1;
+
+    }
+
+
+
+    .descripcion_pasos {
+        font-size: 1rem;
+        line-height: 1.3;
+    }
+
+   
+
+}
+
+
+
+
+@media screen and (max-width: 450px) {
+
+
+  .title_one_pasos {
+      width: 65%;
+      font-size: 1.2rem;
+  }
+    
+ 
+
+
+
+
+}
+
+
+
+
+@media screen and (max-width: 375px) {
+
+    .conten_pasos_user {
+        display: flex;
+        flex-direction: column;
+        -moz-border-radius: 0 50% / 0 100%;
+        -webkit-border-radius: 0 50% / 0 100%;
+        border-radius: 10% 20% / 25% 100%;
+        background-color: rgb(7, 1, 78);
+        border: 3px solid #3cff00;
+    }
+
+
+    .carousel-container {
+        max-width: 240px;
+        height: 400px;
+      }
+
+
+    .carousel-step {
+        max-width: 240px;
+        max-height: 360px;
+        padding: 10px;
+
+    }
+
+
+
+
+    .carousel-button.prev {
+        margin-right: 30px;
+      }
+      
+      .carousel-button.next {
+        margin-left: 30px;
+      }
+      
+
+
+    
+   
+
+}

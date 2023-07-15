@@ -1,0 +1,157 @@
+{% extends 'layout/base.html' %}
+
+{% load humanize %}
+
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/modall/modal_alert_show.css' %}">
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/proveedor/dahsboar_css/sub_dahsboard/details_proyect_prov.css' %}">
+
+
+
+
+
+<div class="Conten_title_envi_cotiz">
+
+    <div class="cj_btn_regres_envi_cotiz">
+        <a href="" class="btn_regres_envi_cotiz btn_regresar"><i class="fa-solid fa-arrow-left-long"></i></a>
+    </div>
+
+    <h2 class="title_data_envi_cotiz">Detalles del proyecto</h2>
+
+</div>
+
+<div class="container_envi_cotiz">
+    <div class="card_envi_cotiz">
+     
+      <div class="card-body_envi_cotiz">
+        <h2 class="card-title_envi_cotiz">Nombre proyecto</h2>
+        <p class="card-text_envi_cotiz">{{proyecto_detail.nombre_proyecto}}</p>
+        <hr>
+
+        <h2 class="card-title_envi_cotiz">Código proyecto</h2>
+        <p class="card-text_envi_cotiz">{{proyecto_detail.codigo_unico_proyect}}</p>
+        <hr>
+  
+        <h2 class="card-title_envi_cotiz">Servicio</h2>
+        <p class="card-text_envi_cotiz">{{proyecto_detail.servicio.nombre_servicio}}</p>
+        <hr>
+
+        <h2 class="card-title_envi_cotiz">Estado del proyecto</h2>
+        <p class="card-text_envi_cotiz">{{proyecto_detail.estado}}</p>
+        <hr>
+        
+        <h2 class="card-title_envi_cotiz">Proveedor</h2>
+        <p class="card-text_envi_cotiz">{{proyecto_detail.proveedor.nombre_empresa}}</p>
+        <hr>
+
+        <h2 class="card-title_envi_cotiz">Precio del proyecto</h2>
+        <p class="card-text_envi_cotiz">$ {{ proyecto_detail.precio|floatformat:2|intcomma }}</p>
+        <hr>
+
+        <h2 class="card-title_envi_cotiz">Comision</h2>
+        <p class="card-text_envi_cotiz">$ {{ proyecto_detail.comision_plataform|floatformat:2|intcomma }}</p>
+        <hr>
+
+        <h2 class="card-title_envi_cotiz">Estado de comision</h2>
+        <p class="card-text_envi_cotiz">{{proyecto_detail.estado_comis_plataform}}</p>
+        <hr>
+
+        <h2 class="card-title_envi_cotiz">Comision plataforma</h2>
+        <p class="card-text_envi_cotiz">$ {{ proyecto_detail.comision_prov|floatformat:2|intcomma }}</p>
+        <hr>
+
+        <h2 class="card-title_envi_cotiz">Fecha de solicitud</h2>
+        <p class="card-text_envi_cotiz">{{proyecto_detail.fecha_solicitud}}</p>
+        <hr>
+
+        <h2 class="card-title_envi_cotiz">Fecha de aprobacion</h2>
+        <p class="card-text_envi_cotiz">{{proyecto_detail.fecha_aprobacion}}</p>
+        <hr>
+
+        <h2 class="card-title_envi_cotiz">Fecha de cotizacion</h2>
+        <p class="card-text_envi_cotiz">{{proyecto_detail.fecha_disponible_cotizacion}}</p>
+        <hr>
+
+        <h2 class="card-title_envi_cotiz">Fecha de inicio</h2>
+        <p class="card-text_envi_cotiz">{{proyecto_detail.fecha_estimada_inicio}}</p>
+        <hr>
+
+        <h2 class="card-title_envi_cotiz">Fecha de suspencion</h2>
+        <p class="card-text_envi_cotiz">{{proyecto_detail.fecha_suspencion_proyec}}</p>
+        <hr>
+
+        <h2 class="card-title_envi_cotiz">Fecha de reanudacion</h2>
+        <p class="card-text_envi_cotiz">{{proyecto_detail.fecha_reanudacion_proyec}}</p>
+        <hr>
+        
+        <h2 class="card-title_envi_cotiz">Fecha de conclucion</h2>
+        <p class="card-text_envi_cotiz">{{proyecto_detail.fecha_conclusion}}</p>
+        <hr>
+        
+        
+        <div class="row_envi_cotiz">
+          <div class="col-md-6_envi_cotiz">
+            
+
+            <h2 class="card-title_envi_cotiz">Nombre vendedor</h2>
+            <p class="card-text_envi_cotiz">{{proyecto_detail.vendedor.user.first_name}} {{proyecto_detail.vendedor.user.last_name}}</p>
+            <hr>
+
+            <h2 class="card-title_envi_cotiz">Usuario vendedor</h2>
+            <p class="card-text_envi_cotiz">{{proyecto_detail.vendedor.user.username}}</p>
+            <hr>
+
+            <h2 class="card-title_envi_cotiz">Codigo vendedor</h2>
+            <p class="card-text_envi_cotiz">{{proyecto_detail.vendedor.codigo_unico_vendedor}}</p>
+            <hr>
+
+            <h2 class="card-title_envi_cotiz">Comision vendedor</h2>
+            <p class="card-text_envi_cotiz">$ {{proyecto_detail.comision_vendedor|floatformat:2|intcomma}}</p>
+            <hr>
+
+            <h2 class="card-title_envi_cotiz">Estado de comision</h2>
+            <p class="card-text_envi_cotiz">{{proyecto_detail.estado_de_comision_vend}}</p>
+            <hr>
+          </div>
+
+  
+          <div class="col-md-6_envi_cotiz">
+            <h2 class="card-title_envi_cotiz">Cliente</h2>
+            <ul class="list-unstyled_envi_cotiz">
+              <li><strong>Nombre:</strong>{{proyecto_detail.nombre_cliente}}</li>
+              <li><strong>WhatsApp:</strong>{{proyecto_detail.whatsapp}}</li>
+              <li><strong>Telefono:</strong>{{proyecto_detail.telefono}}</li>
+            </ul>
+            <hr>
+  
+            <h2 class="card-title_envi_cotiz">Ubicación</h2>
+            <ul class="list-unstyled_envi_cotiz">
+              <li><strong>Provincia:</strong> {{proyecto_detail.provincia_proyec}}</li>
+              <li><strong>Ciudad o municipio:</strong> {{proyecto_detail.ciudad_proyec}}</li>
+              <li><strong>Sector:</strong> {{proyecto_detail.sector_proyec}}</li>
+              <li><strong>Calle:</strong> {{proyecto_detail.calle_proyec}}</li>
+              <li><strong>Número:</strong> {{proyecto_detail.numero_proyec}}</li>
+              <li><strong>Apartamento/Suite:</strong> {{proyecto_detail.apartamen_suite_proyec}}</li>
+            </ul>
+            <hr>
+            
+          </div>
+        </div>
+  
+        <h2 class="card-title_envi_cotiz">Descripción</h2>
+        <p class="card-text_envi_cotiz">{{proyecto_detail.descripcion_proyecto}}</p>
+      </div>
+      
+    </div>
+  </div>
+  
+  
+
+  <script src="{% static '../static/css/modall/modal_show.js' %}"></script>
+
+  <script src="{% static '../static/registro_proveedor/btn_regres.js' %}"></script>
+
+{% endblock %}

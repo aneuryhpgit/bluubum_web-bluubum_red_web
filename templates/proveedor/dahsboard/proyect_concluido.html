@@ -1,0 +1,104 @@
+{% extends 'layout/base.html' %}
+
+{% load humanize %}
+
+{% block content %}
+{% load static %}
+
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/proveedor/sin_archivo.css' %}">
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/proveedor/dahsboar_css/sub_dahsboard/list_proyect_concluido.css' %}">
+
+<section class="content_head_pedidos">
+    <div class="cj_btn_regresar">
+        <a href="{% url 'dashboard_prov' %}" class="btn_regres"><i class="fa-solid fa-arrow-left-long"></i></a>
+    </div>
+
+    <div class="contain_title_head_pedidos">
+        <h2>Proyecto concluido</h2>
+        <p class="sub_title_head">Lista de proyectos concluidos</p>
+    </div>
+
+</section>
+
+{% if proyecto_concluido %}
+<div class="content_dashboar_pedidos">
+    <div class="sub_dashboar_pedidos">
+        <div class="dashboar_pedidos">
+            <table>
+                <tr>
+                  <th>ID</th>
+                  <th>Nombre del proyecto</th>
+                  <th>Codigo proyecto</th>
+                  <th>Provincia</th>
+                  <th>Comision</th>
+                  <th>Usuario</th>
+                  <th>Whatssap vendedor</th>
+                  <th>Whatssap cliente</th>
+                  <th>Nombre cliente</th>
+                  <th>Fecha inicio</th>
+                  <th>Fecha conclucion</th>
+                  <th>Detalles</th>
+                </tr>
+                
+                {% for proyect in proyecto_concluido %}
+                    {% with comipro=proyect.comision_vendedor%}
+                    {% with comiven=proyect.comision_prov %}
+                    {% with resul=comipro|add:comiven %}
+                    <tr>
+                        {% with counter=forloop.counter0|add:1 %}
+                          <tr id="fila_{{ counter }}">
+                            <td>{{ counter }}</td>
+                    {% if proyect.nombre_proyecto != Null %}
+                        <td class="nombre_proyecto_td">{{proyect.nombre_proyecto}}</td>
+                        <td>{{proyect.codigo_unico_proyect}}</td>
+                        <td>{{proyect.provincia_proyec}}</td>
+                        <td>$ {{ resul|floatformat:2|intcomma }}</td>
+                        <td>{{proyect.vendedor.user.username}}</td>
+                        <td>
+                            <a href="https://wa.me/{{proyect.contact_vendedor.numeroWhatsapp_afiliado}}" target="_blank" class="btn_whats">
+                                {{proyect.contact_vendedor.numeroWhatsapp_afiliado}} <i class="fa-brands fa-whatsapp"></i>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="https://wa.me/{{proyect.whatsapp}}" target="_blank" class="btn_whats">
+                                {{proyect.whatsapp}} <i class="fa-brands fa-whatsapp"></i>
+                            </a>
+                        </td>
+                        <td>{{proyect.nombre_cliente}}</td>
+                        <td>{{proyect.fecha_estimada_inicio|date:"Y/m/d"}}</td>
+                        <td>{{proyect.fecha_conclusion|date:"Y/m/d"}}</td>
+
+                        <td>
+                            <a href="{% url 'proyecto_detail_prov' codigo_unico=proyect.codigo_unico_proyect %}" class="btn_delete">
+                                <i class="fa-regular fa-eye"></i>
+                            </a>
+                        </td>
+                    {% endif %}
+                        
+                    {% endwith %}   
+                    
+                    {% endwith %}
+                   {% endwith %}
+                   {% endwith %}
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+
+{% else %}
+<section class="content_sin-archivo">
+    <div class="sub_content_sin-archivo">
+        <div class="cj_image_sin-archivo">
+            <i class="fa-regular fa-rectangle-list"></i>
+        </div>
+        <p class="mesage_sin-archivo">Actualmente no tienes proyectos activados</p>
+    </div>
+</section>
+{% endif %}
+
+
+
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+{% load static %}
+  <h2 class="titulo_pg_edit_contacto">Editar Contacto</h2>
+
+  <div class="contenedor_form_editar_contacto-edit">
+    <div class="contenedor_contacto_actual-edit">
+        <h2 class="titulo_form_titulo_dtadt-edit">Dactos de contato</h2>
+        <div class="cj_data_actual">
+            <label for="" class="label_what_actual">Whatsapp</label>
+            <h4 class="whats_actual">{{contacto.numWhatsapp}}</h4>
+            <label for="" class="label_tel_actual">Telefono</label>
+            <h4 class="tel_actual">{{contacto.telefono}}</h4>
+        </div>
+    </div>
+    <div class="cj_edit_contact">
+        <form action="" method="post" enctype="multipart/form-data" class="form_edit_contac">
+        {% csrf_token %}               
+            <div class="caja_text_form_contac_edit">
+                <input type="text" id="txtfileTitulo" placeholder="Numero de whatsapp" 
+                name="numero_whatsapp" class="input_edit_contacto">             
+            </div>
+            <div class="caja_text_form_contac_edit">
+                <input type="text" id="txtfileTitulo" placeholder="Numero tel" 
+                name="numero_telefono" class="input_edit_contacto">             
+            </div>
+            <div class="div_btn_form_edit_contac">
+                <button type="submit" class="btn_form_edit_contact" id="">Guardar cambio</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

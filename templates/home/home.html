@@ -1,0 +1,252 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/css_home/home_banner.css' %}">
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/css_home/precentacion_home.css' %}">
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/css_home/invitacion.css' %}">
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/css_home/carrusell_pasos_home.css' %}">
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/css_home/galery_table.css' %}">
+
+
+<div class="body_home">
+
+    <section class="cj-banner">
+        <div class="sub_cj-banner">
+            <div class="cj-carrusell">
+                <div class="carrusell">
+                  {% for image_banner in image_banner %}
+                    <img src="{{image_banner.img_banner_one.url}}" alt="" class="img_carrusell">
+                  {% endfor %}
+                </div>
+            </div>
+            <div class="banner_descript">
+                <div class="sub_banner-descript">
+                    <div class="cj-title">
+                        <H2 class="sub_title_ban_descript">
+                          ¡Conviértete en un emprendedor exitoso sin necesidad de tener un producto o servicio propio!
+                        </H2>
+                    </div>
+                    <p class="parafo_bann_descript">
+                      ¡Únete a Bluubum, la innovadora plataforma de afiliado orientada a los servicios! 
+                      Afilate a proveedores, contacta clientes y obten comisiones por cada proyecto realizado.
+                      <br>
+                    </p>
+                    <div class="btns_login">
+                        <a href="{% url 'registro_vendedor' %}" class="btn_register">REGISTRATE GRATIS</a>
+                        <a href="{% url 'login_vnd' %}" class="btn_inic">INICIA SESION</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    
+    
+
+
+    <div class="cj-precentacion">
+      <div class="cj-title_precentacion">
+        <h2 class="title_precentacion">Descubre por qué Bluubum es una oportunidad de negocio excepcional
+        </h2>
+      </div>
+      <div class="sub-cj_presentacion">
+        <div class="cj-img_precentacion">
+          {% for image_two in image_banner %}
+            {% if image_two.img_banner_two.url != '' %}
+            <img src="{{image_two.img_banner_two.url}}" alt="" class="img_precentacion">
+            {% endif %}
+          {% endfor %}
+        </div>
+
+        <div class="cj-texto_precentacion">
+          <h3 class="texto_precentacion">El mercado de los servicios técnicos y la construcción es 
+            uno de los que muestra mayor crecimiento y rentabilidad.<br><br>
+             <span class="text_prest_detail">
+              Ebanistería, Pintura Arquitectónica, Decoración de Interiores, Electricidad Residencial, etc..<br><br>
+              Esos son solo algunos de los servicios que todos necesitan en algún momento. Ahora, 
+              puedes obtener grandes comisiones al conectar a clientes y proveedores.<br><br>
+             </span>
+          </h3>
+          
+
+        </div>
+
+      </div>
+    
+    </div>
+
+
+
+    <div class="cj-content_invitacio">
+      <div class="content_invitacion">
+        <h2 class="text_invitacion">
+          ¡Crea un negocio rentable y sin complicaciones! Únete ahora como vendedor
+           afiliado.
+        </h2>
+        <div class="cj-btn_redi_register_invitacion">
+          <a href="{% url 'registro_vendedor' %}" class="btn_redi_register_invitacion">Quiero ser un vendedor afiliado.</a>
+        </div>
+      </div>
+    </div>
+
+
+    
+    <div class="conten_pasos_user" id="tutorial_pasos">
+        <div class="cj-title_one_pasos">
+            <h2 class="title_one_pasos">7 PASOS TE SEPARAN DE TU NUEVO NEGOCIO</h2>
+            <p class="sub_title_one_pasos">Un breve tutorial de cómo empezar a generar ingresos en Bluubum.</p>
+        </div>
+
+        
+        <div class="carousel-container">
+            <div class="carousel-step active">
+              <h2 class="sub_title_pasos">Paso 1 Registro</h2>
+              <p class="descripcion_pasos">Regístrate pulsando el botón
+                 "Registrarme gratis". A continuación, ingresa los datos solicitados en el formulario.
+              </p>
+            </div>
+            <div class="carousel-step">
+              <h2 class="sub_title_pasos">Paso 2: Confimar cuenta</h2>
+              <p class="descripcion_pasos">
+                Una vez que te hayas registrado, 
+                serás redirigido/a a la confirmación de tu correo electrónico
+                mediante el código de confirmación que se te enviará a tu cuenta.
+              </p>
+            </div>
+            <div class="carousel-step">
+              <h2 class="sub_title_pasos">Paso 3: Configurar cuanta</h2>
+              <p class="descripcion_pasos">
+                Una vez que hayas confirmado tu registro, 
+                debes proceder a rellenar los datos solicitados a continuación
+                para terminar con la configuración de tu perfil.
+              </p>
+            </div>
+            <div class="carousel-step">
+              <h2 class="sub_title_pasos" >Paso 4: Afiliarme</h2>
+              <p class="descripcion_pasos">
+                Al finalizar de configurar tu cuenta, estarás dentro de tu perfil. 
+                Pulsa sobre el botón "Proveedores" para entrar al o los proveedores que desees.
+                 Podrás afiliarte pulsando el botón "Afiliarme" situado en el perfil del proveedor.
+              </p>
+            </div>
+            <div class="carousel-step">
+              <h2 class="sub_title_pasos">Paso 5: Crea un proyecto</h2>
+              <p class="descripcion_pasos">
+                Para crear tu primer proyecto, solo tienes que captar un cliente que requiera un servicio de los
+                 proveídos por tus proveedores afiliados. En tu perfil, pulsa sobre el botón "Crear proyecto" 
+                 y completa el formulario con los datos solicitados. Luego, espera por la aprobación de la cotización.
+              </p>
+            </div>
+            <div class="carousel-step">
+              <h2 class="sub_title_pasos">Paso 6: Ir ha cotizacion</h2>
+              <p class="descripcion_pasos">
+                En el botón "Cotización pendiente" encontrarás tus proyectos pendientes de cotización, 
+                donde el proveedor ha establecido la fecha para realizar la cotización del proyecto. 
+                Llegada la fecha, tú, el proveedor y el cliente se reunirán en la ubicación del
+                 proyecto para proceder con la cotización.
+              </p>
+            </div>
+            <div class="carousel-step">
+              <h2 class="sub_title_pasos">Paso 7: Cobrar comision</h2>
+              <p class="descripcion_pasos">
+                Después de haber cotizado y aprobado el proyecto, tu comisión estará en espera 
+                hasta la fecha de depósito, la cual se realizará 15 días después de que el proyecto
+                haya comenzado. Sin embargo, es importante destacar que este plazo puede variar en
+                caso de que el monto presupuestado supere los USD 3,000.00 o su equivalente en moneda local.
+              </p>
+            </div>
+        </div>
+        
+        <div class="carousel-navigation">
+          <button class="carousel-button prev"><i class="fa-solid fa-chevron-right fa-rotate-180"></i></button>
+          <button class="carousel-button next"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+    </div>
+
+</div>
+
+
+
+<div class="cj-content_table">
+  <div class="cj_title_ventaja">
+    <h2>Ventajas de ser un vendedor afiliado de Bluubum</h2>
+  </div>
+
+  <div class="content_table">
+
+    <div class="table">
+      <p class="table_text_ventaja">
+        Empieza un negocio rentable sin inversión inicial: ¡Sin necesidad de realizar ninguna 
+        inversión inicial, puedes iniciar tu propio negocio y generar ingresos desde el primer día en Bluubum!
+      </p>
+    </div>
+
+    <div class="table">
+      <p class="table_text_ventaja">
+        Amplio mercado de demanda a tu alcance: En cada rincón, siempre habrá personas que
+         necesiten servicios técnicos y de construcción. ¡Aprovecha este vasto mercado de
+          demanda y captura oportunidades constantes!
+      </p>
+    </div>
+
+    <div class="table">
+      <p class="table_text_ventaja">
+        Controla tu rendimiento y aumenta tus ventas: En Bluubum, tienes el 
+        control total sobre tu rendimiento y las oportunidades de aumentar tus ventas.
+         Trabaja a tu propio ritmo y alcanza tus metas personales.
+      </p>
+    </div>
+
+    <div class="table">
+      <p class="table_text_ventaja">
+        Flexibilidad y libertad en tus horarios: ¿Quieres tener un horario de trabajo flexible?
+         En Bluubum, tú decides cuándo y cómo trabajas. Aprovecha la libertad de organizar tu 
+         tiempo de acuerdo con tus necesidades y preferencias.
+      </p>
+    </div>
+
+    <div class="table">
+      <p class="table_text_ventaja">
+        Tu propio negocio con tu ritmo: Ser parte de Bluubum significa ser dueño de tu propio negocio. 
+        Tú estableces el ritmo y defines tu éxito. ¡Marca tu propio camino y disfruta de los beneficios 
+        de ser tu propio jefe!
+      </p>
+    </div>
+
+    <div class="table">
+      <p class="table_text_ventaja">
+        Rentabilidad ilimitada: Las comisiones que obtendrás como vendedor afiliado de Bluubum 
+        son prácticamente ilimitadas. A medida que el valor del presupuesto de un proyecto aumente, 
+        tus comisiones también lo harán. ¡No hay límites para tu rendimiento financiero!
+      </p>
+    </div>
+
+  </div>
+</div>
+
+
+
+<div class="cj-content_invitacio">
+  <div class="content_invitacion">
+    <h2 class="text_invitacion">
+      Bluubum afiliados, rango de mercado y veneficios mas amplio. Tu puedes ser parte.
+    </h2>
+    <div class="cj-btn_redi_register_invitacion">
+      <a href="{% url 'registro_vendedor' %}" class="btn_redi_register_invitacion">Registrate ya</a>
+    </div>
+  </div>
+</div>
+
+
+
+<script src="{% static '../static/css/css_home/home_js/carrusel_pasos.js' %}"></script>
+
+{% endblock %}

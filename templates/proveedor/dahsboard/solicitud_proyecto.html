@@ -1,0 +1,115 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+{% load static %}
+
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/proveedor/sin_archivo.css' %}">
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/proveedor/dahsboar_css/sub_dahsboard/pedidos_dashboard.css' %}">
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/proveedor/dahsboar_css/modal_delete_prov.css' %}">
+
+
+
+<section class="content_head_pedidos">
+    <div class="cj_btn_regresar">
+        <a href="{% url 'dashboard_prov' %}" class="btn_regres"><i class="fa-solid fa-arrow-left-long"></i></a>
+    </div>
+
+    <div class="contain_title_head_pedidos">
+        <h2>Solicitud de proyectos</h2>
+    </div>
+
+</section>
+
+<div class="content_body">
+{% if proyecto_solicitud %}
+<div class="content_dashboar_pedidos">
+    <div class="sub_dashboar_pedidos">
+        <div class="dashboar_pedidos">
+            <table>
+                <tr>
+                  <th>Nombre del proyecto</th>
+                  <th>Codigo proyecto</th>
+                  <th>Provincia</th>
+                  <th>Nombre afiliado</th>
+                  <th>Codigo afiliado</th>
+                  <th>Whatssap afiliado</th>
+                  <th>Fecha de solicitud</th>
+                  <th>Confirmar proyecto</th>
+                  <th>Eliminar</th>
+                </tr>
+                {% for proyect in proyecto_solicitud %}
+                    <tr>
+                    {% if proyect.nombre_proyecto != Null %}
+                        <td>{{proyect.nombre_proyecto}}</td>
+                        <td>{{proyect.codigo_unico_proyect}}</td>
+                        <td>{{proyect.provincia_proyec}}</td>
+                        <td>{{proyect.vendedor.user.username}}</td>
+                        <td>{{proyect.vendedor.codigo_unico_vendedor}}</td>
+                        <td>
+                            <a href="https://wa.me/{{proyect.contact_vendedor.numeroWhatsapp_afiliado}}">
+                                {{proyect.contact_vendedor.numeroWhatsapp_afiliado}}
+                            </a>
+                        </td>
+                        <td>{{proyect.fecha_solicitud}}</td>
+                        <td>
+                            <a href="{% url 'solicitu_enviar_acotizacion' codigo_unico=proyect.codigo_unico_proyect %}" class="btn_cotizar">
+                                <p>Enviar a cotizar</p>
+                            </a>
+                        </td>
+
+                        <td>
+                            <a href="#" class="btn_delete modal-btn"
+                            data-post-delete="{% url 'delete_solicitud_proyect_prov' id=proyect.id %}" >
+                                <i class="fa-solid fa-trash-can"></i>
+                            </a>
+                        </td>
+                    {% endif %}
+                        
+                         
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+
+</div>
+
+{% else %}
+<section class="content_sin-archivo">
+    <div class="sub_content_sin-archivo">
+        <div class="cj_image_sin-archivo">
+            <i class="fa-regular fa-rectangle-list"></i>
+        </div>
+        <p class="mesage_sin-archivo">Actualmente no tienes solicitud de proyectos</p>
+    </div>
+</section>
+{% endif %}
+
+
+
+
+
+<div id="modal_eliminar" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Eliminar solicitud de proyecto</h2>
+      </div>
+      <div class="modal-body">
+        <i class="fas fa-trash-alt"></i>
+        <p>¿Está seguro de que desea eliminar esta solicitud de proyecto?</p>
+      </div>
+      <div class="modal-footer">
+        <button id="modal-close" onclick="closeModal()" class="modal-button cancel-button">Cancelar</button>
+        <a href="#" id="modal-BTNeliminarPost" class="modal-button delete-button">Eliminar</a>
+      </div>
+    </div>
+  </div>
+  
+
+
+<script src="{% static '../static/modall/delete_post.js' %}"></script>
+
+{% endblock %}

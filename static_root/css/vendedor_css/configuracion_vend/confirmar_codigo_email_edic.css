@@ -1,0 +1,82 @@
+.container_edit {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .cf_form_confi_codigo-email {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 30px;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form_confi_codigo-email {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .cj_input_confi_codigo-email {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  
+  .input_confi_codigo-email {
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+    margin: auto;
+    margin-bottom: 10px;
+    color: #555;
+
+  }
+  
+  .input_confi_codigo-email input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .cj_btn_confi_codigo-email {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .btn_cod {
+    display: inline-block;
+    padding: 10px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #4285f4;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .btn_cod:hover {
+    background-color: #1cba00;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .cf_form_confi_codigo-email {
+      padding: 20px;
+    }
+    
+    .input_confi_codigo-email input[type="text"] {
+      font-size: 14px;
+    }
+    
+    .btn_cod {
+      padding: 8px 20px;
+      font-size: 14px;
+    }
+  }

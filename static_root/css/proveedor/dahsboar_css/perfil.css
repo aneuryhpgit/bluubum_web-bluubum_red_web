@@ -1,0 +1,364 @@
+/* Estilos generales */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Estilos para la sección de perfil */
+  .conten_dt_perfil {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+ 
+  }
+  
+  .conatent_logo_name_perfil {
+    margin-right: 20px;
+  }
+
+  
+  .img_perfil {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: solid 5px rgb(0, 117, 252);
+  }
+  
+  .name_empres {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #555;
+  }
+
+  .data_empresa_perfil{
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #555;
+  }
+
+  .data_empresa_perfil .span_geo{
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #484848;
+  }
+
+  .anunc_afiliado_anote{
+    width: auto;
+    margin: auto;
+    padding: 0.2rem 0.4rem;
+    background-color: blue;
+    border: solid 0.3px;
+    border-radius: 5px;
+    color:#fff;
+    font-size: 0.9rem;
+    font-size: bold;
+    cursor: pointer;
+
+  }
+
+  .cj_anunc_afiliado{
+    display: flex;
+    width: 100%;
+  }
+
+  .anunc_afiliado{
+    width: auto;
+    margin: auto;
+    padding: 0.2rem 0.3rem;
+    background-color: rgba(2, 189, 2, 0.966);
+    border-radius: 5px;
+    color:#fff;
+    font-size: 0.9rem;
+    font-size: bold;
+  }
+
+
+  .content_body{
+    min-height: 100vh;
+  }
+  
+  /* Estilos para la sección de servicios */
+  .titulo_perfil {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .titulo_perfil h2{
+    margin-top: -2rem;
+    font-size: 1.2rem;
+
+  }
+  
+ /* Estilos para la tarjeta de servicios */
+.galery_perfil {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .targeta {
+    width: 300px;
+
+    margin-bottom: 30px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .targeta .targeta img {
+    width: 100%;
+    max-height: 150px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+  }
+  
+  .targeta h3 {
+    margin: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .valor_comision{
+    color: rgb(37, 120, 253);
+    font-weight: 400;
+  }
+  
+  .targeta a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  /* Estilos para el perfil */
+  .conten_dt_perfil {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  
+  .conatent_logo_name_perfil {
+    width: 200px;
+    height: 200px;
+    margin-right: 30px;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+  
+  .img_perfil {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .conten_name_empresa {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .name_empres {
+    font-size: 30px;
+    font-weight: bold;
+  }
+  
+  .titulo_perfil {
+    margin-top: 50px;
+    text-align: center;
+  }
+  
+  .galery_perfil {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 5px;
+    width: 72%;
+    margin: 0 13%;
+  }
+  
+  .targeta {
+    position: relative;
+    margin-bottom: 0px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+ 
+  }
+  
+  .targeta:hover {
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  }
+  
+  .targeta:hover img {
+    filter: brightness(50%);
+  }
+  
+  .targeta:hover .icono-corazon {
+    opacity: 1;
+  }
+  
+  .targeta img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .icono-corazon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    color: white;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .icono-corazon:hover {
+    cursor: pointer;
+  }
+
+  @media (max-width: 1024px) {
+    .galery_perfil {
+      width: 90%;
+      margin: 0 5%;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 5px;
+    }
+  
+    .targeta {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .galery_perfil {
+      width: 90%;
+      margin: 0 5%;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 5px;
+    }
+  
+    .targeta {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 667px) {
+    .galery_perfil {
+      width: 96%;
+      margin: 0 2%;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 5px;
+    }
+  
+    .targeta {
+      width: 100%;
+    }
+  }
+
+
+  @media (max-width: 414px) {
+
+    .conten_dt_perfil {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      background-color: #fff;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      margin-bottom: 20px;
+    }
+
+    .conatent_logo_name_perfil {
+      height: 100px;
+      margin-right: 20px;
+
+      margin: auto;
+    }
+
+
+    .img_perfil {
+      width: 100px;
+      height: 100px;
+      margin: 0 25%;
+    }
+    
+    .name_empres {
+      font-size: 1.3rem;
+    }
+  
+    .data_empresa_perfil{
+      font-size: 0.6rem;
+      font-weight: 500;
+
+    }
+    .galery_perfil {
+      width: 100%;
+      margin: 0 0px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 5px;
+    }
+  
+    .targeta {
+      width: 100%;
+    }
+  }
+
+  
+  @media (max-width: 380px) {
+    .targeta h3 {
+      font-size: 14px;
+    }
+
+  }
+
+
+
+  @media (max-width: 280px) {
+
+    .conten_dt_perfil {
+
+        padding: 10px;
+        background-color: #fff;
+        border-radius: 20px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        margin-bottom: 20px;
+      }
+      
+
+    .galery_perfil {
+      width: 100%;
+      margin: 0 0px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+      gap: 5px;
+    }
+  
+    .targeta {
+      width: 100%;
+    }
+
+    .targeta h3 {
+      font-size: 12px;
+    }
+  }
+
+
+
+ 

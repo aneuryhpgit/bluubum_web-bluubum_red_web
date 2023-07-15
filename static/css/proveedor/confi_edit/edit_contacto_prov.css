@@ -1,0 +1,94 @@
+/* Estilos para el título principal */
+.titulo_pg_edit_contacto {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 2rem 0;
+  }
+  
+  /* Estilos para el contenedor principal */
+  .contenedor_form_editar_contacto-edit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Estilos para el contenedor de datos actuales */
+  .contenedor_contacto_actual-edit {
+    margin-bottom: 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    border-radius: 5px;
+  }
+  
+  .titulo_form_titulo_dtadt-edit {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .cj_data_actual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .label_what_actual,
+  .label_tel_actual {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .whats_actual,
+  .tel_actual {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Estilos para el formulario de edición de contacto */
+  .cj_edit_contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .form_edit_contac {
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .caja_text_form_contac_edit {
+    margin-bottom: 1.5rem;
+  }
+  
+  .input_edit_contacto {
+    font-size: 1rem;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .div_btn_form_edit_contac {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .btn_form_edit_contact {
+    padding: 0.8rem 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .btn_form_edit_contact:hover {
+    background-color: #24c001;
+    cursor: pointer;
+  }
+  

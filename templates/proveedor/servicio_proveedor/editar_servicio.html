@@ -1,0 +1,65 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/proveedor/dahsboar_css/edit_servicio.css' %}">
+
+<section class="caja_ls_edit_serv">
+    <div class="cj_titulo_ls_edit_serv">
+        <h3 class="titulo_ls_edit_serv">Editar servicio</h3>
+    </div>
+    <div class="caja_tabal_ls_edit_serv">
+        <table>
+            <tr>
+              <th>Imagen</th>
+              <th>Servicio</th>
+              <th>Descripcion</th>
+              <th>Comision</th>
+            </tr>
+                <tr>
+                  <td><img src="{{ dato_actual.imagen_servicio.url }}" alt="" class="imagen_lp"></td>
+                  <td>{{ dato_actual.nombre_servicio }}</td>
+                  <td>{{ dato_actual.descripcion_serv }}</td>
+                  <td>{{ dato_actual.Comicion }}</td>
+                </tr>                       
+
+          </table>
+    </div>
+
+</section>
+
+  <div class="content_form_edit_serv">
+      <form action="" method="post" enctype="multipart/form-data" class="form_edit_serv">
+      {% csrf_token %}
+            <div class="caja_text_form_edit_serv">
+                <input type="text" id="txtfileTitulo" placeholder="Nuevo nombre de servicio" 
+                name="nombre_servico" class="input_edit_serv" >             
+            </div>
+          
+            <div class="file-image_form_edit_serv" id="src-file1_form_perfil_pg-inicial">
+                <img src="{% static '../media/image_utileria/img-simbol.jpg' %}" alt="" id="img-preview" class="image_preview_edit_serv">
+                <input type="file" class="subirImg-form_edit_serv" id="file" name="imagen" >
+                <label for="file" id="selector" class="label_btn_form_edit_serv"><p>Imagen de 
+                servicio</p></label>
+            </div>
+
+            <div class="caja_text_form_edit_serv">
+                <textarea  id="txtfileTitulo" maxlength="150" rows="7" cols="60"
+                name="descripcion" class="comision_edit_serv" placeholder="Descripcion maximo 150 caracteres"> </textarea>            
+            </div>
+          
+            <div class="caja_text_form_edit_serv">
+                <input type="number" id="txtfileTitulo" placeholder="Comision en %" 
+                name="comision" class="comision_edit_serv" >             
+            </div>
+            <div class="div_btn_form_edit_serv">
+                <button type="submit" class="btn_form_edit_serv" id="">Guardar cambio</button>
+            </div>
+      </form>
+  </div>
+</div>
+
+<script src="{% static '../static/registro_proveedor/post_and_serv/img_previa_edit_serv.js' %}"></script>
+
+{% endblock %}

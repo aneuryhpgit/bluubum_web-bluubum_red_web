@@ -1,0 +1,150 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+{% load static %}
+
+
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/vendedor_css/carpeta_login_register_css/register_vendedor.css' %}">
+
+
+
+
+<div class="contenedor-registro_vendedor">
+    <div class="sub_contenedor-registro_vendedor">
+        <div class="cj-titulo_reg_vendedor">
+            <h1 class="titulo_registro_vendedor">Registrate</h1>
+        </div>           
+        <form id="registro-form" action="{% url 'registro_vendedor' %}" method="post" class="form_registro_vendedor">
+            {% csrf_token %}
+            <div class="nombre_vendedor">
+                <input type="text" placeholder="Nombre" id="nombre" class="control_form_vendedor invalid" name="nombre" value="{{ nombre }}" >
+                
+            </div><br>
+            <div class="apellido_vendedor">
+                <input type="text" placeholder="Apellido" id="apellido" class="control_form_vendedor invalid" name="apellido" value="{{ apellido }}" required>
+                
+            </div><br>
+            <div class="name_usuario_vendedor">
+                <input type="text" placeholder="Usuario" id="usuario" class="control_form_vendedor invalid posible-usuario" name="usuario" value="{{ usuario }}" required>
+
+                {% if error_usuario %}
+                   <br><span style="color: red;">{{ error_usuario }}</span><br>
+                {% endif %}
+                
+                 
+            </div><br>
+            <div class="email_vendedor">
+                <input type="email" placeholder="E-mail" id="email" class="control_form_vendedor invalid" name="email" value="{{ email }}" required>
+                {% if error_email %}
+                  <br><span style="color: red;">{{ error_email }}</span><br>
+                {% endif %}
+                
+            </div><br>
+
+            <div class="password_vendedor">
+                <input type="password" placeholder="Password" id="password" class="control_form_vendedor invalid" name="password" required>
+                <button type="button" id="show-password-btn" class="btn-eyes_vendedor"><i class="fa fa-eye"></i></button>
+                
+            </div>
+            <div class="password2_vendedor">
+                <input type="password" placeholder="Repetir Password" id="password2" class="control_form_vendedor invalid" name="password2" required>
+                <button type="button" id="show-password-btn2" class="btn-eyes_vendedor"><i class="fa fa-eye"></i></button>
+                {% if error_password %}
+                   <br><span style="color: red;">{{ error_password }}</span><br><br>
+                {% endif %}
+            </div>
+            <div class="cj-fecha_nacimiento_vendedor">
+                <div class="cj-tex-nacimineto_vendedor">
+                    <p class="text-nacimiento_vendedor">Fecha de nacimiento</p>
+                </div>
+                <div class="sub_cj_fecha_nacimiento_vendedor">
+                    
+                    <select id="year" name="year" class="year_select_vendedor"></select>
+                    
+
+                    <select id="month" name="month" class="mes_select_vendedor">
+                        <option value="1">Enero</option>
+                        <option value="2">Febrero</option>
+                        <option value="3">Marzo</option>
+                        <option value="4">Abril</option>
+                        <option value="5">Mayo</option>
+                        <option value="6">Junio</option>
+                        <option value="7">Julio</option>
+                        <option value="8">Agosto</option>
+                        <option value="9">Septiembre</option>
+                        <option value="10">Octubre</option>
+                        <option value="11">Noviembre</option>
+                        <option value="12">Diciembre</option>
+                    </select>
+                    
+                    <select id="day" name="day" class="day_select_vendedor"></select>
+                     
+                    {% if error_edad %}
+                       <br><span style="color: red;">{{ error_edad }}</span><br><br>
+                    {% endif %}
+
+                </div>
+            </div>
+            <br>
+            
+            <div class="">
+                <button type="submit" id="registro-button" class="btn_registro_vendedor">
+                    Registrar
+                </button>
+                <br><br>
+                <div>
+                    <p>Al pulsar el boton de registrar acepta nuestra politica, terminos y condiciones</p>
+                    <a href="{% url 'politicas_vend' %}">Politica</a><br>
+                    <a href="{% url 'terminos_vend' %}">Terminos y condiciones</a>
+                </div>
+
+                <div  class="cj_btn_redirec_login">
+                    <a href="{% url 'login_vnd' %}" class="btn_redirec_login">Ya tengo una cuenta</a> 
+                </div><br><br>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+<script>
+    // Función para guardar los valores de los inputs en localStorage
+    function guardarDatos() {
+        localStorage.setItem('nombre', document.getElementById('nombre').value);
+        localStorage.setItem('apellido', document.getElementById('apellido').value);
+        localStorage.setItem('usuario', document.getElementById('usuario').value);
+        localStorage.setItem('email', document.getElementById('email').value);
+        
+    }
+
+    // Función para restaurar los valores de los inputs desde localStorage
+    function restaurarDatos() {
+        document.getElementById('nombre').value = localStorage.getItem('nombre');
+        document.getElementById('apellido').value = localStorage.getItem('apellido');
+        document.getElementById('usuario').value = localStorage.getItem('usuario');
+        document.getElementById('email').value = localStorage.getItem('email');
+        
+    }
+
+    // Evento onchange para guardar los datos en localStorage cuando se modifican los inputs
+    document.getElementById('nombre').onchange = guardarDatos;
+    document.getElementById('apellido').onchange = guardarDatos;
+    document.getElementById('usuario').onchange = guardarDatos;
+    document.getElementById('email').onchange = guardarDatos;
+    
+
+    // Evento onload para restaurar los datos desde localStorage cuando se carga la página
+    window.onload = restaurarDatos;
+</script>
+
+
+<script src="{% static '../static/registro_proveedor/yearselec.js' %}"></script>
+<script src="{% static '../static/registro_proveedor/dianacimento.js' %}"></script>
+<script src="{% static '../static/registro_proveedor/inputs_registro_proveedor.js' %}"></script>
+<script src="{% static '../static/registro_proveedor/ver_password.js' %}"></script>
+
+
+{% endblock %}

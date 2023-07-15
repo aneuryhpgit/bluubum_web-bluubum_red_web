@@ -1,0 +1,316 @@
+/* Estilos generales */
+
+.body_home{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+}
+
+/* Estilos de la cabecera */
+.cj-banner {
+  position: relative;
+  max-height: 800px;
+  margin-bottom: 4rem;
+}
+  
+.cj-banner .sub_cj-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+  
+.sub_cj-banner .cj-carrusell {
+  width: 100%;
+  height: 100%;
+}
+  
+.cj-carrusell .carrusell {
+  width: 100%;
+  height: 100%;
+
+}
+
+  
+.img_carrusell {
+  width: 100%;
+  height: 800px;
+  object-fit: cover;
+}
+
+  
+.banner_descript {
+  width: 100%;
+  height: 100%;
+  margin-top: -4px;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.452);
+  padding: 20px;
+  color: #fff;
+  text-align: center;
+}
+
+
+.sub_banner-descript{
+  width: 58%;
+}
+  
+.cj-title {
+  margin-bottom: 10px;
+}
+  
+.sub_title_ban_descript {
+  font-size: 70px;
+  font-weight: 600;
+}
+  
+.parafo_bann_descript {
+  width: 80%;
+  margin: 0 auto;
+  font-size: 1.8rem;
+  line-height: 1.5;
+  margin-bottom: 50px;
+}
+  
+.btns_login {
+  display: flex;
+  justify-content: center;
+}
+  
+.btns_login a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #003ffc;
+    color: #fff;
+    text-decoration: none;
+    margin: 0 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.8rem;
+}
+
+  
+.btns_login a:hover {
+  background-color: #34b202;
+}
+
+.btns_login .btn_register{
+  background-color: rgb(3, 7, 86);
+}
+
+
+  /* Estilos responsivos */
+@media screen and (max-width: 1366px) {
+
+  .cj-banner {
+    max-height: 600px;
+  }
+
+  .img_carrusell {
+    height: 600px;
+  }
+    
+  .sub_banner-descript{
+    width: 58%;
+  }
+
+  .sub_title_ban_descript {
+    font-size: 50px;
+    font-weight: 600;
+  }
+        
+  .parafo_bann_descript {
+    font-size: 1.3rem;
+  }
+
+
+  .btns_login a {
+
+    font-size: 1.2rem;
+  }
+
+}
+
+
+@media screen and (max-width: 1280px) {
+
+  .cj-banner {
+    max-height: 500px;
+  }
+
+  .img_carrusell {
+    height: 500px;
+  }
+    
+  .sub_banner-descript{
+    width: 55%;
+  }
+
+  .sub_title_ban_descript {
+    font-size: 40px;
+    font-weight: 600;
+  }
+        
+  .parafo_bann_descript {
+    font-size: 1.2rem;
+  }
+
+
+  .btns_login a {
+    font-size: 1.1rem;
+  }
+
+}
+
+
+
+  /* Estilos responsivos */
+@media screen and (max-width: 1024px) {
+
+    .sub_banner-descript{
+      width: 60%;
+    }
+        
+    .sub_title_ban_descript {
+      font-size: 35px;
+    }
+    
+    .parafo_bann_descript {
+      width: 90%;
+      margin-bottom: 40px;
+    }
+
+}
+
+
+
+    /* Estilos responsivos */
+@media screen and (max-width: 920px) {
+
+  .sub_banner-descript{
+    width: 60%;
+  }
+    
+  .sub_title_ban_descript {
+    font-size: 35px;
+  }
+
+  .parafo_bann_descript {
+    width: 90%;
+    margin-bottom: 40px;
+  }
+
+}
+
+
+
+    /* Estilos responsivos */
+@media screen and (max-width: 852px) {
+
+  .sub_banner-descript{
+    width: 70%;
+  }
+      
+  .sub_title_ban_descript {
+    font-size: 35px;
+    margin-bottom: 20px;
+  }
+  
+  .parafo_bann_descript {
+    width: 90%;
+      margin-bottom: 40px;
+    }
+    
+  }
+    
+  
+  
+  /* Estilos responsivos */
+  @media screen and (max-width: 768px) {
+    .banner_descript {
+      font-size: 14px;
+      padding: 10px;
+    }
+  
+    .sub_title_ban_descript {
+      font-size: 30px;
+    }
+
+    .parafo_bann_descript {
+      width: 90%;
+      font-size: 15px;
+      margin-bottom: 40px;
+      font-weight: 300;
+    }
+  }
+  
+
+
+@media screen and (max-width: 480px) {
+
+
+    .sub_banner-descript{
+      width: 80%;
+      margin-top: 6rem;
+    }
+
+    .banner_descript {
+      font-size: 12px;
+    }
+  
+    .sub_title_ban_descript {
+      font-size: 22px;
+    }
+
+    .parafo_bann_descript {
+      width: 100%;
+      font-size: 12px;
+      margin-bottom: 40px;
+      font-weight: 300;
+    }
+
+
+    .btns_login{
+      display: block;
+    }
+
+    .btns_login a{
+      width: 60%;
+      padding: 10px 10px;
+      margin-bottom: 2rem;
+      font-size: 0.8rem;
+    }
+
+
+}
+
+
+
+
+@media screen and (max-width: 400px) {
+
+
+  .sub_banner-descript{
+    width: 100%;
+    margin-top: 4rem;
+  }
+
+
+
+  .btns_login{
+    display: block;
+  }
+
+  .btns_login a{
+    width: 70%;
+    padding: 10px 5px;
+    margin-bottom: 2rem;
+    font-size: 0.7rem;
+  }
+
+
+
+
+}
+
+

@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;700&display=swap');
+
+*{
+    font-family: 'Comfortaa', cursive;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+
+    display: grid;
+    margin: 0;
+    padding: 0;
+    overflow: none;
+
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Standard */
+
+}
+
+  
+.heat{
+    background: rgb(2, 67, 247);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    margin: 0;
+    height: 70px;
+}
+
+
+.heat .logoTitle{
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    margin-top: -0rem;
+}
+
+.logoTitle a{
+    color: #fff;
+    text-decoration: none;
+}
+
+
+.heat li{
+    list-style: none;
+}
+
+.heat li a{
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 1rem;
+    font-weight: 700;
+
+}
+
+.heat li a i{
+    color: aliceblue;
+    font-size: 1rem;
+}
+
+.menu{
+    display: flex;
+}
+
+.btn_menu_lateral a{
+    margin: 0 0.8rem;
+    color: aliceblue;
+    font-size: 1.3rem;
+
+
+}
+
+.btn_redirec_login_lateral_menu {
+    margin-right: 1rem;
+}
+
+.btn_redirec_login_lateral_menu a{
+    margin: 0 0.8rem;
+    color: aliceblue;
+    font-size: 1.3rem;
+
+}
+
+
+.btn_menu_latelar_login{
+    border: solid 1px rgb(241, 108, 42);
+    padding: 5px 5px;
+    border-radius: 5px;
+}
+
+.btn_menu_latelar_register{
+    background-color:rgb(233, 91, 40);
+    padding: 5px 5px;
+    border-radius: 3px;
+}
+
+
+
+
+.menu .togel  i{
+    color: white;
+    font-size: 1.4rem;
+}
+
+.fa-bars{
+    color:rgb(255, 255, 255);
+    font-size: 1.4rem;
+}
+
+
+
+#main{
+    display: flex;
+    background: rgba(0, 0, 0, 0.723);
+    color: black;
+    flex-direction: column;
+    position: fixed;
+    align-items: center;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    pad: 20px 0;
+    overflow: auto;
+    z-index: 2000;
+  
+}
+
+#main{  
+    display: none;
+}
+
+
+.cj_div_ul{
+    width: auto; 
+    
+}
+
+.menu #main ul{
+    display: block;
+    width: 280px;
+    max-width: 400px;
+    background-color: aliceblue;
+    margin: 2rem auto;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.menu .main ul li{
+
+   margin-bottom: 2rem;
+
+}
+
+.menu .main ul li a{
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    color:rgb(61, 61, 61);
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.094);
+}
+
+
+.menu .main ul li a .fa-solid{
+    color: rgb(50, 49, 49);
+}
+
+
+
+.menu .main ul li{
+    margin: 0.5rem;
+    margin-bottom: 1rem;
+
+}
+
+
+.btn_login_menu_mobil p{ 
+    width: 70%;
+    border: solid 2px #004cff;
+    background-color: #0040ff;
+    color: rgb(245, 245, 245);
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.btn_register_menu_mobil p{ 
+    width: 70%;
+    background-color: #09ba00;
+    border: solid 2px #00b42a;
+    color: aliceblue;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+
+
+.main .cerrar {
+    display: flex;
+    margin: 2rem 90%;
+    margin-top: 1rem;
+    color: rgb(255, 255, 255);
+    font-size: 2rem;
+    font-weight: 500;
+    cursor: pointer;
+    background-color: aliceblue;
+}
+
+.main .title_menu{
+    align-items: center;
+    text-align: center;
+}
+
+
+@media only screen and (max-width: 1366px) {
+
+    .heat{
+        height: 50px;
+    }   
+
+}
+
+
+@media only screen and (max-width: 1280px) {
+
+    .heat{
+        height: 40px;
+    }   
+
+    .heat .logoTitle{
+        font-size: 1.8rem;
+    }
+
+    .btn_menu_lateral a{
+
+        font-size: 1rem;
+
+    }
+    
+    .btn_redirec_login_lateral_menu a{
+        font-size: 1rem;
+
+    }
+
+}
+
+
+
+  /* Estilos para dispositivos móviles */
+@media only screen and (min-width: 915px) {
+
+
+    .menu .togel{
+        display: none;
+        color: aliceblue;
+    }
+
+    .togel_vend i{
+        color:rgb(255, 255, 255);
+    }
+
+
+    
+
+}
+
+
+  /* Estilos para dispositivos móviles */
+@media only screen and (max-width: 915px) {
+
+    .menu .togel i{
+        color: aliceblue;
+    }
+
+
+    .btn_menu_lateral a{
+        display: none;
+    
+    }
+    
+    .btn_redirec_login_lateral_menu {
+        display: none;
+    }
+
+    .togel_vend {
+        display: none;
+    }
+    
+}
+
+
+
+
+
+  /* Estilos para dispositivos móviles */
+@media only screen and (max-width: 400px) {
+
+
+    .heat{
+        padding: 0 0.3rem;
+        margin: 0;
+        height: 40px;
+    
+    }
+
+    .heat .logoTitle{
+        font-size: 1.1rem;
+
+    }
+
+
+    
+
+}
+
+
+  /* Estilos para dispositivos móviles */
+  @media only screen and (max-width: 300px) {
+
+    .heat .logoTitle{
+        font-size: 1rem;
+       ;
+    }
+
+}
+

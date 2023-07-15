@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <script src="https://kit.fontawesome.com/9722caf0d0.js" crossorigin="anonymous"></script>
+    <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
+    <link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet">
+    <link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="{% static '../static/css/vendedor_css/inicial_config_vend_css/imagen_perfil_vendedor.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '../static/css/vendedor_css/inicial_config_vend_css/progres_subir_img_perfil.css' %}">
+
+    <title>Bluubum</title>
+</head>
+<body>
+    <div class="contenedor_form_perfil_pg-inicial">
+        <div class="contenedor_titulo_form_perfil_pg-inicial">
+            <h2 class="titulo_form_perfil_pg-inicial">Sube una foto de tu cara</h2>
+        </div>
+
+        <div class="formulario_form_perfil_pg-inicial">
+            <form action="{% url 'foto_vendedor' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+                <div id="progress-circle" class="loader">
+                    
+                </div>
+                <div class="cj-img_previa">
+                    <img id="img-preview" src="{% static '../static/images/image_user.png' %}" alt="Imagen de perfil" class="img_previa" >
+                </div><br>
+
+                <div class="file-select_form_perfil_pg-inicial" id="src-file1_form_perfil_pg-inicial">
+                    <input type="file" class="subirImg-form_perfil_pg-inicial" multiple id="file" name="imagen-logo" >
+                    <label for="file" id="selector" class="label_btn_form_perfil_pg-inicial"><p>Subir imagen</p></label>
+                </div>
+
+                
+                <div class="div_btn_form_perfil_pg-inicial">
+                    <button type="submit" class="btn_form_perfil_pg-inicial" id="save-button">Guardar y continuar<i class="fa-solid fa-arrow-right-long"></i></button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="{% static '../static/registro_proveedor/iniales_stilos_js/mostrar_mig_previa.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <script src="{% static '../static/vendedor/subir_img_inic.js' %}"></script>
+</body>
+</html>

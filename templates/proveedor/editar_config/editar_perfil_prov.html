@@ -1,0 +1,42 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+{% load static %}
+
+<div class="contenedor_edit_profile_prov">
+  <div class="contenedor_titulo_edit_profile_prov">
+      <h2 class="titulo_edit_profile_prov">Editar logo y nombre de empresa</h2>
+  </div>
+
+  <div class="cj_img_edit_profile_prov">
+    <div class="cj_int_img_edit_profile_prov">
+      <img src="{{ profile.image.url }}" alt="" style="width: 100px" class="img_edit_profile_prov">
+    </div>
+  </div>
+  <div class="cj_nameEmpr_edit_profile_prov">
+    <div class="cj_int_nameEmpr_edit_profile_prov">
+      <h4 class="nameEmpr_edit_profile_prov">{{ profile.nombre_empresa }}</h4>
+    </div>
+  </div>
+  
+  <div class="cont_formulario_edit_profile_prov">
+      <form action="{% url 'editar_perfil_prov' %}" method="post" enctype="multipart/form-data" class="formulario_edit_profile_prov">
+      {% csrf_token %}
+          
+          <div class="cj_form_edit_profile_prov" id="src-file1_form_perfil_pg-inicial">
+              <input type="file" class="subirImg-form_edit_profile_prov" multiple id="file" name="imagen-logo" >
+              <label for="file" id="selector" class="label_edit_profile_prov"><p>Nueva foto de perfil</p></label>
+          </div>
+          
+          <div class="caja_text_edit_profile_prov">
+              <input type="text" id="txtfileTitulo" placeholder="Nuevo nombre de empresa" 
+              name="nombre_empresa" class="input_empr_edit_profile_prov">             
+          </div>
+          <div class="div_btn_form_edit_profile_prov">
+              <button type="submit" class="btn_form_edit_profile_prov" id="">Guardar cambio</button>
+          </div>
+      </form>
+  </div>
+</div>
+
+{% endblock %}

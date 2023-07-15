@@ -1,0 +1,174 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/modall/modal_alert_show.css' %}">
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/vendedor_css/dashboard_vend_css/perfil_vend/dashboar_perfil_vend.css' %}">
+
+
+<div class="user-profile-header">
+    <div class="sub_content-profile-header">
+        <div class="user-profile-image">
+            <img src="{{vendedor.image.url}}" alt="Imagen de perfil de usuario">
+        </div>
+        <div class="user-profile-info">
+            <h1 class="user-profile-name">{{vendedor.user.first_name}} {{vendedor.user.last_name}}</h1>
+            <p class="user-profile-code"><span class="span_header_perfil_vend">
+                Código:</span> {{vendedor.codigo_unico_vendedor}}</p>
+            <p class="user-profile-rol"><span class="span_header_perfil_vend">Rol:</span> Vendedor</p>
+            <p class="user-profile-start-date"><span class="span_header_perfil_vend">
+                Activo desde:</span> {{vendedor.user.date_joined|date:"d/m/Y"}}</p>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="dashboard">
+    <div class="gallery">
+       <div class="gallery-item">
+            <a href="{% url 'lista_perfil_prov' %}">
+              <div class="item-content">
+                <i class="fa-solid fa-user-plus"></i>
+                <h2>proveedores</h2>
+                <p>Descubre todo lo que el proveedor tiene para ofrecer. Afiliate y comienza a generar ingresos.</p>
+              </div>
+            </a>
+      </div>
+      <div class="gallery-item">
+        <a href="{% url 'proveedores_afiliados' vendedor_id=vendedor.id %}">
+          <div class="item-content">
+            <i class="fa-solid fa-plus"></i>
+            <h2>Crear nuevo proyecto</h2>
+            <p>Al captar un cliente crearas un proyecto rellenando el formulario.</p>
+          </div>
+        </a>
+      </div>
+      <div class="gallery-item">
+        <a href="{% url 'proyecto_pendiente_solic' %}">
+          <div class="item-content">
+            <div class="">
+              <div class="icon_data">
+                <i class="fa-solid fa-handshake-simple"></i>
+                <p class="data_items">{{proyecto_solicitud_num}}</p>
+              </div>
+            </div>
+            <h2>Proyectos creado</h2>
+            <p>Lista de tus proyectos creados en espera de aprobación.</p>
+          </div>
+        </a>
+      </div>
+      <div class="gallery-item">
+        <a href="{% url 'proyecto_cotizacion' %}">
+          <div class="item-content">
+            <div class="icon_data">
+              <i class="fa-solid fa-pen-ruler"></i>
+              <p class="data_items">{{proyecto_cotizacion_num}}</p>
+            </div>
+            <h2>Cotizacion Pendiente</h2>
+            <p>Lista de proyectos en espera de su fecha de cotizacion.</p>
+          </div>
+        </a>
+      </div>
+      <div class="gallery-item">
+        <a href="{% url 'proyecto_activo' %}">
+          <div class="item-content">
+            <div class="icon_data">
+              <i class="fa-solid fa-trowel-bricks"></i>
+              <p class="data_items">{{proyecto_activo_num}}</p>
+            </div>
+            <h2>Proyecto activo</h2>
+            <p>Revisa y gestiona los proyectos aprobados que estan en ejecucion actualmente.</p>
+          </div>
+        </a>
+      </div>
+      <div class="gallery-item">
+        <a href="{% url 'proyecto_concluido' %}">
+          <div class="item-content">
+            <div class="icon_data">
+              <i class="fa-solid fa-flag-checkered"></i>
+              <p class="data_items">{{proyecto_concluido_num}}</p>
+            </div>
+            <h2>Proyectos concluidos</h2>
+            <p>Revisa y gestiona los proyectos en curso.</p>
+          </div>
+        </a>
+      </div>
+      <div class="gallery-item">
+        <a href="{% url 'proyecto_comision_pendiente' %}">
+          <div class="item-content">
+            <div class="icon_data">
+              <i class="fa-solid fa-sack-dollar"></i>
+              <p class="data_items">{{proyecto_comision_num}}</p>
+            </div>
+            <h2>Comisiones pendientes</h2>
+            <p>Revisa y gestiona las comisiones pendientes de pago.</p>  
+          </div>
+        </a>
+      </div>
+      <div class="gallery-item">
+        <a href="{% url 'factura_comision_vend' %}">
+          <div class="item-content">
+            <div class="icon_data">
+              <i class="fa-solid fa-hand-holding-dollar"></i>
+              <p class="data_items">{{proyec_comision_saldado_num}}</p>
+            </div>
+            <h2>Pagos recientes</h2>
+            <p>Notificacion de tus pagos de los ultimos 20 dias.</p>
+          </div>
+        </a>
+      </div>
+      <div class="gallery-item">
+        <a href="{% url 'historial_de_pagos' %}">
+          <div class="item-content">
+            <i class="fa-solid fa-file-invoice-dollar"></i>
+            <h2>Historial de comisiones</h2>
+            <p>Revisa el historial de comisiones y pagos realizados.</p>
+          </div>
+        </a>
+      </div>
+      <div class="gallery-item">
+        <a href="{% url 'proyecto_suspendido' %}">
+          <div class="item-content">
+            <div class="icon_data">
+              <i class="fa-solid fa-trowel"></i>
+              <p class="data_items">{{proyecto_suspend_num}}</p>
+            </div>
+            <h2>Proyecto suspendido</h2>
+            <p>Revisa y gestiona los proyectos concluidos.</p>
+          </div>
+        </a>
+      </div>
+      <div class="gallery-item">
+        <a href="{% url 'proyecto_delete' %}">
+          <div class="item-content">
+            <div class="icon_data">
+              <i class="fa-solid fa-handshake-simple-slash"></i>
+              <p class="data_items">{{proyecto_cancelado_num}}</p>
+            </div>
+            <h2>Proyectos cancelados</h2>
+            <p>Revisa el historial de tus proyectos cancelados.</p>
+          </div>
+        </a>
+      </div>
+      <div class="gallery-item">
+        <a href="{% url 'proyecto_historial' %}">
+          <div class="item-content">
+            <i class="fa-regular fa-rectangle-list"></i>
+            <h2>Historial de Proyectos</h2>
+            <p>Revisa el historial de todos los proyectos que has creado.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  
+
+
+  
+
+
+{% endblock %}

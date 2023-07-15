@@ -1,0 +1,60 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/modall/modal_alert_show.css' %}">
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/vendedor_css/carpeta_login_register_css/login_vend.css' %}">
+
+{% if show_alert_login %}
+<div id="caj-alert-show" class="caj-alert-show">
+  <div class="alert-danger-show">
+    <div class="icono-show">
+      <div class="circle_icono"><p>!</p></div>
+    </div>
+    <div class="caja-masage-show">
+      <p class="mesage-show">Usuario o contraseña incorrecta</p>
+    </div>
+    <div class="cja-btn-show">
+      <button id="btn-show" class="btn-show btn-left">Aceptar</button>
+      <!--<a href="#" class="btn-reidrec btn-right">Aceptar</a>-->
+    </div>
+  </div>
+</div>
+{% endif %}
+
+
+<div class="contenedor-login_prov">
+<div class="sub-contenedor_login_prov">
+    <div class="title">
+      <h2 class="tex-title">Iniciar sesión</h2>
+    </div>
+    <form action="{% url 'login_vnd' %}" method="post">
+        {% csrf_token %}
+        <div class="nombre_tienda_prov">
+            <input type="text" placeholder="Usuario" class="styl_login_prov" name="username">
+        </div><br>
+        <div class="password_prov">
+            <input type="password" placeholder="Password" class="styl_login_prov" name="password" >
+        </div><br>
+        <div class="div-buton"><br>
+            <button class="btn_login">
+                Iniciar sesion
+            </button><br><br>
+
+            <li> <a href="{% url 'restaurar_password' %}">Olvide mi contraseña</a> </li>
+            <br>
+            <li> <a href="{% url 'registro_vendedor' %}">Crea una cuenta</a> </li>
+
+        </div>
+    </form>
+
+</div>
+
+</div>
+
+<script src="{% static '../static/css/modall/modal_show.js' %}"></script>
+
+{% endblock %}

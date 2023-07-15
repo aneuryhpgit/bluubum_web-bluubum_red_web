@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://kit.fontawesome.com/9722caf0d0.js" crossorigin="anonymous"></script>
+    <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
+    <link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet">
+    <link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="{% static '../static/css/vendedor_css/inicial_config_vend_css/direccion_inic_vend.css' %}">
+
+    <title>Bluubum</title>
+</head>
+<body>
+
+    <div class="contenedor_form_direccion_pg-inicial">
+        <div class="contenedor_titulo_form_direccion_pg-inicial">
+            <h2 class="titulo_form_direccion_pg-inicial">Direccion</h2>
+        </div>
+        <div class="formulario_form_direccion_pg-inicial">
+            <form action="{% url 'config_ini_ubicacion_vend' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}               
+                <label for="provincias">Selecciona una provincia:</label>
+                <select id="provincias" name="provincias" class="input_selec_direc_inic" required></select>
+
+                <div class="caja_text_form_direccion_pg-inicial">
+                    <input type="text" id="txtfileTitulo" placeholder="Ciudad o municipio" 
+                    name="ciudad" class="text_direc_input_pg-inicial" required>             
+                </div>
+                <div class="caja_text_form_direccion_pg-inicial">
+                    <input type="text" id="txtfileTitulo" placeholder="Sector" 
+                    name="sector" class="text_direc_input_pg-inicial" required>             
+                </div>
+                <div class="caja_text_form_direccion_pg-inicial">
+                    <input type="text" id="txtfileTitulo" placeholder="Calle" 
+                    name="calle" class="text_direc_input_pg-inicial" required>             
+                </div>
+                <div class="caja_text_form_perfil_pg-inicial">
+                    <input type="text" id="txtfileTitulo" placeholder="Numero" 
+                    name="numero" class="text_direc_input_pg-inicial" required>             
+                </div>
+                <div class="caja_text_form_perfil_pg-inicial">
+                    <input type="text" id="txtfileTitulo" placeholder="Apartamento o suite" 
+                    name="apartamento_num" class="text_direc_input_pg-inicial" required>             
+                </div>
+                <div class="div_btn_form_direecion_pg-inicial">
+                    <button type="submit" class="btn_form_perfil_pg-inicial" id="">Guardar y continuar<i class="fa-solid fa-arrow-right-long"></i></button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="{% static '../static/config_iniciales/ciudades_rd.js' %}"></script>
+    
+</body>
+</html>

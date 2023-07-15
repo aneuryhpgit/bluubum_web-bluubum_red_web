@@ -1,0 +1,134 @@
+.cj-content_invitacio{
+    display: flex;
+    width: 100%;
+    height: 300px;
+    margin: 3rem 0;
+    background-color: rgba(177, 232, 249, 0.256)
+}
+
+
+.content_invitacion{
+    width: 80%;
+    height: 80%;
+    margin: auto auto;
+
+}
+
+
+.text_invitacion{
+    font-size: 2.3rem;
+    color: rgb(78, 78, 78);
+}
+
+
+.cj-btn_redi_register_invitacion{
+    display: flex;
+    width: 100%;
+    margin: 1rem 0;
+}
+
+.btn_redi_register_invitacion{
+    width: auto;
+    margin: 0.5rem auto;
+    padding: 0.8rem 2rem;
+    border-radius: 10px;
+    background-color: rgb(255, 87, 3);
+    color: whitesmoke;
+    font-size: 1rem;
+    font-weight: bold;
+
+}
+
+
+
+
+
+
+@media screen and (max-width: 1258px) {
+
+    
+    .text_invitacion{
+        font-size: 2.7rem;
+    
+    }
+
+
+}
+
+
+
+@media screen and (max-width: 758px) {
+
+    
+    .text_invitacion{
+        font-size: 2rem;
+    
+    }
+
+
+}
+
+
+@media screen and (max-width: 600px) {
+
+
+    .content_invitacion{
+        width: 90%;
+
+    
+    }
+
+    
+    .text_invitacion{
+        font-size: 1.8rem;
+    
+    }
+
+
+}
+
+
+
+@media screen and (max-width: 377px) {
+
+
+    
+    .text_invitacion{
+        font-size: 1.5rem;
+    
+    }
+
+
+    .btn_redi_register_invitacion{
+        padding: 0.5rem 1rem;
+ 
+    }
+    
+
+
+}
+
+
+
+
+@media screen and (max-width: 300px) {
+
+
+    
+    .text_invitacion{
+        font-size: 1.3rem;
+    
+    }
+
+
+    .btn_redi_register_invitacion{
+        font-size: 0.8rem;
+ 
+    }
+    
+
+
+}
+
+
+

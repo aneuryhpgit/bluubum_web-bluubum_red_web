@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{% static '../static/css/modall/modal_alert_show.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static '../static/css/vendedor_css/carpeta_login_register_css/confirma_email_vend.css' %}">
+  <title>Bluubum</title>
+</head>
+<body>
+  {% if show_message_alert_caduca %}
+  <div id="caj-alert-show" class="caj-alert-show">
+    <div class="alert-danger-show">
+      <div class="icono-show">
+        <div class="circle_icono"><p>!</p></div>
+      </div>
+      <div class="caja-masage-show">
+        <p class="mesage-show">'El código de confirmación ha caducado. <br>Solicita un nuevo codigo.'</p>
+      </div>
+      <div class="cja-btn-show">
+        <button id="btn-show" class="btn-show btn-left">Aceptar</button>
+        <!--<a href="#" class="btn-reidrec btn-right">Aceptar</a>-->
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  {% if show_alert %}
+    <div id="caj-alert-show" class="caj-alert-show">
+      <div class="alert-danger-show">
+        <div class="icono-show">
+          <div class="circle_icono"><p>!</p></div>
+        </div>
+        <div class="caja-masage-show">
+          <p class="mesage-show">'El código de confirmación es inválido.</p>
+        </div>
+        <div class="cja-btn-show">
+          <button id="btn-show" class="btn-show btn-left">Aceptar</button>
+          <!--<a href="#" class="btn-reidrec btn-right">Aceptar</a>-->
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+
+  <div class="container_confirma_codi_prov">
+    <h1 class="titulo_confirma_codi_prov">Confirmar email</h1>
+
+    <form action="{% url 'confirmar_usuario_vend' %}" method="post" class="from_confirma_codi_prov">
+    {% csrf_token %}
+      <div class="div_form_confirma_codi_prov">
+        <label for="label_codigo_confirma_codi_prov">Introduce el codigo que se a enviado a tu correo electronico<br><span style="color: blue; font-weight: bold;"> Si no esta en la bandeja principal revisa tu bandeja de Spam o corrreo no deseado</span></label>
+        <input type="text" class="form-control_confirma_codi_prov" id="codigo" name="codigo" placeholder="Codigo" required>
+      </div>
+      <button type="submit" class="btn btn-primary_confirma_codi_prov">Confirmar</button>
+    </form>
+
+    <a href="{% url 'enviar_nuevo_codigo_vend' %}" class="etiqueta_a_confirm">
+      <button type="submit" class="btn btn-link_confirma_codi_prov">Solicitar un nuevo código</button>
+    </a>
+  </div>
+
+  <script src="{% static '../static/css/modall/modal_show.js' %}"></script>
+  
+</body>
+</html>
+  
+  
+
+ 

@@ -1,0 +1,126 @@
+/* Reset de estilos */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Estilos generales */
+  body {
+    font-family: sans-serif;
+    background-color: #f8f8f8;
+  }
+  
+  .contenedor_form_direccion_pg-inicial {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-top: 2rem;
+  }
+  
+  .contenedor_titulo_form_direccion_pg-inicial {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .titulo_form_direccion_pg-inicial {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+  }
+  
+  .formulario_form_direccion_pg-inicial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  input[type="text"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: solid 1px #f2f2f2;
+    border-radius: 5px;
+    background-color: #fcfcfc;
+    color: #333;
+    font-size: 16px;
+    font-weight: 400;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  input[type="text"]:focus {
+    outline: none;
+    background-color: #e6e6e6;
+  }
+  
+  .input_selec_direc_inic {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    color: #333;
+    font-size: 16px;
+    font-weight: 400;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  select:focus, option:focus {
+    outline: none;
+    background-color: #e6e6e6;
+  }
+  
+  .btn_form_perfil_pg-inicial {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 25px;
+    background-color: #0080ff;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .btn_form_perfil_pg-inicial:hover {
+    background-color: #05c602;
+  }
+  
+  .fa-arrow-right-long {
+    margin-left: 10px;
+  }
+  
+  @media screen and (max-width: 767px) {
+    .contenedor_form_direccion_pg-inicial {
+      padding: 10px;
+    }
+    
+    .titulo_form_direccion_pg-inicial {
+      font-size: 24px;
+    }
+  }
+  
+
+
+  @media screen and (max-width: 470px) {
+    .body {
+      background-color: white;
+    }
+    
+    .contenedor_form_direccion_pg-inicial {
+        background-color: white;
+        box-shadow: 0 0 0px rgba(255, 255, 255, 0.2);
+
+    }
+  }
+  

@@ -1,0 +1,119 @@
+{% extends 'layout/base.html' %}
+
+{% load humanize %}
+
+{% block content %}
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/proveedor/sin_archivo.css' %}">
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/vendedor_css/dashboard_vend_css/historial_depositos.css' %}">
+
+
+<div class="Conten_title_data_actual_edit">
+	<div class="">
+        <a href="" class="btn_regresar"><i class="fa-solid fa-arrow-left-long"></i></a>
+    </div>
+    
+    <h2 class="title_data_actual_edit">Historial de depositos</h2>
+	<p></p>
+</div>
+
+<div class="content_body">
+{% if histori_factura_comision %}
+<div class="contenedor_data_solic">
+	<table class="table_data_solic">
+		<thead class="heat_data_solic">
+			<tr>
+                <th>Proveedor</th>
+				<th>Proyecto</th>
+				<th>Servicio</th>
+				<th>Codigo proyecto</th>
+				<th>Comision</th>
+				<th>codigo factura</th>
+                <th>Fecha deposito</th>
+				<th>Institucion</th>
+				<th>Detalles</th>
+
+			</tr>
+		</thead>
+		<tbody class="body_data_solic">
+            {% for data in histori_factura_comision %}
+			<tr>
+				<td >{{data.proyecto_comi.proveedor.nombre_empresa}}</td>
+				<td >{{data.proyecto_comi.nombre_proyecto}}</td>
+				<td >{{data.proyecto_comi.servicio.nombre_servicio}}</td>
+                <td >{{data.proyecto_comi.codigo_unico_proyect}}</td>
+				<td >$ {{data.proyecto_comi.comision_vendedor|floatformat:2|intcomma}}</td>
+				<td >{{data.codigo_factura_comision_ved}}</td>
+				<td >{{data.fecha_facturacion}}</td>
+				<td >{{data.institucion_deposito}}</td>
+				<td ><a href="{% url 'detail_factura_vendedor' codigo_factura=data.codigo_factura_comision_ved %}" class="icon_eye">
+                    <i class="fa fa-eye"></i></a>
+                </td>
+			</tr>
+            {% endfor %}
+		</tbody>
+	</table>
+</div>
+
+
+
+<div class="content_data_solic_mobil">
+	{% for datamobil in histori_factura_comision %}
+	<div class="targeta_content_data_solic_mobil">
+		<div class="mobil_tech nombr_proyec_data_solic_mobil">
+			<label for="" class="label_mobil_data_solic">Proveedor</label><hr><p>{{datamobil.proyecto_comi.proveedor.nombre_empresa}}</p>
+		</div>
+		<div class="mobil_tech servi_proyec_data_solic_mobil">
+			<label for="" class="label_mobil_data_solic">Nombre:</label><p>{{datamobil.proyecto_comi.nombre_proyecto}}</p>
+		</div>
+		<div class="mobil_tech codi_proyec_data_solic_mobil">
+			<label for="" class="label_mobil_data_solic">Servicio:</label><p>{{datamobil.proyecto_comi.servicio.nombre_servicio}}</p>
+		</div>
+        <div class="mobil_tech codi_proyec_data_solic_mobil">
+			<label for="" class="label_mobil_data_solic">Codigo proyecto:</label><p>{{datamobil.proyecto_comi.codigo_unico_proyect}}</p>
+		</div>
+		<div class="mobil_tech codi_proyec_data_solic_mobil">
+			<label for="" class="label_mobil_data_solic">Comision:</label>
+			<p>$ {{datamobil.proyecto_comi.comision_vendedor|floatformat:2|intcomma}}</p>
+		</div>
+		<div class="mobil_tech codi_proyec_data_solic_mobil">
+			<label for="" class="label_mobil_data_solic">Codigo factura:</label><p>{{datamobil.codigo_factura_comision_ved}}</p>
+		</div>
+		<div class="mobil_tech codi_proyec_data_solic_mobil">
+			<label for="" class="label_mobil_data_solic">Fecha deposito:</label><p>{{datamobil.fecha_facturacion}}</p>
+		</div>
+		<div class="mobil_tech codi_proyec_data_solic_mobil">
+			<label for="" class="label_mobil_data_solic">Institucio deposito:</label><p>{{datamobil.institucion_deposito}}</p>
+		</div>
+        <div class="mobil_tech codi_proyec_data_solic_mobil">
+			<label for="" class="label_mobil_data_solic">Detalles:</label>
+            <div class="detail">
+                <a href="{% url 'detail_factura_vendedor' codigo_factura=datamobil.codigo_factura_comision_ved %}"><i class="fa fa-eye"></i></a>
+            </div>
+		</div>
+	</div>
+	{% endfor %}
+</div>
+
+</div>
+
+{% else %}
+<section class="content_sin-archivo">
+    <div class="sub_content_sin-archivo">
+        <div class="cj_image_sin-archivo">
+            <i class="fa-regular fa-rectangle-list"></i>
+        </div>
+        <p class="mesage_sin-archivo">Actualmente no hay datos</p>
+    </div>
+</section>
+{% endif %}
+
+
+
+
+<script src="{% static '../static/vendedor/botn_regres.js' %}"></script>
+
+{% endblock %}

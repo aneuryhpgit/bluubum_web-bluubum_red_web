@@ -1,0 +1,149 @@
+/* Estilos generales */
+
+* {
+    box-sizing: border-box;
+  }
+  
+
+
+
+
+/* Estilos para el título */
+.Conten_title_data_actual_edit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #000000;
+  color: #fff;
+}
+
+.Conten_title_data_actual_edit a {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.Conten_title_data_actual_edit a:hover {
+  color: #ccc;
+}
+
+.title_data_actual_edit {
+  font-size: 1rem;
+  margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Estilos del título */
+  
+  .cj_title_edit_email_vend {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .cj_title_edit_email_vend h1 {
+    font-size: 36px;
+    margin: 0;
+  }
+  
+  /* Estilos de la sección de correo electrónico actual */
+  .content_body{
+    min-height: 100vh;
+  }
+  
+  .cj-email_actual {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cj-email_actual p {
+    font-size: 18px;
+    margin: 0;
+  }
+  
+  .label_email {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+  }
+  
+  /* Estilos del formulario de edición de correo electrónico */
+  
+  .container_form_edit_email {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  label {
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+
+  }
+  
+  button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #0062cc;
+  }
+  
+  @media screen and (max-width: 767px) {
+    .container_form_edit_email {
+      padding: 10px;
+    }
+
+
+  }

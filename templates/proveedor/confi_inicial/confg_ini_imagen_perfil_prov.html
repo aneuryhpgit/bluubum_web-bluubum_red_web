@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://kit.fontawesome.com/9722caf0d0.js" crossorigin="anonymous"></script>
+    <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
+    <link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet">
+    <link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="{% static '../static/css/proveedor/configuracio_nic_prov/inic_confi_perfil.css' %}">
+
+    <title>Bluubum</title>
+</head>
+<body>
+
+    {% if show_message_error %}
+    <div id="caj-alert-show" class="caj-alert-show">
+      <div class="alert-danger-show">
+        <div class="icono-show">
+          <div class="circle_icono"><p>!</p></div>
+        </div>
+        <div class="caja-masage-show">
+          <p class="mesage-show">Ha ocurrido un error. Verifique que está llenando todos los campos correctamente</p>
+        </div>
+        <div class="cja-btn-show">
+          <button id="btn-show" class="btn-show btn-left">Aceptar</button>
+          <!--<a href="#" class="btn-reidrec btn-right">Aceptar</a>-->
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
+    <div class="contenedor_form_perfil_pg-inicial">
+        <div class="contenedor_titulo_form_perfil_pg-inicial">
+            <h2 class="titulo_form_perfil_pg-inicial">Imagen y nombre de tienda</h2>
+        </div>
+        <div class="formulario_form_perfil_pg-inicial">
+            <form action="{% url 'image_perfil_prov' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+                <div class="cj-img_previa">
+                    <img id="img-preview" src="{% static '../media/image_utileria/img-simbol.jpg' %}" alt="Imagen de perfil" class="img_previa" >
+                </div><br>
+                <div class="file-select_form_perfil_pg-inicial" id="src-file1_form_perfil_pg-inicial">
+                    <input type="file" class="subirImg-form_perfil_pg-inicial" multiple id="file" name="imagen-logo" >
+                    <label for="file" id="selector" class="label_btn_form_perfil_pg-inicial"><p>Foto de perfil</p></label>
+                </div>
+             
+                <div class="caja_text_form_perfil_pg-inicial">
+                    <input type="text" id="txtfileTitulo" placeholder="Nombre de mi empresa" 
+                    name="nombre_empresa" class="titulo_producto_form_perfil_pg-inicial">             
+                </div>
+                <div class="div_btn_form_perfil_pg-inicial">
+                    <button type="submit" class="btn_form_perfil_pg-inicial" id="">Guardar y continuar<i class="fa-solid fa-arrow-right-long"></i></button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+<script src="{% static '../static/registro_proveedor/iniales_stilos_js/mostrar_mig_previa.js' %}"></script>
+    
+    
+</body>
+</html>

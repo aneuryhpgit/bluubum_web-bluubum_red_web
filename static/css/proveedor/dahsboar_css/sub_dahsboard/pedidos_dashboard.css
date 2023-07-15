@@ -1,0 +1,119 @@
+/* Estilos generales */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Estilos para la sección de encabezado */
+  
+  .content_head_pedidos {
+    display: flex;
+    background-color: #88029f;
+    padding: 20px;
+  }
+
+  .contain_title_head_pedidos {
+    margin: auto;
+  }
+  
+  .contain_title_head_pedidos h2 {
+    font-size: 32px;
+    margin: 0;
+    color: #fff;
+  }
+  
+  .cj_btn_regresar {
+    float: right;
+  }
+  
+  .btn_regres {
+    background-color: #13ba00;
+    border-radius: 5px;
+    color: #fff;
+    display: inline-block;
+    padding: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn_regres:hover {
+    background-color: #208b00;
+  }
+  
+  .fa-arrow-left-long {
+    margin-right: 5px;
+  }
+  
+  /* Estilos para el contenido de la tabla */
+  
+  .content_body{
+    min-height: 70vh;
+  }
+
+  .content_dashboar_pedidos {
+    margin-top: 20px;
+  }
+  
+  .sub_dashboar_pedidos {
+    overflow-x: auto;
+  }
+  
+  .dashboar_pedidos {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #290030;
+    color: #fff;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .btn_cotizar {
+    background-color: #00ba13;
+    border-radius: 5px;
+    color: #fff;
+    display: inline-block;
+    padding: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn_cotizar:hover {
+    background-color: #008b38;
+  }
+  
+  .btn_ver, .btn_delete {
+    color: #008CBA;
+    display: inline-block;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .btn_ver:hover, .btn_delete:hover {
+    color: #00688B;
+  }
+  
+  .fa-regular.fa-eye {
+    margin-right: 5px;
+  }
+  
+  .fa-solid.fa-trash-can {
+    margin-right: 5px;
+  }
+  

@@ -1,0 +1,48 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+{% load static %}
+  <h2>Editar Direccion</h2>
+
+<div class="contenedor_dtact_edict_direc">
+    <div class="contenedor_titulo_dtact_edict_direc">
+        <h2 class="titulo_dtact_edict_direc">Datos de direccion</h2>
+        <div class="data_dtact_edict_direc">
+          <label for="" class="label_dtact_edict_direc">provincia</label>
+          <h4 class="dtact_edict_direc">{{direccion.provicia}}</h4>
+          <label for="" class="label_dtact_edict_direc">Ciudad o municipio</label>
+          <h4 class="dtact_edict_direc">{{direccion.ciudad}}</h4>
+          <label for="" class="label_dtact_edict_direc">Sector y calle</label>
+          <h4 class="dtact_edict_direc">{{direccion.calle}}</h4>
+          <label for="" class="label_dtact_edict_direc">Numero</label>
+          <h4 class="dtact_edict_direc">{{direccion.numero}}</h4>
+      </div>
+    </div>
+    <div class="content_form_edict_direc">
+        <form action="{% url 'editar_ubicacion_prov' %}" method="post" enctype="multipart/form-data" class="form_edict_direc">
+        {% csrf_token %}               
+            <label for="provincias" class="label_form_edict_direc">Selecciona una provincia:</label>
+            <select id="provincias" name="provincias" class="select_fonm_edit_direc"></select>
+
+            <div class="caja_text_form_edict_direc">
+                <input type="text" id="txtfileTitulo" placeholder="Ciudad o municipio" 
+                name="ciudad" class="input_edit_direc">             
+            </div>
+            <div class="caja_text_form_edict_direc">
+                <input type="text" id="txtfileTitulo" placeholder="Sector y calle" 
+                name="calle" class="input_edit_direc">             
+            </div>
+            <div class="caja_text_form_edict_direc">
+                <input type="text" id="txtfileTitulo" placeholder="Numero" 
+                name="numero" class="input_edit_direc">             
+            </div>
+            <div class="div_btn_form_edit_direc">
+                <button type="submit" class="btn_form_edict_direc" id="">Guardar y continuar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+    <script src="{% static '../static/config_iniciales/ciudades_rd.js' %}"></script>
+
+{% endblock %}

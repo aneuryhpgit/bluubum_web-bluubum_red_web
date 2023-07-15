@@ -1,0 +1,62 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/modall/modal_alert_show.css' %}">
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/vendedor_css/mensage/mensage_duda_comentario.css' %}">
+
+
+
+{% if show_message_alert %}
+<div id="caj-alert-show" class="caj-alert-show">
+  <div class="alert-danger-show">
+    <div class="icono-show">
+      <div class="bien circle_icono"><p class="fa fa-thumbs-up"></p></div>
+    </div>
+    <div class="caja-masage-show">
+      <p class="mesage-show">Tu mensaje ha sido enviado exitosamente.</p>
+    </div>
+    <div class="cja-btn-show">
+      <!--<button id="btn-show" class="btn-show btn-left">Aceptar</button>-->
+      <a href="" class="btn-reidrec btn-right">Aceptar</a>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+
+<div class="Conten_title_data_actual_edit">
+	<div class="">
+        <a href="" class="btn_regresar"><i class="fa-solid fa-arrow-left-long"></i></a>
+    </div>
+    
+    <h2 class="title_data_actual_edit">Dudas y comentarios</h2>
+	<p></p>
+</div>
+
+<div class="content_body">
+<div class="container">
+    <h1 class="title_form_mesage">Formulario de dudas y comentarios</h1>
+    <form action="{% url 'create_message_duda_comentario' %}" method="post">
+        {% csrf_token %}
+        <label for="asunto" class="label_asunto">Asunto:</label><br>
+        <input type="text" id="asunto" name="asunto" class="asunto_mesage" required><br><br>
+    
+        <label for="mensaje" class="label_mensaje">Mensaje:</label><br>
+        <textarea id="mensaje" name="mensaje" rows="7" class="mensage_textarea" required></textarea><br><br>
+    
+        <div class"content_btn_message">
+            <button type="submit" class="btn_envi_message">Enviar mensaje</button>
+        </div>
+    </form>
+</div>
+</div>
+
+  <script src="{% static '../static/css/modall/modal_show.js' %}"></script>
+
+  <script src="{% static '../static/vendedor/botn_regres.js' %}"></script>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/proveedor/dahsboar_css/post.css' %}">
+
+
+<div class="cj-btn_volver_servicio">
+    <a href="{% url 'vista_perfil_proveedor' codigo_unico=codigo_unico %}" class="btn_volver_servicio"><i class="fa-solid fa-arrow-left-long"></i></a>
+</div>
+
+<section class="content_body">
+    <div class="content_header_post_servi">
+        <h2>{{servicio.nombre_servicio}}</h2>
+        <hr class="horizon_parf">
+        <div class="content_parf_post">
+            <p class="parafo_descrptivo_servi">{{servicio.descripcion_serv}}</p>
+        </div>
+    </div>
+
+    <div class="contaner-galery_post">
+    {% for post in posts %}
+        <div class="container-targeta_post">
+            <a href="/post_detail/{{post.slug}}/">
+                <img src="{{post.imagen_serv.url}}" alt="" class="img_post">
+                <h3 class="Descripcion_post">{{post.titulo}}</h3>
+            </a>
+        </div>
+    {% endfor %}
+    </div>
+</section>
+
+
+{% endblock %}

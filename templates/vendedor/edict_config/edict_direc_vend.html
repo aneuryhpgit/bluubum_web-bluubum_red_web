@@ -1,0 +1,128 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+{% load static %}
+{% load static %}
+
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/modall/modal_alert_show.css' %}">
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/vendedor_css/configuracion_vend/edit_direc_vend.css' %}">
+
+
+<div class="Conten_title_data_actual_edit">
+	<div class="">
+        <a href="{% url 'configuracion_vend' %}" class=""><i class="fa-solid fa-person-walking-arrow-right fa-flip-horizontal"></i></a>
+    </div>
+    
+    <h2 class="title_data_actual_edit">Editar direccion</h2>
+	<p></p>
+</div>
+
+
+{% if show_message_error %}
+  <div id="caj-alert-show" class="caj-alert-show">
+    <div class="alert-danger-show">
+      <div class="icono-show">
+        <div class="circle_icono"><p>!</p></div>
+      </div>
+      <div class="caja-masage-show">
+        <p class="mesage-show">Ha ocurrido un erro. Asegurece de ingresar los datos correctamente</p>
+      </div>
+      <div class="cja-btn-show">
+        <button id="btn-show" class="btn-show btn-left">Aceptar</button>
+        <!--<a href="#" class="btn-reidrec btn-right">Aceptar</a>-->
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+
+{% if show_message_exito %}
+<div id="caj-alert-show" class="caj-alert-show">
+  <div class="alert-danger-show">
+    <div class="icono-show">
+      <div class="bien circle_icono"><p class="fa fa-thumbs-up"></p></div>
+    </div>
+    <div class="caja-masage-show">
+      <p class="mesage-show">Datos actualizados exitosamente</p>
+    </div>
+    <div class="cja-btn-show">
+      <!--<button id="btn-show" class="btn-show btn-left">Aceptar</button>-->
+      <a href="{% url 'editar_direccion_vend' %}" class="btn-reidrec btn-right">Aceptar</a>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+
+<div class="contenedor_dt_direc_edit_vend">
+
+
+    <div class="contenedor_dtactual_dt_direc_edit_vend">
+        <h2 class="subtitle_dt_direc_edit_vend">Datos de direccion</h2>
+        <div class="div_dt_actual_direc_edit_vend">
+            <label for="" class="label_dt_actual_direc_edit_vend">provincia:</label>
+            <p>{{direccion.provincia_afiliado}}</p>
+        </div>
+        <div class="div_dt_actual_direc_edit_vend">
+            <label for="" class="label_dt_actual_direc_edit_vend">Ciudad o municipio:</label>
+            <p>{{direccion.ciudad_afiliado}}</p>
+        </div>
+        <div class="div_dt_actual_direc_edit_vend">
+            <label for="" class="label_dt_actual_direc_edit_vend">Sector:</label>
+            <p>{{direccion.sector_afiliado}}</p>
+        </div>
+        <div class="div_dt_actual_direc_edit_vend">
+            <label for="" class="label_dt_actual_direc_edit_vend">Calle:</label>
+            <p>{{direccion.calle_afiliado}}</p>
+        </div>
+        <div class="div_dt_actual_direc_edit_vend">
+            <label for="" class="label_dt_actual_direc_edit_vend">Numero:</label>
+            <p>{{direccion.numero}}</p>
+        </div>
+        <div class="div_dt_actual_direc_edit_vend">
+            <label for="" class="label_dt_actual_direc_edit_vend">Apartamento o suit:</label>
+            <p>{{direccion.apartamento_num}}</p>
+        </div>
+    </div>
+    
+    <div class="content_form_edit_direcc_vend">
+        <form action="{% url 'editar_direccion_vend' %}" method="post" enctype="multipart/form-data" class="form_edit_direcc_vend">
+        {% csrf_token %}               
+            <label for="provincias" class="label_select_form_edit_direcc_vend">Selecciona una provincia:</label>
+            <select id="provincias" name="provincias" class="select_form_edit_direcc_vend"></select>
+
+            <div class="caja_text_form_edit_direcc_vend">
+                <input type="text" id="txtfileTitulo" placeholder="Ciudad o municipio" 
+                name="ciudad" class="input_form_edit_direcc_vend">             
+            </div>
+            <div class="caja_text_form_edit_direcc_vend">
+                <input type="text" id="txtfileTitulo" placeholder="Sector" 
+                name="sector" class="input_form_edit_direcc_vend">             
+            </div>
+            <div class="caja_text_form_edit_direcc_vend">
+                <input type="text" id="txtfileTitulo" placeholder="Calle" 
+                name="calle" class="input_form_edit_direcc_vend">             
+            </div>
+            <div class="caja_text_form_edit_direcc_vend">
+                <input type="text" id="txtfileTitulo" placeholder="Numero" 
+                name="numero" class="input_form_edit_direcc_vend">             
+            </div>
+            <div class="caja_text_form_edit_direcc_vend">
+                <input type="text" id="txtfileTitulo" placeholder="Apartamento o suite" 
+                name="apartamento_num" class="input_form_edit_direcc_vend">             
+            </div>
+            <div class="div_btn_edit_direcc_vend">
+                <button type="submit" class="btn_edit_direcc_vend" id="">Guardar cambio</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="{% static '../static/css/modall/modal_show.js' %}"></script>
+<script src="{% static '../static/config_iniciales/ciudades_rd.js' %}"></script>
+
+<script src="{% static '../static/registro_proveedor/btn_regres.js' %}"></script>
+
+{% endblock %}

@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static '../static/css/proveedor/configuracio_nic_prov/mesage_bienvenida_prov.css' %}">
+    <title>Bluubum</title>
+</head>
+<body>
+    <h1 class="titulo_mesage_biev_prov">¡Bienvenid@ a Bluubum!</h1>
+    <div class="cj-uno_biev_prov">
+        <p class="textuno_biev_prov">Estamos emocionados de tenerte como proveedor en nuestra plataforma. 
+            Su cuenta ha sido configurada y está lista para ser usada. 
+            A partir de ahora, podrá ofrecer sus servicios y llegar a una audiencia más amplia.</p><br>
+
+    </div>
+    <div class="cj-dos_biev_prov">
+        <h4 class="textdos_biev_prov">Gracias por unirse a nuestra comunidad de proveedores de servicios. 
+            ¡Estamos deseando ver lo que puedes hacer!</h4>
+    </div>
+    
+    <div style="width: 100%; display: flex;">
+        <div style="width: auto; margin: 0 auto;">
+            <p>Inicia en:</p>
+            <div id="contador" class="contador_bienvenida"></div>
+        </div>
+    </div>
+
+    <style>
+        #contador {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #0ecc00;
+            position: relative;
+        }
+    
+        #contador::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ff0000;
+            border-radius: 50%;
+            transform-origin: center;
+            transform: scale(1, 1);
+            animation: completarCirculo 30s linear;
+            animation-fill-mode: forwards;
+            border: none;
+        }
+    
+        @keyframes completarCirculo {
+            0% {
+                transform: scale(1, 1);
+            }
+            100% {
+                transform: scale(0, 0);
+            }
+        }
+    </style>
+    
+
+    <script>
+        setTimeout(function() {
+            window.location.href = "{% url 'dashboard_prov' %}";  // Reemplaza 'nombre_url' con la URL a la que deseas redirigir
+        }, 30000);  // 30000 milisegundos = 30 segundos
+    </script>
+</body>
+</html>

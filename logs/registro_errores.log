@@ -1,0 +1,63 @@
+
+
+
+ File /home/kali/Desktop/aplicacion_vaf/bluubum_web_project/backend/settings.py previous mtime: 1687811068.6223488, current mtime: 1687811648.9343648
+/home/kali/Desktop/aplicacion_vaf/bluubum_web_project/backend/settings.py notified as changed. Signal results: [(<function template_changed at 0x7f8f6c8d9300>, None), (<function translation_file_changed at 0x7f8f6ab43060>, None)].
+/home/kali/Desktop/aplicacion_vaf/bluubum_web_project/backend/settings.py changed, reloading.
+Internal Server Error: /
+
+
+
+Internal Server Error: /your-path-to-fontawesome/css/brands.css
+Traceback (most recent call last):
+  File "/workspaces/bluubum_web/venv/lib/python3.10/site-packages/django/db/backends/base/base.py", line 282, in ensure_connection
+    self.connect()
+  File "/workspaces/bluubum_web/venv/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/workspaces/bluubum_web/venv/lib/python3.10/site-packages/django/db/backends/base/base.py", line 263, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/workspaces/bluubum_web/venv/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/workspaces/bluubum_web/venv/lib/python3.10/site-packages/django/db/backends/postgresql/base.py", line 215, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/workspaces/bluubum_web/venv/lib/python3.10/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: SSL SYSCALL error: Connection reset by peer
+FATAL:  SSL/TLS required
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/workspaces/bluubum_web/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/workspaces/bluubum_web/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/python/3.10.8/lib/python3.10/contextlib.py", line 78, in inner
+    with self._recreate_cm():
+  File "/workspaces/bluubum_web/venv/lib/python3.10/site-packages/django/db/transaction.py", line 197, in __enter__
+    if not connection.get_autocommit():
+  File "/workspaces/bluubum_web/venv/lib/python3.10/site-packages/django/db/backends/base/base.py", line 455, in get_autocommit
+    self.ensure_connection()
+  File "/workspaces/bluubum_web/venv/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/workspaces/bluubum_web/venv/lib/python3.10/site-packages/django/db/backends/base/base.py", line 281, in ensure_connection
+    with self.wrap_database_errors:
+  File "/workspaces/bluubum_web/venv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/workspaces/bluubum_web/venv/lib/python3.10/site-packages/django/db/backends/base/base.py", line 282, in ensure_connection
+    self.connect()
+  File "/workspaces/bluubum_web/venv/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/workspaces/bluubum_web/venv/lib/python3.10/site-packages/django/db/backends/base/base.py", line 263, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/workspaces/bluubum_web/venv/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/workspaces/bluubum_web/venv/lib/python3.10/site-packages/django/db/backends/postgresql/base.py", line 215, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/workspaces/bluubum_web/venv/lib/python3.10/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: SSL SYSCALL error: Connection reset by peer
+FATAL:  SSL/TLS required
+
+"GET /your-path-to-fontawesome/css/brands.css HTTP/1.1" 500 153395

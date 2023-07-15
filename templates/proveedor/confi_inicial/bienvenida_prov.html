@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static '../static/css/proveedor/configuracio_nic_prov/bienvenida_inic.css' %}">
+    <title>Bienvenida</title>
+</head>
+<body>
+    <h1>Bloobum</h1>
+    <div>
+        <p>Bienvenid@ a Bluubum una red 
+        donde podras poner a dispocion tu 
+        servicios y llegar a miles de clientes
+        a travez de nuestros promotores</p>
+    </div>
+    <div>
+        <h4>Pulse el boton para continuar con
+        la configuracion de tu cuenta</h4>
+    </div>
+    <a href="{% url 'image_perfil_prov' %}">Continuar</a>
+</body>
+</html>

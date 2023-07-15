@@ -1,0 +1,113 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+{% load static %}
+
+<div class="cj-btn_regresar">
+    <a href="{% url 'dashboard_prov' %}" class="btn_regresar"><i class="fa-solid fa-arrow-left-long"></i></a>
+</div>
+
+<section class="caja_lp">
+    <div class="cj_titulo_lp">
+        <h3 class="titulo_lp">Lista de servicios</h3>
+    </div>
+    <div class="caja_tabal_lp">
+        <table>
+            <tr>
+              <th>Imagen1</th>
+              <th>Imagen2</th>
+              <th>Imagen3</th>
+              <th>Imagen4</th>
+              <th>Titulo</th>
+              <th>Servicio</th>
+              <th>Ver Post</th>
+              <th>Editar</th>
+              <th>Eliminar</th>
+            </tr>
+            {% for list_post in post_list %}
+                <tr>
+                {% if list_post.imagen_serv.url != NULL %}
+                    <td><img src="{{ list_post.imagen_serv.url }}" alt="" class="imagen_lp"></td>
+                {% else %}
+                    <td><img src="static/image_utileria/img-simbol.jpg" alt="" class="imagen_lp"></td>
+                {% endif %}
+                {% if list_post.imagen_serv_dos.url != NULL %}
+                    <td><img src="{{ list_post.imagen_serv_dos.url }}" alt="" class="imagen_lp"></td>
+                {% else %}
+                    <td><img src="static/image_utileria/img-simbol.jpg" alt="" class="imagen_lp"></td>
+                {% endif %}
+                {% if list_post.imagen_serv_tres.url != NULL %}
+                    <td><img src="{{ list_post.imagen_serv_tres.url }}" alt="" class="imagen_lp"></td>
+                {% else %}
+                    <td><img src="static/image_utileria/img-simbol.jpg" alt="" class="imagen_lp"></td>
+                {% endif %}
+                {% if list_post.imagen_serv_cuatro.url != NULL %}
+                    <td><img src="{{ list_post.imagen_serv_cuatro.url }}" alt="" class="imagen_lp"></td>
+                {% else %}
+                    <td><img src="media/image_utileria/img-simbol.jpg" alt="" class="imagen_lp"></td>
+                {% endif %}
+                    <td>{{ list_post.titulo }}</td>
+                    <td>{{ list_post.servicio.nombre_servicio }}</td>
+
+                    <td>
+                        <a href="">
+                            <i class="fa-regular fa-eye"></i>
+                        </a>
+                    </td>
+                     
+            {% endfor %}
+        </table>
+    </div>
+
+</section>
+
+<div class="contenedor_cp">
+    <div class="contenedor_titulo_cp">
+        <h2 class="titulo_cp">Crear nuevo producto</h2>
+    </div>
+    <div class="formulario_cp">
+        <form action="{% url '' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+            <label for="">Crear Post de servicio</label><br>
+            <label for="titulo">Título:</label>
+            <input type="text" name="titulo" id="titulo" required>
+
+            <label for="servicio">Servicio:</label>
+            <select name="servicio_id" id="servicio_id" required>
+            {% for servicio in servicios %}
+                <option value="{{ servicio.id }}">{{ servicio.nombre_servicio }}</option>
+            {% endfor %}
+            </select>
+            <div class="galeria_edit_image">
+                <div class="file-select" id="src-file1">
+                    <input type="file" class="subirImg" multiple id="file" name="imagen_serv" required>
+                    <label for="file" id="selector" class="label_btn_cp">Subir imagen 1</label>
+                </div>
+                <div class="file-select" id="src-file2">
+                    <input type="file" class="subirImg" multiple id="file2" name="imagen_serv_dos" >
+                    <label for="file2" id="selector2" class="label_btn_cp">Subir imagen 2</label>
+                </div>
+                <div class="file-select" id="src-file3">
+                    <input type="file" class="subirImg" multiple id="file3" name="imagen_serv_tres" >
+                    <label for="file3" id="selector3" class="label_btn_cp">Subir imagen 3</label>
+                </div>
+                <div class="file-select" id="src-file4">
+                    <input type="file" class="subirImg" multiple name="imagen_serv_cuatro" aria-label="Archivo" id="file4">
+                    <label for="file4" id="selector4" class="label_btn_cp">Subir imagen 4</label>
+                </div>
+            </div>
+            <label for="archivo_contenido">Contenido:</label>
+            <textarea name="contenido" id="archivo_contenido" required cols="50" rows="10"></textarea>
+            
+
+            <div class="div_btn">
+                <button type="submit" class="btn_cp" id="">Guardar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<script src="{% static '../static/registro_proveedor/btn_regres.js' %}"></script>
+
+{% endblock %}

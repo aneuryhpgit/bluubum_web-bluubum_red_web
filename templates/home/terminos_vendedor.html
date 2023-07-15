@@ -1,0 +1,22 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/css_home/politica/politica_user_vend.css' %}">
+
+<div class="cj-content_politica">
+    <div class="content_politica">
+        {% for terminos in text_termino %}
+            
+            {{terminos.contenido|safe}}
+
+        {% endfor %}
+
+    </div>
+</div>
+
+
+
+{% endblock %}

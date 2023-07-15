@@ -1,0 +1,84 @@
+/* Estilos para la sección de editar usuario */
+.content_edit_userio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    background-color: #fdfdfd;
+    border-radius: 8px;
+  }
+  
+  .cj_titulo_edit_userio {
+    margin-bottom: 20px;
+  }
+  
+  .titulo_edit_userio {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .cj_user_edit_userio {
+    margin-bottom: 40px;
+  }
+
+  .title_edit_userio{
+    font-size: 15px;
+    font-weight: bold;
+    color: #666;
+  }
+  
+  .user_edit_userio {
+    font-size: 20px;
+    font-weight: bold;
+    color: #666;
+  }
+  
+  .form_edit_userio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .form-group_edit_userio {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  
+  .label_input_edit_userio {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+  }
+  
+  .input_edit_userio {
+    font-size: 1rem;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .btn-edit_userio {
+    padding: 10px 20px;
+    background-color: #0064f9;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .btn-edit_userio:hover {
+    background-color: #12ab01;
+  }
+  

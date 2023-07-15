@@ -1,0 +1,87 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/proveedor/sin_archivo.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/vendedor_css/dashboard_vend_css/proyect_delet.css' %}">
+
+
+<div class="Conten_title_data_actual_edit">
+	<div class="">
+        <a href="{% url 'vista_perfil_vend' codigo_unico_vend=profile.codigo_unico_vendedor %}"><i class="fa-solid fa-arrow-left-long"></i></a>
+    </div>
+    
+    <h2 class="title_data_actual_edit">Proyectos cancelados</h2>
+	<p></p>
+</div>
+
+<div class="content_body">
+{% if proyect_delete %}
+<div class="contenedor_data_solic">
+	<table class="table_data_solic">
+		<thead class="heat_data_solic">
+			<tr>
+				<th>Proyecto</th>
+				<th>Servicio</th>
+				<th>codigo</th>
+				<th>Detalles</th>
+
+			</tr>
+		</thead>
+		<tbody class="body_data_solic">
+            {% for data in proyect_delete %}
+			<tr>
+				<td >{{data.nombre_proyecto}}</td>
+				<td >{{data.servicio.nombre_servicio}}</td>
+				<td >{{data.codigo_unico_proyect}}</td>
+				<td ><a href="{% url 'details_proyect' codigo_unico=data.codigo_unico_proyect %}" class="icon_eye">
+                    <i class="fa fa-eye"></i></a>
+                </td>
+			</tr>
+            {% endfor %}
+		</tbody>
+	</table>
+</div>
+
+
+
+<div class="content_data_solic_mobil">
+	{% for datamobil in proyect_delete %}
+	<div class="targeta_content_data_solic_mobil">
+		<div class="mobil_tech nombr_proyec_data_solic_mobil">
+			<label for="" class="label_mobil_data_solic">Nombre proyecto</label><hr><p>{{datamobil.nombre_proyecto}}</p>
+		</div>
+		<div class="mobil_tech servi_proyec_data_solic_mobil">
+			<label for="" class="label_mobil_data_solic">Servicio:</label><p>{{datamobil.servicio.nombre_servicio}}</p>
+		</div>
+		<div class="mobil_tech codi_proyec_data_solic_mobil">
+			<label for="" class="label_mobil_data_solic">Codigo proyecto:</label><p>{{datamobil.codigo_unico_proyect}}</p>
+		</div>
+        <div class="mobil_tech codi_proyec_data_solic_mobil">
+			<label for="" class="label_mobil_data_solic">Detalles:</label>
+            <div class="detail">
+                <a href="{% url 'details_proyect' codigo_unico=datamobil.codigo_unico_proyect %}"><i class="fa fa-eye"></i></a>
+            </div>
+		</div>
+	</div>
+	{% endfor %}
+</div>
+
+<div>
+
+{% else %}
+<section class="content_sin-archivo">
+    <div class="sub_content_sin-archivo">
+        <div class="cj_image_sin-archivo">
+            <i class="fa-regular fa-rectangle-list"></i>
+        </div>
+        <p class="mesage_sin-archivo">Actualmente no hay datos</p>
+    </div>
+</section>
+{% endif %}
+
+
+{% endblock %}

@@ -1,0 +1,90 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/modall/modal_alert_show.css' %}">
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/vendedor_css/configuracion_vend/confirmar_codigo_email_edic.css' %}">
+
+
+
+
+{% if show_message_invalid %}
+  <div id="caj-alert-show" class="caj-alert-show">
+    <div class="alert-danger-show">
+      <div class="icono-show">
+        <div class="circle_icono"><p>!</p></div>
+      </div>
+      <div class="caja-masage-show">
+        <p class="mesage-show">'El código de confirmación es inválido.'</p>
+      </div>
+      <div class="cja-btn-show">
+        <button id="btn-show" class="btn-show btn-left">Aceptar</button>
+        <!--<a href="#" class="btn-reidrec btn-right">Aceptar</a>-->
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  {% if show_message_caducad %}
+    <div id="caj-alert-show" class="caj-alert-show">
+      <div class="alert-danger-show">
+        <div class="icono-show">
+          <div class="circle_icono"><p>!</p></div>
+        </div>
+        <div class="caja-masage-show">
+          <p class="mesage-show">El código de confirmación ha caducado.<br> Intentelo denuevo.</p>
+        </div>
+        <div class="cja-btn-show">
+          <!--<button id="btn-show" class="btn-show btn-left">Aceptar</button>-->
+          <a href="{% url 'edit_email_vend' %}" class="btn-reidrec btn-right">Aceptar</a>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+{% if show_message_exitoso %}
+<div id="caj-alert-show" class="caj-alert-show">
+  <div class="alert-danger-show">
+    <div class="icono-show">
+      <div class="bien circle_icono"><p class="fa fa-thumbs-up"></p></div>
+    </div>
+    <div class="caja-masage-show">
+      <p class="mesage-show">Actualización exitosa</p>
+    </div>
+    <div class="cja-btn-show">
+      <!--<button id="btn-show" class="btn-show btn-left">Aceptar</button>-->
+      <a href="{% url 'edit_email_vend' %}" class="btn-reidrec btn-right">Aceptar</a>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+
+
+  <div class="container_edit">
+    <h2>Confirmación de cambio de correo electrónico</h2>
+  </div>
+
+  <div class="cf_form_confi_codigo-email">
+    <form action="{% url 'confir_cambio_email_vend' %}" method="post" class="form_confi_codigo-email">
+    {% csrf_token %}
+      <div class="cj_input_confi_codigo-email">
+        <label for="codigo" class="input_confi_codigo-email">
+          Introduce el código de confirmación que has recibido por correo electrónico:
+        </label>
+        <input type="text" name="codigo" id="codigo" class="input_confi_codigo-email" required>
+      </div>
+      <div class="cj_btn_confi_codigo-email">
+        <button type="submit" class="btn_cod btn-confi_codigo-email">Guardar</button>
+      </div>
+    </form>
+
+  </div>
+
+
+  <script src="{% static '../static/css/modall/modal_show.js' %}"></script>
+{% endblock %}

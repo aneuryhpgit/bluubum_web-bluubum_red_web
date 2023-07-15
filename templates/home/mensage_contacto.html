@@ -1,0 +1,30 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/css_home/mensage_contac.css' %}">
+
+<div class="content_body">
+<h2>Enviar mensaje</h2>
+<form method="post">
+  {% csrf_token %}
+  <label for="sender_name">Nombre:</label>
+  <input type="text" name="sender_name" required><br><br>
+
+  <label for="sender_email">Correo electrónico:</label>
+  <input type="email" name="sender_email" required><br><br>
+
+  <label for="subject">Asunto:</label>
+  <input type="text" name="subject" required><br><br>
+
+  <label for="message">Mensaje:</label>
+  <textarea name="message" required></textarea><br><br>
+
+  <input type="submit" value="Enviar">
+</form>
+
+</div>
+
+{% endblock %}

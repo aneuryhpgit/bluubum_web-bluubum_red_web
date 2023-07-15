@@ -1,0 +1,127 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/modall/dlete_modal.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/proveedor/dahsboar_css/crear_servicio_prov.css' %}">
+
+    <div class="cj_btn_redirg_perfil_serv">
+
+        <a href="{% url 'dashboard_prov' %}" 
+        class="btn_redirg_perfil_serv">Dashboard</a>
+        
+        <a href="{% url 'vista_perfil_proveedor' codigo_unico=profile.codigo_unico_proveedor %}" 
+        class="btn_redirg_perfil_serv">Mi perfil</a>
+
+
+    </div>
+
+    <div class="cj_btn_redirg_perfil_serv">
+        
+    </div>
+  
+    <div class="cj-titulo_crear_serv">
+        <h1 class="titulo_crear_serv">Crear servicio</h1>
+    </div>
+    <div class="cj-formulario_crear_serv">
+        <form action="{% url 'crea_servicio_prov' %}" method="post" enctype="multipart/form-data" class="form_crear_serv">
+         {% csrf_token %}
+            <div class="caja_text_form_crear_serv">
+                <input type="text" id="txtfileTitulo" placeholder="Introduce nombre de servicio" 
+                name="nombre_servico" class="input_crear_serv" >             
+            </div>
+          
+            <div class="cj_subir_img_crear_serv" id="src-file1_form_perfil_pg-inicial">
+                <img src="{% static '../media/image_utileria/img-simbol.jpg' %}"
+                 alt="" id="img-preview" class="image_preview_edit_serv">
+                <input type="file" class="input-subirImg_crear_serv" id="file" name="imagen" >
+                <label for="file" id="selector" class="label_input_subi-img_crear_serv">Imagen de 
+                servicio</label>
+            </div>
+
+            <div class="caja_porcen_crear_serv">
+                <textarea  id="txtfileTitulo" maxlength="150"
+                name="descripcion" class="input_comision_crear_serv" placeholder="Descripcion maximo 150 caracteres"> </textarea>            
+            </div>
+            
+            <div class="caja_porcen_crear_serv">
+                <input type="number" id="txtfileTitulo" placeholder="por ciento de comision" 
+                name="comision" class="input_comision_crear_serv" >             
+            </div>
+            <div class="div_btn_form_crear_serv">
+                <button type="submit" class="btn_form_crear_serv" id="">Guardar</button>
+            </div>
+        </form>
+    </div>
+
+
+
+<section class="caja_ls_crear_serv">
+    <div class="cj_titulo_ls_crear_serv">
+        <h3 class="titulo_ls_crear_serv">Lista de servicios</h3>
+    </div>
+    <div class="caja_tabal_ls_crear_serv">
+        <table class="table_ls_crear_serv">
+            <tr>
+              <th>Imagen</th>
+              <th>Servicio</th>
+              <th>Comision</th>
+              <th>vista</th>
+              <th>Editar</th>
+              <th>Eliminar</th>
+            </tr>
+            {% for lista_ser in servicioList %}
+                {% if lista_ser.imagen_servicio.url != NULL %}
+                <tr>
+                        <td><img src="{{ lista_ser.imagen_servicio.url }}" alt="" class="imagen_lp"></td>
+                        <td>{{ lista_ser.nombre_servicio }}</td>
+                        <td>{{ lista_ser.Comicion }} %</td>
+
+                        <td>
+                            <a href="/post_vista/{{lista_ser.slug}}/">
+                                <i class="fa-regular fa-eye"></i>
+                            </a>
+                        </td>
+                  
+                        <td>
+                        <a href="/editar_servicio/{{lista_ser.id}}">
+                            <i class="fa-regular fa-pen-to-square"></i></a></td>
+                        <td>
+                        <a href="#" class="modal-btn" 
+                        data-product-delete="{% url 'eleiminar_servicio_prov' lista_ser.id %}">
+                        <i class="delete-btn_ser fa-regular fa-trash-can"></i>
+                        </a>
+                    </td>
+                </tr>
+                
+                {% endif %}   
+
+            {% endfor %}
+          </table>
+    </div>
+
+</section>
+
+<div id="modal_eliminar" class="modal_eliminar">
+    <div class="modal-content_eliminar">
+       <div class="modal_imagen">
+        <i class="fa-solid fa-trash-can"></i>
+        <p>Esta seguro que decea eliminar este servicio</p>
+       </div>
+  
+      <div class="botones_selecion_eliminar">
+        <button id="modal-close" onclick="closeModal()">Close</button>
+        
+        <div class="boton_redireccion-detalles">
+            <a href="" id="modal-BTNeliminarServicio">Eliminar</a>
+        </div>
+    </div>
+        
+</div>
+  
+
+
+<script src="{% static '../static/modall/delete_servicio.js' %}"></script>
+<script src="{% static '../static/registro_proveedor/post_and_serv/crea_serv.js' %}"></script>
+
+{% endblock %}

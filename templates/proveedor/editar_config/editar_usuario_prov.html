@@ -1,0 +1,28 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+
+<div class="content_edit_userio">
+  <div class="cj_titulo_edit_userio">
+    <h2 class="titulo_edit_userio">Editar usuario</h2>
+  </div>
+
+  <div class="cj_user_edit_userio">
+
+    <p class="user_edit_userio">{{username.username}}</p>
+    <h5 class="title_edit_userio">Nombre actual de usuario</h5>
+  </div>
+
+ 
+  <div class="cj_form_edit_userio">
+      <form method="post"  class="form_edit_userio">
+        {% csrf_token %}
+        <div class="form-group_edit_userio">
+          <label for="id_username" class="label_input_edit_userio">Nombre de usuario:</label>
+          <input type="text" name="username" id="id_username" required class="input_edit_userio" placeholder="Nuevo usuario">
+        </div>
+        <button type="submit" class="btn btn-edit_userio">Guardar cambio</button>
+      </form>
+  </div>
+</div>
+{% endblock %}

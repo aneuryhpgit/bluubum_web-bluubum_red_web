@@ -1,0 +1,72 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+{% load static %}
+
+
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/proveedor/dahsboar_css/dahsboar_prov.css' %}">
+
+<section class="header">
+    <div class="dash_titulo">
+      <h1>Dashboard</h1>
+    </div>
+    <div class="admin">
+      <div class="cj_img_perfil">
+        <img src="{{profile.image.url}}" alt="" class="img_perfil">
+      </div>
+      <div class="datos_admin">
+        <p class="nombr_user">{{profile.user.first_name}} {{profile.user.last_name}}</p>
+        <p class="codigo_user">Codigo: {{profile.codigo_unico_proveedor}}</p>
+      </div>
+    </div>
+    <div class="datos_user">
+      <h3 class="nombre_tienda">{{profile.nombre_empresa}}</h3>
+    </div>
+  </section>
+  
+  <div class="gallery">
+    <div class="gallery-item primera">
+      <a href="{% url 'crea_servicio_prov' %}">Servicios</a>
+    </div>
+    <div class="gallery-item segun">
+      <a href="{% url 'creador_post_serv' %}">Post_servicios</a>
+    </div>
+    <div class="gallery-item tercer">
+      <a href="{% url 'solicitu_proyecto_prov' %}"><p> {{ proyecto_solicitud_num }}</p>Solicitud de proyecto</a>
+    </div>
+    <div class="gallery-item cuarta">
+      <a href="{% url 'proyecto_cotizacion_prov' %}"><p> {{ proyecto_cotiz_num }}</p>Cotizaciones pendientes</a>
+    </div>
+    <div class="gallery-item quinta">
+      <a href="{% url 'proyecto_activado_prov' %}"><p> {{ proyecto_activo_num }}</p> Proyectos<br> activos</a>
+    </div>
+    <div class="gallery-item sexta">
+      <a href="{% url 'proyecto_concluido_prov' %}"><p> {{proyecto_concluido_num }}</p>Proyecto concluido</a>
+    </div>
+    <div class="gallery-item sexta">
+      <a href="{% url 'proyecto_suspendido_prov' %}"><p>{{proyecto_suspendido_num }}</p>Proyecto suspendido</a>
+    </div>
+    <div class="gallery-item septima">
+      <a href="{% url 'proyecto_cancelado_prov' %}"><p>{{proyecto_cancelado_num }}</p>Proyectos cancelados</a>
+    </div>
+    <div class="gallery-item octa">
+      <a href="{% url 'proyecto_comision' %}"><p>{{proyecto_comis_pendient_num }}</p>Comiciones pendiente</a>
+    </div>
+    <div class="gallery-item nobe">
+      <a href="{% url 'list_comision_pendiente_vend' %}"><p>{{proyecto_comis_pendient_vend_num }}</p>Comisiones Pendiente Vendedor</a>
+    </div>
+    <div class="gallery-item nobe">
+      <a href="{% url 'history_comision' %}"><p>{{proyecto_comis_saldada_num }}</p>Historial de Comisiones</a>
+    </div>
+    <div class="gallery-item nobe">
+      <a href="{% url 'history_comision_vendedores' %}"><p>{{proyecto_comis_pagado_vend_num }}</p>Historial de Comisiones Vendedores</a>
+    </div>
+    <div class="gallery-item nobe">
+      <a href="{% url 'history_afiliados_vendedores' %}"><p>{{afiliado_vendedores_num}}</p>Afiliados</a>
+    </div>
+  </div>
+  
+
+
+{% endblock %}

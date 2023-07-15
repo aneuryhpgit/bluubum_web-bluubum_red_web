@@ -1,0 +1,171 @@
+/* Estilos generales */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Estilos para la sección de encabezado */
+  
+  .content_head_pedidos {
+    width: 100%;
+    display: flex;
+    background-color: #d80202;
+    padding: 20px;
+  }
+
+  .contain_title_head_pedidos {
+    margin: auto;
+  }
+  
+  .contain_title_head_pedidos h2 {
+    font-size: 32px;
+    margin: 0;
+    color: #fff;
+  }
+
+  .contain_title_head_pedidos .sub_title_head{
+    margin-left: 0.5rem;
+    color: #fff;
+  }
+  
+  .cj_btn_regresar {
+    float: right;
+  }
+  
+  .btn_regres {
+    background-color: #000000;
+    border-radius: 5px;
+    color: #2fd700;
+    font-weight: bold;
+    display: inline-block;
+    padding: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn_regres:hover {
+    background-color: #18181879;
+  }
+  
+  .fa-arrow-left-long {
+    font-size: large;
+    font-weight: bold;
+    margin-right: 5px;
+    
+  }
+  
+  /* Estilos para el contenido de la tabla */
+  
+  .content_dashboar_pedidos {
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  .sub_dashboar_pedidos {
+    width: 100%;
+    overflow-x: auto;
+    margin: auto;
+  }
+  
+  .dashboar_pedidos {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 5px;
+    text-align: left;
+    font-size: 14px
+  }
+
+  .nombre_proyecto_td{
+    width: 10%;
+    word-break: break-all;
+    
+    
+  }
+
+  .btn_whats{
+    padding: 0.3rem 0.4rem;
+    background-color: rgb(0, 178, 0);
+    color: #ededed;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.329)
+  }
+
+  .btn_whats:hover{
+    background-color: rgb(0, 120, 0);
+    color: #ededed;
+  }
+  
+  th {
+    background-color: #290030;
+    color: #fff;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  .cj_btn_concluir{
+    width: 30px;
+  }
+  
+  .btn_concluir {
+    background-color: #008cff;
+    border-radius: 5px;
+    color: #fff;
+    display: inline-block;
+    padding: 0.4rem 0.4rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn_concluir:hover {
+    background-color: #00b548;
+  }
+
+
+  .btn_suspender {
+    background-color: #242f37;
+    border-radius: 5px;
+    color: #fff;
+    display: inline-block;
+    padding: 0.4rem 0.4rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn_suspender:hover {
+    background-color: #00ae46;
+  }
+  
+  .btn_delete {
+    background-color: #d60000;
+    border-radius: 5px;
+    color: #fff;
+    display: inline-block;
+    padding: 0.4rem 0.4rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn_delete:hover {
+    background-color: #00ae46;
+  }
+  
+  .fa-regular.fa-eye {
+    margin-right: 5px;
+  }
+  
+  .fa-solid.fa-trash-can {
+    margin-right: 5px;
+  }
+  

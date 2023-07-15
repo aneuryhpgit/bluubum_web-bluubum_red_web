@@ -1,0 +1,86 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/modall/modal_alert_show.css' %}">
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/vendedor_css/configuracion_vend/nameuser_edit.css' %}">
+
+
+<div class="Conten_title_data_actual_edit">
+	<div class="">
+    <a href="{% url 'configuracion_vend' %}" class=""><i class="fa-solid fa-person-walking-arrow-right fa-flip-horizontal"></i></a>
+  </div>
+    
+  <h2 class="title_data_actual_edit">Editar nombre de usuario</h2>
+	
+</div>
+
+
+{% if show_message_error == True %}
+  <div id="caj-alert-show" class="caj-alert-show">
+    <div class="alert-danger-show">
+      <div class="icono-show">
+        <div class="circle_icono"><p>!</p></div>
+      </div>
+      <div class="caja-masage-show">
+        <p class="mesage-show">El nombre de usuario ya existe.<br> Intente con uno nuevo</p>
+      </div>
+      <div class="cja-btn-show">
+        <button id="btn-show" class="btn-show btn-left">Aceptar</button>
+        <!--<a href="#" class="btn-reidrec btn-right">Aceptar</a>-->
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+
+{% if show_message_alert %}
+<div id="caj-alert-show" class="caj-alert-show">
+  <div class="alert-danger-show">
+    <div class="icono-show">
+      <div class="bien circle_icono"><p class="fa fa-thumbs-up"></p></div>
+    </div>
+    <div class="caja-masage-show">
+      <p class="mesage-show">El nombre de usuario ha sido actualizado</p>
+    </div>
+    <div class="cja-btn-show">
+      <!--<button id="btn-show" class="btn-show btn-left">Aceptar</button>-->
+      <a href="{% url 'edit_username_vend' %}" class="btn-reidrec btn-right">Aceptar</a>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+
+
+<div class="cj_edit_user_vend">
+
+  <div class="cj_actual_edit_user_vend">
+    <p class="actual_edit_user_vend">{{user.username}}</p>
+    <label class="label_actual_edit_user_vend">Usuario actual</label>
+  </div>
+
+  <div class="container_form_edit_user_vend">
+    <form action="{% url 'edit_username_vend' %}" method="post" class="form_edit_user_vend">
+    {% csrf_token %}
+      <div class="form-group_edit_user_vend">
+        <label for="id_username">Nuevo nombre de usuario:</label>
+        <input type="text" name="username" id="id_username" required class="form-input_edit_user_vend">
+      </div>
+      <div class="cj_btn_form_edit_user_vend">
+        <button type="submit" class="btn_form_edit_user_vend">Guardar cambio</button>
+      </div>
+   </form>
+  </div>
+</div>
+
+<script src="{% static '../static/css/modall/modal_show.js' %}"></script>
+
+<script src="{% static '../static/registro_proveedor/btn_regres.js' %}"></script>
+
+
+{% endblock %}
+

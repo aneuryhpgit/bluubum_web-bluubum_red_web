@@ -1,0 +1,76 @@
+{% extends 'layout/base.html' %}
+
+{% load humanize %}
+
+{% block content %}
+{% load static %}
+
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/proveedor/sin_archivo.css' %}">
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/proveedor/dahsboar_css/sub_dahsboard/comsion_pendiente_plataform.css' %}">
+
+<section class="content_head_pedidos">
+    <div class="cj_btn_regresar">
+        <a href="{% url 'dashboard_prov' %}" class="btn_regres"><i class="fa-solid fa-arrow-left-long"></i></a>
+    </div>
+
+    <div class="contain_title_head_pedidos">
+        <h2>Afiliados</h2>
+        <p class="sub_title_head">Lista de vendedores afiliados</p>
+    </div>
+
+</section>
+
+{% if afiliado_vendedores %}
+<div class="content_dashboar_pedidos">
+    <div class="sub_dashboar_pedidos">
+        <div class="dashboar_pedidos">
+            <table>
+                <tr>
+                  <th>ID</th>
+                  <th>Nombre</th>
+                  <th>Usuario</th>
+                  <th>Codigo </th>
+                  <th>Foto</th>
+                  <th>ver</th>
+
+                </tr>
+                
+                {% for afiliado in afiliado_vendedores %}  
+                    <tr>
+                        {% with counter=forloop.counter0|add:1 %}
+                          <tr id="fila_{{ counter }}">
+                            
+                        <td>{{ counter }}</td>
+                        <td class="nombre_proyecto_td">
+                            {{afiliado.vendedor_afiliacion.user.first_name}} {{afiliado.vendedor_afiliacion.user.last_name}}
+                        </td>
+                        <td>{{afiliado.vendedor_afiliacion.user.username}}</td>
+                        <td>{{afiliado.vendedor_afiliacion.codigo_unico_vendedor}}</td>
+                        <td><img src="{{afiliado.vendedor_afiliacion.image.url}}" alt="" style="width: 50px;"> </td>
+                        <td>
+                            <a href="#"><i class="fa-regular fa-eye"></i></a> 
+                        </td>
+                       {% endwith %}   
+                    
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+
+{% else %}
+<section class="content_sin-archivo">
+    <div class="sub_content_sin-archivo">
+        <div class="cj_image_sin-archivo">
+            <i class="fa-regular fa-rectangle-list"></i>
+        </div>
+        <p class="mesage_sin-archivo">Actualmente no tienes afiliados</p>
+    </div>
+</section>
+{% endif %}
+
+
+
+{% endblock %}

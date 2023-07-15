@@ -1,0 +1,99 @@
+/* Estilos generales */
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+  }
+  
+  /* Estilos para contenedor principal */
+  .contenedor_form_edit_pass {
+    max-width: 600px;
+    margin: 3rem auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+  }
+  
+  /* Estilos para el título */
+  .cj-titulo_edit_pass {
+    text-align: center;
+  }
+  
+  .titulo_edit_pass {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 0;
+  }
+  
+  /* Estilos para el formulario */
+  .from_edit_pass {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group_edit_pass {
+    margin-bottom: 20px;
+  }
+  
+  .label_inptu_edit_pass {
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .inptu_edit_pass {
+    font-size: 1rem;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  #show-password-btn,
+  #show-password-btn2 {
+    background-color: transparent;
+    border: none;
+    position: relative;
+    top: -45px;
+    right: -90%;
+    font-size: 1.5rem;
+    color: #999;
+    cursor: pointer;
+  }
+  
+  /* Estilos para el botón */
+  .btn-primary_edit_pass {
+    background-color: #0377eb;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .btn-primary_edit_pass:hover {
+    background-color: #19b801;
+  }
+  
+  /* Estilos responsivos */
+  @media (max-width: 768px) {
+    .contenedor_form_edit_pass {
+      padding: 10px;
+    }
+    
+    .titulo_edit_pass {
+      font-size: 1.5rem;
+    }
+    
+    #show-password-btn,
+    #show-password-btn2 {
+      top: -28px;
+    }
+  }
+  

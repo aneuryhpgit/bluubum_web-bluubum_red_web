@@ -1,0 +1,139 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/modall/modal_alert_show.css' %}">
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/vendedor_css/configuracion_vend/metodo_pagos_edic.css' %}">
+
+
+<div class="Conten_title_data_actual_edit">
+	<div class="">
+    <a href="{% url 'configuracion_vend' %}" class=""><i class="fa-solid fa-person-walking-arrow-right fa-flip-horizontal"></i></a>
+  </div>
+    
+  <h2 class="title_data_actual_edit">Editar metodo de pago</h2>
+	
+</div>
+
+{% if show_message_error %}
+  <div id="caj-alert-show" class="caj-alert-show">
+    <div class="alert-danger-show">
+      <div class="icono-show">
+        <div class="circle_icono"><p>!</p></div>
+      </div>
+      <div class="caja-masage-show">
+        <p class="mesage-show">Ha ocurrido un error. <br>Verifica que los datos ingresados</p>
+      </div>
+      <div class="cja-btn-show">
+        <button id="btn-show" class="btn-show btn-left">Aceptar</button>
+        <!--<a href="#" class="btn-reidrec btn-right">Aceptar</a>-->
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+
+{% if show_message_exitoso %}
+<div id="caj-alert-show" class="caj-alert-show">
+  <div class="alert-danger-show">
+    <div class="icono-show">
+      <div class="bien circle_icono"><p class="fa fa-thumbs-up"></p></div>
+    </div>
+    <div class="caja-masage-show">
+      <p class="mesage-show">Datos actualizados exitosamente</p>
+    </div>
+    <div class="cja-btn-show">
+      <!--<button id="btn-show" class="btn-show btn-left">Aceptar</button>-->
+      <a href="{% url 'edict_metodo_pago_vend' %}" class="btn-reidrec btn-right">Aceptar</a>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+<div class="contenedor_form_perfil_pg-inicial">
+
+    <div class="contenedor_dtactual_dt_direc_edit_vend">
+
+        <h2 class="subtitle_dt_direc_edit_vend">Datos de pagos</h2>
+        <div class="div_dt_actual_direc_edit_vend">
+            <label for="" class="label_dt_actual_direc_edit_vend">Metodo de pagos:</label>
+            <p>{{mtd.metodo_cobro }}</p>
+        </div>
+        <div class="div_dt_actual_direc_edit_vend">
+            <label for="" class="label_dt_actual_direc_edit_vend">Tipo documento:</label>
+            <p>{{ mtd.tipo_document_identificacion}}</p>
+        </div>
+        <div class="div_dt_actual_direc_edit_vend">
+            <label for="" class="label_dt_actual_direc_edit_vend">Nombre de documento:</label>
+            <p>{{mtd.Nombre_completo_identificacion}}</p>
+        </div>
+        {% if mtd.nombre_banco != "NULL" and mtd.nombre_banco != '' %}
+        <div class="div_dt_actual_direc_edit_vend">
+            <label for="" class="label_dt_actual_direc_edit_vend">Nombre institucion bancaria:</label>
+            <p>{{mtd.nombre_banco}}</p>
+        </div>
+        <div class="div_dt_actual_direc_edit_vend">
+            <label for="" class="label_dt_actual_direc_edit_vend">Numero de cuenta:</label>
+            <p>{{ mtd.Numero_cuenta_bancaria}}</p>
+        </div>
+        {% endif %}
+
+    </div>
+    
+
+    <div class="formulario_form_perfil_pg-inicial">
+        <form action="{% url 'edict_metodo_pago_vend' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}               
+
+            <div class="caja_text_form_perfil_pg-inicial">
+                <label for="opciones">Selecciona una opción de pago:</label>
+                <div>
+                    <button type="button" id="btn-transferencia" class="btn-pago" data-value="Transferencia bancaria">Transferencia bancaria</button>
+                    <button type="button" id="btn-deposito" class="btn-pago" data-value="Depósito de efectivo">Depósito de efectivo</button>
+                </div>
+            </div>
+            <div class="caja_text_form_perfil_pg-inicial">
+                <label for="metodo_pago">Método de pago:</label>
+                <input type="text" id="metodo_pago" name="metodo_pago">
+              </div>
+            <div class="caja_text_form_perfil_pg-inicial">
+                <label for="opciones">Tipo documento de identidad:</label>
+                <select name="tipo_documet" id="opciones">
+                    <option value="Cedula">Cedula</option>
+                    <option value="Pasaporte">Pasaporte</option>
+                </select>                
+            </div>
+            <div class="caja_text_form_perfil_pg-inicial">
+                <input type="text" id="txtfileTitulo" placeholder="Nombre de documento" 
+                name="nombre_idp" class="titulo_producto_form_perfil_pg-inicial">             
+            </div>
+            <div id="cuenta" style="display: none;">
+                <div class="caja_text_form_perfil_pg-inicial">
+                    <input type="text" id="txtfileTitulo" placeholder="Nombre de institucion bancaria" 
+                    name="nombre_banco" class="titulo_producto_form_perfil_pg-inicial">             
+                </div>
+                <div class="caja_text_form_perfil_pg-inicial">
+                    <input type="text" id="txtfileTitulo" placeholder="Numero de cuenta" 
+                    name="numero_cuenta" class="titulo_producto_form_perfil_pg-inicial">             
+                </div>
+            </div>
+            <div class="div_btn_form_perfil_pg-inicial">
+                <button type="submit" class="btn_form_perfil_pg-inicial" id="">Guardar Cambios</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<script src="{% static '../static/css/modall/modal_show.js' %}"></script>
+
+<script src="{% static '../static/vendedor/mostrar-input.js' %}"></script>
+
+
+<script src="{% static '../static/registro_proveedor/btn_regres.js' %}"></script>
+
+
+ 
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends "layout/base.html" %}
+
+{% load humanize %}
+
+{% block content %}
+
+{% load static %}
+
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/vendedor_css/dashboard_vend_css/detail_proyec.css' %}">
+
+
+
+<div class="Conten_title_data_actual_edit">
+	<div class="">
+        <a href="" class="btn_regresar"><i class="fa-solid fa-arrow-left-long"></i></a>
+    </div>
+    
+    <h2 class="title_data_actual_edit">Detalles de proyecto</h2>
+	<p></p>
+</div>
+
+
+<section class="project-details">
+
+    <div class="project-details-location">
+      <h2 class="project-details-subtitle">Ubicación:</h2>
+      <ul class="project-details-list">
+        <li><strong>Provincia:</strong> {{ proyecto.provincia_proyec }}</li>
+        <li><strong>Ciudad:</strong> {{ proyecto.ciudad_proyec }}</li>
+        <li><strong>Sector:</strong> {{ proyecto.sector_proyec }}</li>
+        <li><strong>Calle:</strong> {{ proyecto.calle_proyec }}</li>
+        <li><strong>Número:</strong> {{ proyecto.numero_proyec }}</li>
+        <li><strong>Suite:</strong> {{ proyecto.apartamen_suite_proyec }}</li>
+      </ul>
+    </div>
+  
+    <div class="client-details">
+      <h2 class="project-details-subtitle">Detalles del cliente:</h2>
+      <ul class="project-details-list">
+        <li><strong>Cliente:</strong> {{ proyecto.nombre_cliente }}</li>
+        <li><strong>WhatsApp:</strong> {{ proyecto.whatsapp }}</li>
+        <li><strong>Teléfono:</strong> {{ proyecto.telefono }}</li>
+      </ul>
+    </div>
+  
+    <div class="project-status">
+      <h2 class="project-details-subtitle">Estado del proyecto:</h2>
+      <ul class="project-details-list">
+        <li><strong>Fecha de solicitud:</strong> {{ proyecto.fecha_solicitud|date:"Y/m/d" }}</li>
+        <li><strong>Fecha de cotización:</strong> {{ proyecto.fecha_disponible_cotizacion|date:"Y/m/d" }}</li>
+        <li><strong>Estado:</strong> {{ proyecto.estado }}</li>
+        <li><strong>Fecha de aprobación:</strong> {{ proyecto.fecha_aprobacion|date:"Y/m/d" }}</li>
+        <li><strong>Fecha de inicio:</strong> {{ proyecto.fecha_estimada_inicio|date:"Y/m/d" }}</li>
+        <li><strong>Estimacion conclusión:</strong> {{ proyecto.fecha_estimada_conclusion|date:"Y/m/d" }}</li>
+      </ul>
+    </div>
+
+    <div class="project-status">
+        <h2 class="project-details-subtitle">Datos del proyecto</h2>
+        <ul class="project-details-list">
+          <li><strong>Proveedor:</strong> {{ proyecto.proveedor.nombre_empresa }}</li>
+          <li><strong>Servicio:</strong> {{ proyecto.servicio.nombre_servicio }}</li>
+          <li><strong>Nombre:</strong> {{ proyecto.nombre_proyecto }}</li>
+          <li><strong>Codigo proyecto:</strong> {{ proyecto.codigo_unico_proyect }}</li>
+          <li class="detail_descriccion"><strong>Descripcion</strong><br> {{ proyecto.descripcion_proyecto }}</li>
+        </ul>
+    </div>
+  </section>
+
+
+  <script src="{% static '../static/vendedor/botn_regres.js' %}"></script>
+  
+  
+
+{% endblock %}

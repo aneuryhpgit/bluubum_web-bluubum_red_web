@@ -1,0 +1,428 @@
+.cj-precentacion{
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 3rem 0;
+    -moz-border-radius: 0 50% / 0 100%;
+     -webkit-border-radius: 0 50% / 0 100%;
+     border-radius: 20% 45% 50% 0% / 0 100%;
+     background: #000c52;
+     border: 5px solid #ff6200;
+     padding-left: 0.2rem;
+}
+
+
+.cj-title_precentacion{
+    display: flex;
+    width: 100%;
+}
+
+
+.title_precentacion{
+    width: 40%;
+    font-size: 2.9rem;
+    margin: 2rem auto;
+    color: rgb(236, 235, 235);
+    margin-bottom: 0.5rem;
+}
+
+
+.cj-precentacion .sub-cj_presentacion{
+    display: flex;
+    width: 100%;
+    max-height: 800px;
+    padding: 0.8rem 0 0 0;
+}
+
+
+.sub-cj_presentacion .cj-img_precentacion{
+    width: 40%;
+    margin: 0rem 0 0 0.5rem;
+}
+
+.cj-img_precentacion .img_precentacion{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    -moz-border-radius: 0 50% / 0 100%;
+    -webkit-border-radius: 0 50% / 0 100%;
+    border-radius: 0 0% 0% 20% / 0 100%;
+}
+
+.cj-texto_precentacion{
+    display: block;
+    width: 57%;
+    height: 650px;
+    margin-top: 5rem;
+    background-color: rgb(255, 106, 0);
+    padding: 0.5rem ;
+    margin-right: 1rem;
+    -moz-border-radius: 0 50% / 0 100%;
+    -webkit-border-radius: 0 50% / 0 100%;
+    border-radius: 0 27% 40% 0 / 0 100%;
+}
+
+.cj-texto_precentacion .texto_precentacion{
+    width: 75%;
+    margin: auto auto;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: rgb(246, 246, 246);
+    margin-top: 1rem;
+}
+
+.text_prest_detail{
+    margin-top: 2rem;
+    font-size: 2rem;
+    font-weight: 300;
+
+}
+
+
+
+@media screen and (max-width: 1366px) {
+
+    .cj-precentacion{
+        height: 700px;
+        margin: 3rem 0;
+    }
+
+    .cj-texto_precentacion{
+        width: 57%;
+        height: 497px;
+        margin-top: 4rem;
+        padding: 0.5rem ;
+        margin-right: 1rem;
+    }
+
+    .title_precentacion{
+        font-size: 2rem;
+    }
+
+    .cj-texto_precentacion .texto_precentacion{
+        width: 72%;
+        font-size: 1.9rem;
+    }
+
+    .text_prest_detail{
+        font-size: 1.4rem;
+    }
+
+}
+
+
+@media screen and (max-width: 1280px) {
+
+    .cj-precentacion{
+        height: 600px;
+        margin: 3rem 0;
+        border: 3px solid #ff6200;
+    }
+
+    .cj-texto_precentacion{
+        width: 62%;
+        height: 395px;
+        margin-top: 2rem;
+        padding: 0.5rem ;
+        margin-right: 1rem;
+    }
+
+    .title_precentacion{
+        font-size: 2rem;
+    }
+
+    .cj-texto_precentacion .texto_precentacion{
+        width: 72%;
+        font-size: 1.7rem;
+    }
+
+    .text_prest_detail{
+        font-size: 1.4rem;
+    }
+
+}
+
+
+
+
+@media screen and (max-width: 1024px) {
+
+
+    .title_precentacion{
+        font-size: 2rem;
+    
+    }
+
+    .cj-texto_precentacion .texto_precentacion{
+        width: 90%;
+        font-size: 1.5rem;
+
+    }
+
+
+    .text_prest_detail{
+        font-size: 1.1rem;
+    
+    }
+
+}
+
+
+
+@media screen and (max-width: 916px) {
+
+    .cj-precentacion{
+        height: 500px;
+        margin: 3rem 0;
+        border: 3px solid #ff6200;
+    }
+
+    .title_precentacion{
+        width: 40%;
+        font-size: 2.2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .cj-texto_precentacion{
+        width: 62%;
+        height: 345px;
+        margin-top: 1rem;
+        padding: 0.5rem ;
+        margin-right: 1rem;
+    }
+
+    .title_precentacion{
+        width: 45%;
+        font-size: 1.5rem;
+        margin: 2rem auto;
+    }
+
+
+    .cj-texto_precentacion .texto_precentacion{
+        width: 72%;
+        font-size: 1.2rem;
+    }
+
+    .text_prest_detail{
+        font-size: 1.1rem;
+    }
+
+}
+
+@media screen and (max-width: 852px) {
+
+    .cj-precentacion{
+        height: 500px;
+        margin: 3rem 0;
+        border: 3px solid #ff6200;
+    }
+
+    .title_precentacion{
+        width: 40%;
+        font-size: 2.2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .cj-texto_precentacion{
+        width: 64%;
+        height: 317px;
+        margin-top: 1rem;
+        padding: 0.5rem ;
+        margin-right: 1rem;
+    }
+
+    .title_precentacion{
+        width: 45%;
+        font-size: 1.5rem;
+        margin: 2rem auto;
+    }
+
+
+    .cj-texto_precentacion .texto_precentacion{
+        width: 72%;
+        font-size: 1.2rem;
+    }
+
+    .text_prest_detail{
+        font-size: 1.1rem;
+    }
+
+}
+
+
+
+
+@media screen and (max-width: 820px) {
+
+    .cj-precentacion{
+        -moz-border-radius: 0 50% / 0 100%;
+         -webkit-border-radius: 0 50% / 0 100%;
+         border-radius: 10% 10% 0 0;
+
+         padding-left: 0rem;
+         box-shadow: 10px 0px 10px 10px #002c524e;
+
+    
+    }
+    
+
+
+    .title_precentacion{
+        width: 70%;
+
+    }
+
+
+    .cj-img_precentacion .img_precentacion{
+
+        -moz-border-radius: 0 50% / 0 100%;
+        -webkit-border-radius: 0 50% / 0 100%;
+        border-radius: 0 0% 0% 0% / 0 100%;
+    
+        
+    }
+    
+    .cj-texto_precentacion{
+        width: 62%;
+        height: 362px;
+        margin: 0px;
+        -moz-border-radius: 0 50% / 0 100%;
+        -webkit-border-radius: 0 50% / 0 100%;
+        border-radius: 0 0% 0% 0 / 0 100%;
+    
+    }
+
+    
+
+
+
+  }
+
+
+
+  @media screen and (max-width: 601px) {
+
+    .cj-precentacion{
+        height: auto;
+    }
+
+    .cj-precentacion .sub-cj_presentacion{
+        display: block;
+
+    }
+
+
+    .title_precentacion{
+        width: 80%;
+
+    }
+
+
+    .sub-cj_presentacion .cj-img_precentacion{
+        width: 100%;
+        height: 200px;
+        margin: 0;
+       
+        
+    }
+
+
+    .cj-texto_precentacion{
+        display: block;
+        width: 100%;
+        margin: 0;
+
+        
+
+    }
+
+
+
+
+}
+
+
+@media screen and (max-width: 412px) {
+
+    .title_precentacion{
+        width: 90%;
+        font-size: 1.3rem;
+
+    }
+
+    .cj-texto_precentacion{
+
+        padding: 0.2rem ;
+
+    }
+
+    .cj-texto_precentacion .texto_precentation{
+        width: 96%;
+        margin: 0 0;
+        padding: 0rem;
+    }
+
+
+
+}
+
+
+
+
+
+  @media screen and (max-width: 400px) {
+
+
+
+    .title_precentacion{
+        width: 90%;
+        font-size: 1.2rem;
+
+    }
+
+
+    .cj-texto_precentacion{
+        padding: 0.1rem ;
+
+    }
+
+    .texto_precentacion{
+        font-size: 1rem;
+
+    }
+
+    .text_prest_detail{
+        font-size: 1rem;
+    }
+
+
+
+
+  }
+
+
+
+  @media screen and (max-width: 300px) {
+
+
+
+    .title_precentacion{
+        width: 90%;
+        font-size: 1.1rem;
+
+    }
+
+
+    .cj-texto_precentacion .texto_precentacion{
+        font-size: 1rem;
+
+
+    }
+
+    .text_prest_detail{
+        font-size: 0.9rem;
+
+    }
+
+
+  }

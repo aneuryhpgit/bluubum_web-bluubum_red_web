@@ -1,0 +1,160 @@
+/* Estilos generales */
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+
+
+/* Estilos para el título */
+.Conten_title_data_actual_edit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #000000;
+  color: #fff;
+}
+
+.Conten_title_data_actual_edit a {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.Conten_title_data_actual_edit a:hover {
+  color: #ccc;
+}
+
+.title_data_actual_edit {
+  font-size: 1rem;
+  margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+  
+  /* Estilos para la sección principal */
+  .cj_edit_user_vend {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px auto;
+    max-width: 600px;
+    min-height: 65vh;
+  }
+  
+  /* Estilos para el contenedor del título */
+  .container_titulo_edit_user_vend {
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+
+  }
+  
+  /* Estilos para el título */
+  .titulo_edit_user_vend {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+  
+  /* Estilos para el contenedor del usuario actual */
+  .cj_actual_edit_user_vend {
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+  }
+  
+  /* Estilos para el nombre de usuario actual */
+  .actual_edit_user_vend {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  /* Estilos para la etiqueta "Usuario actual" */
+  .label_actual_edit_user_vend {
+    color: #666;
+    font-size: 14px;
+    margin: 5px 0 0;
+  }
+  
+  /* Estilos para el contenedor del formulario */
+  .container_form_edit_user_vend {
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+  /* Estilos para el formulario */
+  .form_edit_user_vend {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  /* Estilos para los campos de formulario */
+  .form-group_edit_user_vend {
+    margin-bottom: 10px;
+    width: 100%;
+
+  }
+  
+  /* Estilos para las etiquetas de formulario */
+  .form-group_edit_user_vend label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  /* Estilos para los campos de entrada de formulario */
+  .form-input_edit_user_vend {
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+  }
+  
+  /* Estilos para el botón de formulario */
+  .btn_form_edit_user_vend {
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 20px;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .btn_form_edit_user_vend:hover {
+    background-color: #13ad02;
+  }
+
+  
+@media screen and (max-width: 467px) {
+
+    .form-group_edit_user_vend {
+        width: 90%;
+        
+      }
+
+}

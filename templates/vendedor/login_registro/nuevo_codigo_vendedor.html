@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <script src="https://kit.fontawesome.com/9722caf0d0.js" crossorigin="anonymous"></script>
+    <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
+    <link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet">
+    <link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" type="text/css" href="{% static '../static/css/modall/modal_alert_show.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '../static/css/vendedor_css/carpeta_login_register_css/nuevo_codigo_vend.css' %}">
+    <title>Bluubum</title>
+</head>
+<body>
+    {% if show_message_alert %}
+    <div id="caj-alert-show" class="caj-alert-show">
+      <div class="alert-danger-show">
+        <div class="icono-show">
+            <div class="bien circle_icono"><p class="fa fa-thumbs-up"></p></div>
+        </div>
+        <div class="caja-masage-show">
+          <p class="mesage-show">Se ha enviado un nuevo código de confirmación a tu correo electrónico.</p>
+        </div>
+        <div class="cja-btn-show">
+          <!--<button id="btn-show" class="btn-show btn-left">Aceptar</button>-->
+          <a href="{% url 'confirmar_usuario_vend' %}" class="btn-reidrec btn-right">Aceptar</a>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+  <div class="Improvement">
+    <h1 class="titulo_new_cod_prov">Solicitud de nuevo código de confirmación</h1>
+    
+    <p class="texto_descri_pnew_cod_prov">Presione el botón para solicitar un nuevo código de confirmación:</p>
+    
+    <form action="{% url 'enviar_nuevo_codigo_vend' %}" method="POST" class="form_new_cod_prov">
+      {% csrf_token %}
+      <button type="submit" class="form_new_cod_prov">Solicitar nuevo código</button>
+    </form>
+  </div>
+
+  <script src="{% static '../static/css/modall/modal_show.js' %}"></script>
+    
+</body>
+</html>
+

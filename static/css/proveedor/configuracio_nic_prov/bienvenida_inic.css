@@ -1,0 +1,68 @@
+/* Estilos para la página de bienvenida */
+
+/* Fondo y colores */
+body {
+    background-color: #f8f8f8;
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+
+/* Títulos */
+h1 {
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 3rem;
+
+}
+
+/* Contenido */
+div {
+    width: 40%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-top: 2rem;
+}
+
+/* Botón */
+a {
+    display: block;
+    width: 30%;
+    margin: 0 auto;
+    margin-top: 3rem;
+    padding: 1rem 2rem;
+    border-radius: 3rem;
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+
+a:hover {
+    background-color: #0062cc;
+}
+
+
+@media screen and (max-width: 768px) {
+
+    /* Contenido */
+div {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+    
+
+  }

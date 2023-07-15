@@ -1,0 +1,72 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/vendedor_css/configuracion_vend/plantilla_configuracion.css' %}">
+
+
+<div class="Conten_title_data_actual_edit">
+	<div class="">
+        <a href="{% url 'home_page' %}" class=""><i class="fa-solid fa-person-walking-arrow-right fa-flip-horizontal"></i></a>
+    </div>
+    
+    <h2 class="title_data_actual_edit">Configuracion</h2>
+	<p></p>
+</div>
+
+<div class="dashboard_configuracion_vend">
+    <div class="sub_dashboard">
+       
+        <div class="config-item">
+            <a href="{% url 'edit_username_vend' %}">
+                <h2>Editar nombre de usuario</h2>
+            </a>
+        </div>
+
+        <div class="config-item">
+            <a href="{% url 'editar_foto_perfil_vend' %}">
+                <h2>Editar foto de perfil</h2>
+            </a>
+        </div>
+
+        <div class="config-item">
+            <a href="{% url 'edit_email_vend' %}">
+                <h2>Editar email</h2>
+            </a>
+        </div>
+
+        <div class="config-item">
+            <a href="{% url 'edit_password_vend' %}">
+                <h2>Editar contraseña</h2>
+            </a>
+        </div>
+
+        <div class="config-item">
+            <a href="{% url 'edict_metodo_pago_vend' %}">
+                <h2>Editar metodo y datos de pago</h2>
+            </a>
+        </div>
+
+        <div class="config-item">
+            <a href="{% url 'editar_direccion_vend' %}">
+                <h2>Editar direccion</h2>
+            </a>
+        </div>
+
+        <div class="config-item">
+            <a href="{% url 'editar_contacto_vend' %}">
+                <h2>Editar datos de contacto</h2>
+            </a>
+        </div>
+
+    </div>
+  </div>
+
+
+  <script src="{% static '../static/registro_proveedor/btn_regres.js' %}"></script>
+
+{% endblock %}

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    
+    <meta name="google-site-verification" content="0ka-h_br8WxsByQlOYnkl5angYxDHYVpg6qgVqZRSGk" />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <script src="https://kit.fontawesome.com/9722caf0d0.js" crossorigin="anonymous"></script>
+    <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
+    <link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet">
+    <link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" type="text/css" href="{% static '../static/fontawesome-free-6.4.0-web/css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '../static/fontawesome-free-6.4.0-web/css/all.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '../static/fontawesome-free-6.4.0-web/css/solid.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '../static/fontawesome-free-6.4.0-web/css/brands.css' %}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="{% static '../static/css/modal_delete.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '../static/css/base_css_menu/base.css' %}">
+    
+    
+    <link rel="stylesheet" type="text/css" href="{% static '../static/css/proveedor/login_registro/login_proveedor.css' %}">
+    
+    <link rel="stylesheet" type="text/css" href="{% static '../static/css/modall/modal_alert_show.css' %}">
+    
+    <link rel="stylesheet" type="text/css" href="{% static '../static/css/proveedor/login_registro/new_codigo_prov.css' %}">
+
+   
+
+
+    <!--Editar datos proveedor-->
+    <link rel="stylesheet" type="text/css" href="{% static '../static/css/proveedor/confi_edit/edict_user_prov.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '../static/css/proveedor/confi_edit/editar_pass_prove.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '../static/css/proveedor/confi_edit/edict_perfil_prov.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '../static/css/proveedor/confi_edit/edit_contacto_prov.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '../static/css/proveedor/confi_edit/edit_geo_prov.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '../static/css/proveedor/confi_edit/edit_direc_prov.css' %}">
+
+     <!--Css footer-->
+
+    <link rel="stylesheet" type="text/css" href="{% static '../static/css/base_css_menu/footer.css' %}">
+
+    <link rel="icon" type="image/png" href="{% static '../static/images/favicon-32x32.png' %}">
+     
+    <title>bluubum</title>
+</head>
+<body>
+    
+    <header class="heat">
+        <h1 class="logoTitle"><a href="{% url 'home_page' %}" >Bluubum</a></h1>
+
+
+        <section class="btn_menu_lateral">
+            
+            {% if not request.user.is_authenticated %}
+            <a href="{% url 'home_page' %}">Inicio</a>
+            <a href="{% url 'home_page' %}#tutorial_pasos" style="display: none;">Blog</a>
+            <a href="{% url 'home_page' %}#tutorial_pasos">Tutorial</a>
+            
+            <a href="{% url 'message_form' %}">Contacto</a>
+            {% endif %}
+        </section>
+        
+        <div class="menu">
+
+            <script>
+                function ocultar(){
+                    document.getElementById("main").style.display = "none";
+                }
+
+                function mostrar(){
+                    document.getElementById("main").style.display = "block";
+                }
+            </script>
+            
+            {% if not request.user.is_authenticated %}
+                <section class="btn_redirec_login_lateral_menu">
+                    <a href="{% url 'login_vnd' %}" class="btn_menu_latelar_login">Iniciar sesion</a>
+                    <a href="{% url 'registro_vendedor' %}" class="btn_menu_latelar_register">Registrate</a>
+                </section>
+            {% endif %}
+
+            {% if request.user.is_authenticated %}
+            <label for="menuid" id="menuid" onclick="mostrar();" class="togel_vend" >
+                <i class="fa-solid fa-bars"></i>
+            </label>
+                
+            {% endif %}
+
+            
+            <!--Abrir menu-->
+            <label for="menuid" id="menuid" onclick="mostrar();" class="togel">
+                <i class="fa-solid fa-bars"></i>
+            </label>
+            
+            <nav class="main" id="main">
+                <!--Cerrar menu-->
+                <label for="menu_cerrar" onclick="ocultar();" class="cerrar">
+                    <i class="fa-solid fa-xmark"></i>    
+                </label>
+                <div class="cj_div_ul" onclick="ocultar();">
+                    <ul>
+                        {% if request.user.is_authenticated and user.profile_proveedor %}
+                        <li> <a href="{% url 'dashboard_prov' %}">Dahsboard</a> </li>
+                        <li> <a href="{% url 'configuration_prov' %}">Configuracion</a> </li>
+                        <li> <a href="{% url 'logout_view_proveedor' %}">Salir</a> </li>
+                        {% elif request.user.is_authenticated and user.profile_vendedor %}
+                        <li> 
+                            <a href="{% url 'comprueba_perfil_vend' %}">
+                                <i class="fa-solid fa-house"></i>
+                                Inicio
+                            </a> 
+                        </li>
+                        <li> 
+                            <a href="{% url 'configuracion_vend' %}">
+                                <i class="fa-solid fa-gear"></i> 
+                                configuracion y privacidad
+                            </a> 
+                        </li>
+                        <li> 
+                            <a href="{% url 'create_message_duda_comentario' %}">
+                                <i class="fa-solid fa-message"></i>
+                                Dudas y comentarios
+                            </a> 
+                        </li>
+
+                        <li style="display: none;"> 
+                            <a href="">
+                                <i class="fa-solid fa-newspaper"></i>
+                                Blog
+                            </a>
+                        </li>
+                        
+                        <li> 
+                            <a href="{% url 'logout_vnd' %}">
+                                <i class="fa-solid fa-power-off"></i>
+                                 Cerrar session
+                            </a> 
+                        </li>
+                        <hr>
+                        <li> 
+                            <a href="{% url 'politicas_vend' %}">
+                                <i class="fa-solid fa-book"></i> 
+                                Politica de privacidad
+                            </a> 
+                        </li>
+                        <li> 
+                            <a href="{% url 'terminos_vend' %}">
+                                <i class="fa-solid fa-book"></i> 
+                                Terminos y condiciones
+                            </a> 
+                        </li>
+
+                        {% else %}
+                        <li><a href="{% url 'home_page' %}">Inicio</a></li>
+                        <li><a href="{% url 'message_form' %}">Contacto</a></li>
+                        <li><a href="{% url 'terminos_vend' %}">Terminos</a></li>
+                        <li><a href="{% url 'politicas_vend' %}">Privacidad</a></li>
+                        <li><hr></li>
+                        <li><a href="{% url 'login_vnd' %}" class="btn_login_menu_mobil"><p>Iniciar sesion</p></a></li>
+                        <li><a href="{% url 'registro_vendedor' %}" class="btn_register_menu_mobil"><p>Registrate</p></a></li>
+                        
+                        {% endif %}          
+                    </ul>
+                </div>
+            </nav>
+
+        </div>
+        
+    </header>
+
+{% block content %}
+
+{% endblock %}
+</div>
+
+<br><br><br><br>
+<footer class="footer">
+    <div class="footer-container">
+      <ul class="footer-menu">
+        <li><a href="{% url 'home_page' %}">Inicio</a></li>
+        <li style="display: none;"><a href="#">Acerca de</a></li>
+        <li><a href="{% url 'message_form' %}">Ayuda</a></li>
+        <li><a href="{% url 'terminos_vend' %}">Términos</a></li>
+        <li><a href="{% url 'politicas_vend' %}">Privacidad</a></li>
+        <li><a href="https://www.facebook.com/people/Bluubum/100094091217794/"><i class="fa-brands fa-facebook-f"></i></a></li>
+        <li style="display: none;"><i class="fa-brands fa-twitter"></i></li>
+        <li><a href="https://www.instagram.com/bluubum/"><i class="fa-brands fa-instagram"></i></a></li>
+        <li style="display: none;"><i class="fa-brands fa-youtube"></i></li>
+      </ul>
+      <span class="footer-logo">2023 Bluubum</span>
+    </div>
+</footer>
+
+  <script src="{% static '../static/fontawesome-free-6.4.0-web/js' %}"></script>
+  <script src="{% static '../static/fontawesome-free-6.4.0-web/js/all.js' %}"></script>
+  <script src="{% static '../static/fontawesome-free-6.4.0-web/js/brands.js' %}"></script>
+  <script src="{% static '../static/fontawesome-free-6.4.0-web/js/solid.js' %}"></script>
+
+</body> 

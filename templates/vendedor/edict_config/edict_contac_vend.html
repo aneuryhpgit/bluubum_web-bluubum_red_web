@@ -1,0 +1,93 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/modall/modal_alert_show.css' %}">
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/vendedor_css/configuracion_vend/edic_contact_vend.css' %}">
+
+<div class="Conten_title_data_actual_edit">
+	<div class="">
+        <a href="{% url 'configuracion_vend' %}" class=""><i class="fa-solid fa-person-walking-arrow-right fa-flip-horizontal"></i></a>
+    </div>
+    
+    <h2 class="title_data_actual_edit">Editar contacto</h2>
+	<p></p>
+</div>
+
+{% if show_message_error %}
+  <div id="caj-alert-show" class="caj-alert-show">
+    <div class="alert-danger-show">
+      <div class="icono-show">
+        <div class="circle_icono"><p>!</p></div>
+      </div>
+      <div class="caja-masage-show">
+        <p class="mesage-show">Ha ocurrido un error. Revisa que los dactos introducidos sean correctos. <br><br> Es posible que ese nuemero este registrado</p>
+      </div>
+      <div class="cja-btn-show">
+        <button id="btn-show" class="btn-show btn-left">Aceptar</button>
+        <!--<a href="#" class="btn-reidrec btn-right">Aceptar</a>-->
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+
+{% if show_message_exito %}
+<div id="caj-alert-show" class="caj-alert-show">
+  <div class="alert-danger-show">
+    <div class="icono-show">
+      <div class="bien circle_icono"><p class="fa fa-thumbs-up"></p></div>
+    </div>
+    <div class="caja-masage-show">
+      <p class="mesage-show">Datos de contacto actulizado</p>
+    </div>
+    <div class="cja-btn-show">
+      <!--<button id="btn-show" class="btn-show btn-left">Aceptar</button>-->
+      <a href="{% url 'editar_contacto_vend' %}" class="btn-reidrec btn-right">Aceptar</a>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+
+
+<div class="contenedor_editar_cont_vend">
+
+    <div class="cj_dt_actual_editar_cont_vend">
+        <div class="sub_cjdt_actual_editar_cont_vend">
+            <p class="num_actual_editar_cont_vend">{{contacto.numeroWhatsapp_afiliado}}</p>
+            <label class="label_dt_actual_editar_cont_vend">Whatsapp</label>
+        </div>
+        <div class="sub_cjdt_actual_editar_cont_vend">
+            <p class="num_actual_editar_cont_vend">{{contacto.telefono}}</p>
+            <label class="label_dt_actual_editar_cont_vend">Telefono</label>
+        </div>
+    </div>
+
+    <div class="content_formulario_editar_cont_vend">
+        <form action="{% url 'editar_contacto_vend' %}" method="post" enctype="multipart/form-data" class="form_editar_cont_vend">
+        {% csrf_token %}               
+            <div class="caja_text_form_edit_cont_vend">
+                <input type="text" id="txtfileTitulo" placeholder="Numero de whatsapp" 
+                name="numero_whatsapp" class="input_edit_cont_vend">             
+            </div>
+            <div class="caja_text_form_edit_cont_vend">
+                <input type="text" id="txtfileTitulo" placeholder="Nuemro Telefonico" 
+                name="numero_telefono" class="input_edit_cont_vend">             
+            </div>
+            <div class="cj_btn_form_edit_cont_vend">
+                <button type="submit" class="btn_form_edit_cont_vend" id="">Guardar cambios</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="{% static '../static/css/modall/modal_show.js' %}"></script>
+
+<script src="{% static '../static/registro_proveedor/btn_regres.js' %}"></script>
+
+{% endblock %}

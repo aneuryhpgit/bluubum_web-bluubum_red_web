@@ -1,0 +1,105 @@
+.contenedor_form_edit_geo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.contenedor_titulo_form_edit_geo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.titulo_form_edit_geo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 10px;
+}
+
+.cj_data_edit_geo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.data_edit_geo {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333333;
+  margin: 0;
+}
+
+.cj_form_edit_geo {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.formulario_edit_geo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.label_input_edit_geo {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 10px;
+}
+
+.input_edit_geo {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  color: #333333;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  margin-bottom: 20px;
+}
+
+.div_btn_form_edit_geo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn_form_edit_geo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #0073ff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn_form_edit_geo:hover {
+  background-color: #00a706;
+  transform: translateY(-3px);
+}
+
+.fa-arrow-right-long {
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+    
+  

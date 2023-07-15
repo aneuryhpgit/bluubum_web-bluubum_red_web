@@ -1,0 +1,89 @@
+/* Estilos generales */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Estilos para dispositivos móviles */
+  @media only screen and (max-width: 600px) {
+    .Improvement {
+      margin: 40px;
+    }
+    
+    .titulo_new_cod_prov {
+      font-size: 20px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+     
+    .texto_descri_pnew_cod_prov {
+      font-size: 16px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    
+    .form_new_cod_prov {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .form_new_cod_prov button {
+      font-size: 18px;
+      padding: 10px 20px;
+      background-color: #14b802;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+    }
+  }
+  
+  /* Estilos para dispositivos de escritorio */
+  @media only screen and (min-width: 601px) {
+    .Improvement {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin-top: 20px;
+    }
+    
+    .titulo_new_cod_prov {
+      font-size: 25px;
+      margin-bottom: 20px;
+    }
+    
+    .texto_descri_pnew_cod_prov {
+      font-size: 18px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    
+    .form_new_cod_prov {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 0 10px #ccc;
+      margin-top: 0rem;
+    }
+    
+    .form_new_cod_prov button {
+      font-size: 24px;
+      padding: 15px 30px;
+      border-radius: 5px;
+      background-color: #14b802;
+      color: #fff;
+      transition: all 0.3s ease;
+    }
+    
+    .form_new_cod_prov button:hover {
+      cursor: pointer;
+      background-color: #01b907;
+    }
+  }
+  

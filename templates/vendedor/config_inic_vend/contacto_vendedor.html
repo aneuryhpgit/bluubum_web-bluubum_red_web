@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://kit.fontawesome.com/9722caf0d0.js" crossorigin="anonymous"></script>
+    <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
+    <link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet">
+    <link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="{% static '../static/css/vendedor_css/inicial_config_vend_css/contacto_vend_ini.css' %}">
+
+    <title>Bluubum</title>
+</head>
+<body>
+    <div class="contenedor_form_perfil_pg-inicial">
+        <div class="contenedor_titulo_form_perfil_pg-inicial">
+            <h2 class="titulo_form_perfil_pg-inicial">Contacto</h2>
+        </div>
+        <div class="formulario_form_perfil_pg-inicial">
+            <form action="{% url 'config_ini_contacto_vendedor' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}               
+                <div class="caja_text_form_perfil_pg-inicial">
+                    <input type="text" id="txtfileTitulo" placeholder="Numero de whatsapp" 
+                    name="numero_whatsapp" class="num_input_form_perfil_pg-inicial" required>             
+                </div>
+                <div class="caja_text_form_perfil_pg-inicial">
+                    <input type="text" id="txtfileTitulo" placeholder="Numero telefono opcional" 
+                    name="numero_telefono" class="num_input_form_perfil_pg-inicial">             
+                </div>
+                <div class="div_btn_form_perfil_pg-inicial">
+                    <button type="submit" class="btn_form_perfil_pg-inicial" id="">Guardar y continuar<i class="fa-solid fa-arrow-right-long"></i></button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>

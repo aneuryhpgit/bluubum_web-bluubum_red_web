@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #fcfcfc;
+    font-family: Arial, sans-serif;
+  }
+  
+  .contenedor_form_geo_pg-inicial {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  .contenedor_titulo_form_geo_pg-inicial {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .titulo_form_geo_pg-inicial {
+    color: #333;
+    font-size: 32px;
+    font-weight: bold;
+  }
+  
+  .formulario_form_geo_pg-inicial {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    margin-top: 20px;
+    width: 80%;
+    max-width: 500px;
+  }
+  
+  .form_geo_servicio {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .label_geo {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .select_geo {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #f7f7f7;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .div_btn_form_geo_pg-inicial {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .btn_form_geo_pg-inicial {
+    background-color: #0080ff;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    margin-top: 20px;
+  }
+  
+  .btn_form_geo_pg-inicial:hover {
+    background-color: #05c602;
+  }
+  
+  .fa-arrow-right-long {
+    margin-left: 10px;
+    font-size: 18px;
+    vertical-align: middle;
+  }
+  
+  @media only screen and (max-width: 768px) {
+
+    .formulario_form_geo_pg-inicial {
+      padding: 20px;
+    }
+  
+    .titulo_form_geo_pg-inicial {
+      font-size: 28px;
+    }
+  
+    .label_geo {
+      font-size: 16px;
+    }
+  
+    .select_geo {
+      font-size: 14px;
+    }
+  
+    .btn_form_geo_pg-inicial {
+      font-size: 14px;
+    }
+  }
+
+
+  @media only screen and (max-width: 470px) {
+    body {
+        background-color: #fff;
+        font-family: Arial, sans-serif;
+    }
+      
+
+    .formulario_form_geo_pg-inicial {
+      padding: 20px;
+      box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    }
+  
+
+  }
+  

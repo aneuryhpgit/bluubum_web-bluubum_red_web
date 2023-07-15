@@ -1,0 +1,143 @@
+{% extends 'layout/base.html' %}
+
+{% load humanize %}
+
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/modall/modal_alert_show.css' %}">
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/proveedor/dahsboar_css/sub_dahsboard/factura_pago_vend.css' %}">
+
+
+{% if show_message_alert %}
+<div id="caj-alert-show" class="caj-alert-show">
+  <div class="alert-danger-show">
+    <div class="icono-show">
+      <div class="bien circle_icono"><p class="fa fa-thumbs-up"></p></div>
+    </div>
+    <div class="caja-masage-show">
+      <p class="mesage-show">Comision Saldada</p>
+    </div>
+    <div class="cja-btn-show">
+      <!--<button id="btn-show" class="btn-show btn-left">Aceptar</button>-->
+      <a href="{% url 'list_comision_pendiente_vend' %}" class="btn-reidrec btn-right">Aceptar</a>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+
+
+<div class="Conten_title_envi_cotiz">
+
+    <div class="cj_btn_regres_envi_cotiz">
+        <a href="{% url 'proyecto_comision' %}" class="btn_regres_envi_cotiz"><i class="fa-solid fa-arrow-left-long"></i></a>
+    </div>
+
+    <h2 class="title_data_envi_cotiz">Saldar Comision Vendedor</h2>
+
+</div>
+
+<div class="container_envi_cotiz">
+  <div class="card_envi_cotiz">
+    <div class="card-body_envi_cotiz">
+      <h2 class="card-title_envi_cotiz">Nombre proyecto</h2>
+      <p class="card-text_envi_cotiz">{{pcv.nombre_proyecto}}</p>
+      <hr>
+
+      <div class="row_envi_cotiz">
+        <div class="col-md-6_envi_cotiz">
+          <h2 class="card-title_envi_cotiz">Código proyecto</h2>
+          <p class="card-text_envi_cotiz">{{pcv.codigo_unico_proyect}}</p>
+          <hr>
+
+          <h2 class="card-title_envi_cotiz">Servicio</h2>
+          <p class="card-text_envi_cotiz">{{pcv.servicio.nombre_servicio}}</p>
+          <hr>
+
+          <h2 class="card-title_envi_cotiz">Comision</h2>
+          <p class="card-text_envi_cotiz">${{pcv.comision_vendedor|floatformat:2|intcomma}}</p>
+          <hr>
+        </div>
+
+        <div class="col-md-6_envi_cotiz">
+          <h2 class="card-title_envi_cotiz">Cliente</h2>
+          <ul class="list-unstyled_envi_cotiz">
+            <li><strong>Nombre:</strong> {{pcv.nombre_cliente}}</li>
+            <li><strong>WhatsApp:</strong> {{pcv.whatsapp}}</li>
+          </ul>
+          <hr>
+
+          <h2 class="card-title_envi_cotiz">Vendedor</h2>
+          <ul class="list-unstyled_envi_cotiz">
+            <li><strong>Nombre:</strong> {{pcv.vendedor.user.first_name}} {{pcv.vendedor.user.last_name}}</li>
+            <li><strong>Whatsapp:</strong>{{pcv.contact_vendedor.numeroWhatsapp_afiliado}}</li>
+            <li><strong>Telefono:</strong>{{pcv.contact_vendedor.telefono}}</li>
+          </ul>
+          <hr>
+        </div>
+
+
+
+        
+        <div class="cj_direccion">
+          <h3 class=" title_direc">______________________________</h3>
+          <h3 class=" title_direc">Direccion del vendedor</h3><br>
+          <ul class="list-unstyled_envi_cotiz">
+            {% for direccion_vend in direccion_vend %}
+              <li><strong>Provincia:</strong> {{direccion_vend.provincia_afiliado}}</li>
+              <li><strong>Ciudad o municipio:</strong> {{direccion_vend.ciudad_afiliado}}</li>
+              <li><strong>Sector:</strong> {{direccion_vend.sector_afiliado}}</li>
+              <li><strong>Calle:</strong> {{direccion_vend.calle_afiliado}}</li>
+              <li><strong>Número:</strong> {{direccion_vend.numero}}</li>
+              <li><strong>Apartamento/Suite:</strong> {{direccion_vend.apartamento_num}}</li>
+            {% endfor %}
+          </ul>
+          <hr>
+        </div>
+          
+        <div class="cj_metodo_pago">
+          <h2 class="card-title_envi_cotiz">Informacion metodo de pago</h2>
+          <ul class="list-unstyled_envi_cotiz">
+            {% for mtdvend in mtdvend %}
+              <li><strong>Metodo pago:</strong> {{mtdvend.metodo_cobro}}</li>
+              <li><strong>Tipo de documento:</strong> {{mtdvend.tipo_document_identificacion}}</li>
+              <li><strong>Nombre documento:</strong> {{mtdvend.Nombre_completo_identificacion}}</li>
+              {% if mtdvend.nombre_banco != NULL and mtdvend.nombre_banco != '' %}
+                <li><strong>Nombre de banco:</strong> {{mtdvend.nombre_banco }}</li>
+                <li><strong>Número cuenta bancaria:</strong> {{mtdvend.Numero_cuenta_bancaria}}</li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+          <hr>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+</div>
+
+  
+  
+
+  <form method="post" enctype="multipart/form-data" class="form_envi_cotiz">
+    {% csrf_token %}
+      <label>Si no dispone de cuenta bancaria</label>
+      <input type="text" id="" name="name_institucion" placeholder="Nombre institucion de deposito">
+
+      <div class="content_btn-form_envi_cotiz">
+        <button type="submit" class="btn_envi_cotiz">Saldar comision</button>
+      </div>
+  </form>
+
+
+
+  <script src="{% static '../static/css/modall/modal_show.js' %}"></script>
+
+  <script src="{% static '../static/proveedor_js/cotizacion_horaActual.js' %}"></script>
+
+
+{% endblock %}

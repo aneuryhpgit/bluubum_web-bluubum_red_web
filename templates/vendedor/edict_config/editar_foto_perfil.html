@@ -1,0 +1,92 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/modall/modal_alert_show.css' %}">
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/vendedor_css/configuracion_vend/edit_foto_perfil.css' %}">
+
+<div class="Conten_title_data_actual_edit">
+	<div class="">
+    <a href="{% url 'configuracion_vend' %}" class=""><i class="fa-solid fa-person-walking-arrow-right fa-flip-horizontal"></i></a>
+  </div>
+    
+  <h2 class="title_data_actual_edit">Editar foto de perfil</h2>
+	
+</div>
+
+
+{% if show_message_error %}
+  <div id="caj-alert-show" class="caj-alert-show">
+    <div class="alert-danger-show">
+      <div class="icono-show">
+        <div class="circle_icono"><p>!</p></div>
+      </div>
+      <div class="caja-masage-show">
+        <p class="mesage-show">Ha ocurrido un error. Verifica que el archivo seleccionado sea un archivo de imagen</p>
+      </div>
+      <div class="cja-btn-show">
+        <button id="btn-show" class="btn-show btn-left">Aceptar</button>
+        <!--<a href="#" class="btn-reidrec btn-right">Aceptar</a>-->
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+
+{% if show_message_exito %}
+<div id="caj-alert-show" class="caj-alert-show">
+  <div class="alert-danger-show">
+    <div class="icono-show">
+      <div class="bien circle_icono"><p class="fa fa-thumbs-up"></p></div>
+    </div>
+    <div class="caja-masage-show">
+      <p class="mesage-show">Se ha actualizado la foto de perfil</p>
+    </div>
+    <div class="cja-btn-show">
+      <!--<button id="btn-show" class="btn-show btn-left">Aceptar</button>-->
+      <a href="{% url 'editar_foto_perfil_vend' %}" class="btn-reidrec btn-right">Aceptar</a>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+
+
+
+<div class="contenedor_editar_foto_vend">
+  
+  <div class="content_form_perfil_editar_foto_vend">
+
+      <form action="{% url 'editar_foto_perfil_vend' %}" method="post" enctype="multipart/form-data" class="content_form_perfil_editar_foto_vend">
+        {% csrf_token %}
+        
+          <div class="cj_prim_logo-actual_editar_foto_vend">
+            <div class="cj_int-logo_editar_foto_vend">
+              <img src="{{ profile.image.url }}" alt="" id="img-preview" class="actual_foto_vend">
+            </div>
+          </div>
+
+          <div class="cj_inputfile_editar_foto_vend" id="src-file1_form_perfil_pg-inicial">
+              <input type="file" class="cj_inputfile_editar_foto_vend" multiple id="file" name="imagen-logo">
+              <label for="file" id="selector" class="label_inputfile_editar_foto_vend"><p>Subir nueva  de tu rostro</p> 
+              </label>
+          </div>
+
+          <div class="cj_btn_perfil_inputfile_editar_foto_vend">
+              <button type="submit" class="btn_perfil_inputfile_editar_foto_vend" id="">Guardar</button>
+          </div>
+
+      </form>
+
+  </div>
+
+</div>
+
+<script src="{% static '../static/css/modall/modal_show.js' %}"></script>
+<script src="{% static '../static/vendedor/image_previa_vend_foto_profil.js' %}"></script>
+
+<script src="{% static '../static/registro_proveedor/btn_regres.js' %}"></script>
+
+{% endblock %}

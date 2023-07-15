@@ -1,0 +1,57 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/proveedor/sin_archivo.css' %}">
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/vendedor_css/dashboard_vend_css/lista_result_prov.css' %}">
+
+<div class="Conten_title">
+	<div class="">
+        <a href="{% url 'vista_perfil_vend' codigo_unico_vend=profile.codigo_unico_vendedor %}"><i class="fa-solid fa-arrow-left-long"></i></a>
+    </div>
+
+    <div class="title_subtitle_list_proveedore">
+        <h2 class="title_data_actual_edit">Proveedores</h2>
+	    <p>Visita el perfil y afiliate</p>
+	</div>
+</div>
+
+<div class="content_body">
+
+{% if proveedorVis %}
+<div class="content_resul_perfil_prov">
+    
+    {% for prov in proveedorVis %}
+    <div class="targeta_resul_perfil_prov">
+		<a href="{% url 'vista_perfil_proveedor' codigo_unico=prov.codigo_unico_proveedor %}">
+			<img src="{{prov.image.url}}" alt="Imagen de perfil de proveedor 1" class="image_resul_perfil_prov">
+            <div class="cj-text_resul_perfil_prov">
+                <h2 class="name_resul_perfil_prov">{{prov.nombre_empresa}}</h2>
+                <div class="cj-text_liservis">
+                    {% for servicio in prov.servicio.all %}
+                        <p class="liservis">.{{servicio.nombre_servicio}}</p>
+                    {% endfor %}
+                </div>
+            </div>
+		</a>
+	</div>
+    {% endfor %}
+</div>
+
+{% else %}
+<section class="content_sin-archivo">
+    <div class="sub_content_sin-archivo">
+        <div class="cj_image_sin-archivo">
+            <i class="fa-regular fa-rectangle-list"></i>
+        </div>
+        <p class="mesage_sin-archivo">Actualmente no hay datos</p>
+    </div>
+</section>
+{% endif %}
+</div>
+
+{% endblock %}

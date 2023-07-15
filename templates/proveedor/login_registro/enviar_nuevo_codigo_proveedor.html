@@ -1,0 +1,38 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+{% load static %}
+
+{% if show_message_email_new_cod %}
+    <div id="caj-alert-show" class="caj-alert-show">
+      <div class="alert-danger-show">
+        <div class="icono-show">
+          <div class="bien circle_icono"><p class="fa fa-thumbs-up"></p></div>
+        </div>
+        <div class="caja-masage-show">
+          <p class="mesage-show">Se ha enviado un nuevo código de <br>confirmación a tu correo electrónico.</p>
+        </div>
+        <div class="cja-btn-show">
+          <!--<button id="btn-show" class="btn-show btn-left">Aceptar</button>-->
+          <a href="{% url 'confirmar_proveedor' %}" class="btn-reidrec btn-right">Aceptar</a>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
+    <div class="Improvement">
+        <h1 class="titulo_new_cod_prov">Solicitud de nuevo código de confirmación</h1>
+        
+        <p class="texto_descri_pnew_cod_prov">Presione el botón para solicitar un nuevo código de confirmación:</p>
+        
+        <form action="{% url 'nuevo_codigo' %}" method="POST" class="form_new_cod_prov">
+          {% csrf_token %}
+          <button type="submit" class="form_new_cod_prov">Solicitar nuevo código</button>
+        </form>
+    </div>
+
+    <script src="{% static '../static/css/modall/modal_show.js' %}"></script>
+
+{% endblock %}
+
+

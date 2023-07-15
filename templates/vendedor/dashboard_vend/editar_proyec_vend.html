@@ -1,0 +1,145 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/modall/modal_alert_show.css' %}">
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/vendedor_css/dashboard_vend_css/editar_proyec.css' %}">
+
+
+{% if show_message_alert %}
+<div id="caj-alert-show" class="caj-alert-show">
+  <div class="alert-danger-show">
+    <div class="icono-show">
+      <div class="bien circle_icono"><p class="fa fa-thumbs-up"></p></div>
+    </div>
+    <div class="caja-masage-show">
+      <p class="mesage-show">Datos actualizados exitosamente</p>
+    </div>
+    <div class="cja-btn-show">
+      <!--<button id="btn-show" class="btn-show btn-left">Aceptar</button>-->
+      <a href="" class="btn-reidrec btn-right">Aceptar</a>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+
+
+<div class="Conten_title_data_actual_edit">
+
+    <div class="">
+        <a href="{% url 'proyecto_pendiente_solic' %}"><i class="fa-solid fa-arrow-left-long"></i></a>
+    </div>
+
+    <h2 class="title_data_actual_edit">Editar proyecto</h2>
+
+</div>
+
+<div class="container">
+    <div class="card">
+     
+      <div class="card-body">
+        
+  
+          <div class="col-md-6">
+            <h2 class="card-title">Proyecto</h2>
+            <ul class="list-unstyled">
+              <li><strong>Nombre proyecto:</strong> {{dataedit.nombre_proyecto}}</li>
+              <li><strong>Código:</strong>{{dataedit.codigo_unico_proyect}}</li>
+              <li><strong>Servicio:</strong> {{dataedit.servicio.nombre_servicio}}</li>
+            <hr>
+
+            <h2 class="card-title">Cliente</h2>
+            <ul class="list-unstyled">
+              <li><strong>Nombre:</strong> {{dataedit.nombre_cliente}}</li>
+              <li><strong>WhatsApp:</strong> {{dataedit.whatsapp}}</li>
+            </ul>
+            <hr>
+  
+            <h2 class="card-title">Ubicación</h2>
+            <ul class="list-unstyled">
+              <li><strong>Provincia:</strong> {{dataedit.provincia_proyec}}</li>
+              <li><strong>Ciudad o municipio:</strong> {{dataedit.ciudad_proyec}}</li>
+              <li><strong>Sector:</strong> {{dataedit.sector_proyec}}</li>
+              <li><strong>Calle:</strong> {{dataedit.calle_proyec}}</li>
+              <li><strong>Número:</strong> {{dataedit.numero_proyec}}</li>
+              <li><strong>Apartamento/Suite:</strong> {{dataedit.apartamen_suite_proyec}}</li>
+            </ul>
+            <hr>
+          </div>
+        </div>
+  
+        <h2 class="card-title">Descripción</h2>
+        <p class="card-text">{{dataedit.descripcion_proyecto}}</p>
+      </div>
+      
+    </div>
+  </div>
+  
+  
+
+
+
+<div class="content_crear_proyec">
+  <div class="content_title_crear_proye">
+    <h1 class="title_crear_proye">Editar</h1>
+    
+  </div>
+
+  <form method="post" enctype="multipart/form-data" class"form_crear_proye">
+    {% csrf_token %}
+    <div class"content_input_crear_proye">
+      <label for="nombre_proyecto" class="label_input_crear_proye">Crea nuevo nombre para tu proyecto:</label>
+      <input type="text" id="nombre_proyecto" name="nombre_proyecto" class="input_crear_proye" placeholder="Proyecto one">
+    </div>
+    <div class="content_input_crear_proye">
+      <label for="descripcion_proyecto" class="label_textarea_crear_proye">Descripción del proyecto:</label><br>
+      <textarea id="descripcion_proyecto" name="descripcion_proyecto" class="textarea_crear_proye" 
+      placeholder="Descripcion de tu proyecto maximo 1000 caracteres" maxlength="1000"></textarea>
+    </div>
+    <div class"content_select_crear_proye">
+      <label for="provincia" class="label_select_crear_proye">Provincia del proyecto</label>
+      <select id="provincias" name="provincias" class="select_crear_proye"></select>
+    </div>
+    <div class"content_input_crear_proye">
+      <label for="ciudad" class="label_input_crear_proye">Ciudad o municipio:</label>
+      <input type="text" id="ciudad" name="ciudad" class="input_crear_proye" placeholder="ciudad de proyecto">
+    </div>
+    <div class"content_input_crear_proye">
+      <label for="sector" class="label_input_crear_proye">Sector:</label>
+      <input type="text" id="sector" name="sector" class="input_crear_proye" placeholder="Sector del proyecto">
+    </div>
+    <div class"content_input_crear_proye">
+      <label for="calle" class="label_input_crear_proye">Calle:</label>
+      <input type="text" id="calle" name="calle" class="input_crear_proye" placeholder="Calle del proyecto">
+    </div>
+    <div class"content_input_crear_proye">
+      <label for="numero" class="label_input_crear_proye">Número:</label>
+      <input type="text" id="numero" name="numero" class="input_crear_proye" placeholder="000">
+    </div>
+    <div class"content_input_crear_proye">
+      <label for="apartamento_suite" class="label_input_crear_proye">Apartamento/Suite:</label>
+      <input type="text" id="apartamento_suite" class="input_crear_proye" name="apartamento_suite" placeholder="000 opcional">
+    </div>
+    <div class"content_input_crear_proye">
+      <label for="nombre_client" class="label_input_crear_proye">Nombre del cliente:</label>
+      <input type="text" id="nombre_cliente" name="nombre_client" class="input_crear_proye" placeholder="Nombre cliente">
+    </div>
+    <div class"content_input_crear_proye">
+      <label for="num_what_client" class="label_input_crear_proye">Whatsapp cliente:</label>
+      <input type="text" id="num_what_client" name="num_what_client" class="input_crear_proye" placeholder="000 000 0000">
+    </div>
+    <div class"content_btn_crear_proye">
+      <button type="submit" class="btn_crear_proye">Guaradar cambios</button>
+    </div>
+  </form>
+</div>
+
+
+  <script src="{% static '../static/css/modall/modal_show.js' %}"></script>
+  <script src="{% static '../static/config_iniciales/ciudades_rd.js' %}"></script>
+  
+{% endblock %}

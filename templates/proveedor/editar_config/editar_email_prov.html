@@ -1,0 +1,21 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+  <h2 class="edit_email_titulo">Iniciar sesión</h2>
+
+<div class="cj-data_edit_email_">
+    <div class="sub_cj_edit_email_">
+        <label for="id_email">Nombre de usuario:</label>
+        <p></p>
+    </div>
+</div>
+
+  <form action="edit_email_prov" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="id_username">Editar Email</label>
+      <input type="email" name="email" id="id_username" required class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+  </form>
+{% endblock %}

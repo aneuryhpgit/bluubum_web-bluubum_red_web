@@ -1,0 +1,46 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/proveedor/dahsboar_css/detail_post.css' %}">
+
+<div class="regresar_botn_detalle">
+  <a href="" class="botn_detalle_regres"><i class="fa-solid fa-arrow-left-long"></i></a>
+</div>
+<div class="content_body">
+<section class="content_detail">
+    <div class="container-carousel_detail">
+      <div class="carousel_detail">
+        {% if posts.imagen_serv.url != NULL %}
+          <img src="{{posts.imagen_serv.url}}" alt="">
+        {% endif %}
+        {% if posts.imagen_serv_dos.url != NULL %}
+          <img src="{{posts.imagen_serv_dos.url}}" alt="">
+        {% endif %}
+        {% if posts.imagen_serv_tres.url != NULL %}
+          <img src="{{posts.imagen_serv_tres.url}}" alt="">
+        {% endif %}
+        {% if posts.imagen_serv_cuatro.url != NULL %}
+          <img src="{{posts.imagen_serv_cuatro.url}}" alt="">
+        {% endif %}
+        <button class="carousel-prev_detail"><i class="fa fa-angle-left"></i></button>
+        <button class="carousel-next_detail"><i class="fa fa-angle-right"></i></button>
+      </div>
+    </div>
+    <div class="content-detail_detail">
+      <div class="title-description_detail">
+        <h1 class="post-title_detail">{{posts.titulo}}</h1>
+      </div>
+      <div class="description_detail">
+        <p class="description-text_detail">{{posts.archivo_contenido}}</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+  <script src="{% static '../static/registro_proveedor/post_and_serv/detail_post.js' %}"></script>
+  <script src="{% static '../static/registro_proveedor/post_and_serv/boton_regre.js' %}"></script>
+
+{% endblock %}

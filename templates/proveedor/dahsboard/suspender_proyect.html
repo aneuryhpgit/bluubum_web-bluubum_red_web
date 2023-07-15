@@ -1,0 +1,123 @@
+{% extends 'layout/base.html' %}
+
+{% load humanize %}
+
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/modall/modal_alert_show.css' %}">
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/proveedor/dahsboar_css/sub_dahsboard/suspender_proyect.css' %}">
+
+
+{% if show_message_alert %}
+<div id="caj-alert-show" class="caj-alert-show">
+  <div class="alert-danger-show">
+    <div class="icono-show">
+      <div class="bien circle_icono"><p class="fa fa-thumbs-up"></p></div>
+    </div>
+    <div class="caja-masage-show">
+      <p class="mesage-show">El proyecto ha sido suspendido</p>
+    </div>
+    <div class="cja-btn-show">
+      <!--<button id="btn-show" class="btn-show btn-left">Aceptar</button>-->
+      <a href="{% url 'proyecto_activado_prov' %}" class="btn-reidrec btn-right">Aceptar</a>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+
+
+<div class="Conten_title_envi_cotiz">
+
+    <div class="cj_btn_regres_envi_cotiz">
+        <a href="{% url 'proyecto_activado_prov' %}" class="btn_regres_envi_cotiz"><i class="fa-solid fa-arrow-left-long"></i></a>
+    </div>
+
+    <h2 class="title_data_envi_cotiz">Suspender proyecto</h2>
+
+</div>
+
+<div class="container_envi_cotiz">
+    <div class="card_envi_cotiz">
+     
+      <div class="card-body_envi_cotiz">
+        <h2 class="card-title_envi_cotiz">Nombre proyecto</h2>
+        <p class="card-text_envi_cotiz">{{envi_suspender.nombre_proyecto}}</p>
+        <hr>
+  
+        <div class="row_envi_cotiz">
+          <div class="col-md-6_envi_cotiz">
+            <h2 class="card-title_envi_cotiz">Código proyecto</h2>
+            <p class="card-text_envi_cotiz">{{envi_suspender.codigo_unico_proyect}}</p>
+            <hr>
+  
+            <h2 class="card-title_envi_cotiz">Servicio</h2>
+            <p class="card-text_envi_cotiz">{{envi_suspender.servicio.nombre_servicio}}</p>
+            <hr>
+
+            <h2 class="card-title_envi_cotiz">Nombre vendedor</h2>
+            <p class="card-text_envi_cotiz">{{envi_suspender.vendedor.user.first_name}} {{envi_cotiz.vendedor.user.last_name}}</p>
+            <hr>
+
+            <h2 class="card-title_envi_cotiz">Usuario vendedor</h2>
+            <p class="card-text_envi_cotiz">{{envi_suspender.vendedor.user.username}}</p>
+            <hr>
+
+            <h2 class="card-title_envi_cotiz">Codigo vendedor</h2>
+            <p class="card-text_envi_cotiz">{{envi_suspender.vendedor.codigo_unico_vendedor}}</p>
+            <hr>
+
+          </div>
+  
+          <div class="col-md-6_envi_cotiz">
+            <h2 class="card-title_envi_cotiz">Cliente</h2>
+            <ul class="list-unstyled_envi_cotiz">
+              <li><strong>Nombre:</strong> {{envi_suspender.nombre_cliente}}</li>
+              <li><strong>WhatsApp:</strong> {{envi_suspender.whatsapp}}</li>
+            </ul>
+            <hr>
+  
+            <h2 class="card-title_envi_cotiz">Ubicación</h2>
+            <ul class="list-unstyled_envi_cotiz">
+              <li><strong>Provincia:</strong> {{envi_suspender.provincia_proyec}}</li>
+              <li><strong>Ciudad o municipio:</strong> {{envi_suspender.ciudad_proyec}}</li>
+              <li><strong>Sector:</strong> {{envi_suspender.sector_proyec}}</li>
+              <li><strong>Calle:</strong> {{envi_suspender.calle_proyec}}</li>
+              <li><strong>Número:</strong> {{envi_suspender.numero_proyec}}</li>
+              <li><strong>Apartamento/Suite:</strong> {{envi_suspender.apartamen_suite_proyec}}</li>
+            </ul>
+            <hr>
+            
+          </div>
+        </div>
+  
+        <h2 class="card-title_envi_cotiz">Descripción</h2>
+        <p class="card-text_envi_cotiz">{{envi_suspender.descripcion_proyecto}}</p>
+      </div>
+      
+    </div>
+  </div>
+  
+  
+
+
+
+  <form method="post" enctype="multipart/form-data" class="form_envi_cotiz">
+    {% csrf_token %}
+      <input type="text" id="fecha-hora-actual" name="fecha_suspendido_proyect" style="display: none;">
+      <input type="text" id="" value="Suspendido" name="proyect_suspendido" style="display: none;">
+
+      <div class="content_btn-form_envi_cotiz">
+        <button type="submit" class="btn_envi_cotiz">Suspender proyecto</button>
+      </div>
+  </form>
+
+
+
+  <script src="{% static '../static/css/modall/modal_show.js' %}"></script>
+
+  <script src="{% static '../static/proveedor_js/cotizacion_horaActual.js' %}"></script>
+
+{% endblock %}

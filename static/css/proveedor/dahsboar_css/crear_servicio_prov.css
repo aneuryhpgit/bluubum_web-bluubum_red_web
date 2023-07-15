@@ -1,0 +1,309 @@
+/* Estilos generales */
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+ }
+    body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: #f7f7f7;
+    }
+    
+    /* Estilos para la barra de navegación */
+    .cj_btn_redirg_perfil_serv {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    }
+    
+    .btn_redirg_perfil_serv {
+    display: inline-block;
+    background-color: #2ab300;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.2s ease-in-out;
+    }
+    
+    .btn_redirg_perfil_serv:hover {
+    background-color: #1e8700;
+    }
+    
+    /* Estilos para el título de la sección */
+    .cj-titulo_crear_serv {
+    text-align: center;
+    margin-top: 50px;
+    }
+    
+    .titulo_crear_serv {
+    font-size: 36px;
+    font-weight: bold;
+    color: #444;
+    }
+    
+    /* Estilos para el formulario de crear servicio */
+    .cj-formulario_crear_serv {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+    
+    .form_crear_serv {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .caja_text_form_crear_serv {
+    margin-bottom: 20px;
+    }
+    
+    .input_crear_serv {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    color: #333;
+    }
+    
+
+/*##################################*/
+.cj_subir_img_crear_serv {
+  width: calc(25% - 10px);
+  height: 0;
+  padding-bottom: calc(25% - 10px);
+  position: relative;
+  border: 1px solid #ddd;
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  margin: 0 auto 1rem auto;
+}
+
+.cj_subir_img_crear_serv .image_preview_edit_serv {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+}
+
+.input-subirImg_crear_serv {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.label_input_subi-img_crear_serv {
+  display: block;
+  margin-top: 10px;
+  text-align: center;
+  color: #333;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  border: 1px solid #333;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: all 0.2s ease-in-out;
+}
+
+.label_input_subi-img_crear_serv:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+
+/*##################################*/
+    
+    .caja_porcen_crear_serv {
+    margin-bottom: 20px;
+    }
+    
+    .input_comision_crear_serv {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    color: #333;
+    }
+    
+    .div_btn_form_crear_serv {
+    display: flex;
+    justify-content: center;
+    }
+    
+    .btn_form_crear_serv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #007ddc;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    border: none;}
+  
+  .btn_form_crear_serv:hover {
+    background-color: #03b000;
+  }
+
+
+
+
+/* Lista de servicios */
+
+  a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  a:hover {
+    color: #11c501;
+  }
+  
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Estilos de la sección */
+  
+  .caja_ls_crear_serv {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+  
+  @media (min-width: 768px) {
+    .caja_ls_crear_serv {
+      padding: 80px 20px;
+    }
+  }
+  
+  .cj_titulo_ls_crear_serv {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .titulo_ls_crear_serv {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  @media (min-width: 768px) {
+    .titulo_ls_crear_serv {
+      font-size: 35px;
+    }
+  }
+  
+  .caja_tabal_ls_crear_serv {
+    overflow-x: auto;
+    margin-top: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+  
+  .table_ls_crear_serv {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  
+  .table_ls_crear_serv th,
+  .table_ls_crear_serv td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .table_ls_crear_serv th {
+    font-weight: bold;
+    background-color: #000000;
+    color: #fffefe;
+  }
+  
+  .imagen_lp {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+  @media (min-width: 768px) {
+    .imagen_lp {
+      width: 120px;
+      height: 120px;
+    }
+  }
+
+
+  .delete-btn_ser{
+    color: white;
+  }
+
+  .delete-btn_ser:hover{
+    color: white;
+  }
+  
+  .modal-btn {
+    background-color: #000000;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .modal-btn:hover {
+    background-color: #ff0000;
+  }
+  
+  /* Cambios para dispositivos móviles */
+  
+  @media (max-width: 767px) {
+    .table_ls_crear_serv th:nth-child(1),
+    .table_ls_crear_serv td:nth-child(1) {
+      display: none;
+    }
+  
+    .table_ls_crear_serv th:nth-child(2),
+    .table_ls_crear_serv td:nth-child(2) {
+      width: 100%;
+    }
+  
+    .table_ls_crear_serv th:nth-child(3),
+    .table_ls_crear_serv td:nth-child(3),
+    .table_ls_crear_serv th:nth-child(4),
+    .table_ls_crear_serv td:nth-child(4),
+    .table_ls_crear_serv th:nth-child(5),
+    .table_ls_crear_serv td:nth-child(5) {
+      display: none;
+    }
+}
+  

@@ -1,0 +1,110 @@
+{% extends 'layout/base.html' %}
+
+{% load humanize %}
+
+{% block content %}
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/vendedor_css/dashboard_vend_css/sin_archivo_vend.css' %}">
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/vendedor_css/dashboard_vend_css/factura_detail.css' %}">
+
+
+
+<div class="Conten_title_data_actual_edit">
+	<div class="">
+        <a href="" class="btn_regresar"><i class="fa-solid fa-arrow-left-long"></i></a>
+    </div>
+    
+    <h2 class="title_data_actual_edit">Factura de comision</h2>
+	<p></p>
+</div>
+
+<div class="content_body">
+<div class="container_envi_cotiz">
+  <div class="card_envi_cotiz">
+    {% for factura_comision in factura_comision %}
+    <div class="card-body_envi_cotiz">
+      <h2 class="card-title_envi_cotiz">Nombre proyecto</h2>
+      <p class="card-text_envi_cotiz">{{factura_comision.proyecto_comi.nombre_proyecto}}</p>
+      <hr>
+
+      <div class="row_envi_cotiz">
+        <div class="col-md-6_envi_cotiz">
+          <h2 class="card-title_envi_cotiz">Código proyecto</h2>
+          <p class="card-text_envi_cotiz">{{factura_comision.proyecto_comi.codigo_unico_proyect}}</p>
+          <hr>
+
+          <h2 class="card-title_envi_cotiz">Servicio</h2>
+          <p class="card-text_envi_cotiz">{{factura_comision.proyecto_comi.servicio.nombre_servicio}}</p>
+          <hr>
+
+          <h2 class="card-title_envi_cotiz">Comision</h2>
+          <p class="card-text_envi_cotiz">$ {{factura_comision.proyecto_comi.comision_vendedor|floatformat:2|intcomma}}</p>
+          <hr>
+        </div>
+
+        <div class="col-md-6_envi_cotiz">
+
+          <h2 class="card-title_envi_cotiz">Vendedor</h2>
+          <ul class="list-unstyled_envi_cotiz">
+            <li><strong>Nombre:</strong> {{factura_comision.proyecto_comi.vendedor.user.first_name}} {{factura_comision.proyecto_comi.vendedor.user.last_name}}</li>
+            <li><strong>Codigo:</strong> {{factura_comision.proyecto_comi.vendedor.codigo_unico_vendedor}}</li>
+
+          </ul>
+          <hr>
+        </div>
+
+          
+        <div class="cj_metodo_pago">
+          <h2 class="card-title_envi_cotiz">Informacion metodo de pago</h2>
+          <ul class="list-unstyled_envi_cotiz">
+            
+              <li><strong>Metodo pago:</strong> {{factura_comision.metd_pg_vend_comi_fk.metodo_cobro}}</li>
+              <li><strong>Tipo de documento:</strong> {{factura_comision.metd_pg_vend_comi_fk.tipo_document_identificacion}}</li>
+              <li><strong>Nombre documento:</strong> {{factura_comision.metd_pg_vend_comi_fk.Nombre_completo_identificacion}}</li>
+              {% if factura_comision.metd_pg_vend_comi_fk.nombre_banco != NULL and factura_comision.metd_pg_vend_comi_fk.nombre_banco != '' %}
+                <li><strong>Nombre de banco:</strong> {{factura_comision.metd_pg_vend_comi_fk.nombre_banco }}</li>
+                <li><strong>Cuenta bancaria:</strong> {{factura_comision.metd_pg_vend_comi_fk.Numero_cuenta_bancaria}}</li>
+
+              {% else %}
+                
+                <li><strong>Envio:</strong> {{factura_comision.institucion_deposito}}</li>
+                
+                <hr>
+                <h3 class=" title_direc">Direccion del destinatario</h3><br>
+                <ul class="list-unstyled_envi_cotiz">
+                  <li><strong>Provincia:</strong> {{factura_comision.direccion_comi_fk.provincia_afiliado}}</li>
+                  <li><strong>Ciudad o municipio:</strong> {{factura_comision.direccion_comi_fk.ciudad_afiliado}}</li>
+                  <li><strong>Sector:</strong> {{factura_comision.direccion_comi_fk.sector_afiliado}}</li>
+                  <li><strong>Calle:</strong> {{factura_comision.direccion_comi_fk.calle_afiliado}}</li>
+                  <li><strong>Número:</strong> {{factura_comision.direccion_comi_fk.numero}}</li>
+                  <li><strong>Apartamento/Suite:</strong> {{factura_comision.direccion_comi_fk.apartamento_num}}</li>
+                </ul>
+              {% endif %}
+
+              
+              
+          </ul>
+          <hr>
+          <ul class="list-unstyled_envi_cotiz">
+            <li><strong>Fecha:</strong>  {{factura_comision.fecha_facturacion}}</li>
+
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+</div>
+{% endfor %}
+</div>
+
+<script src="{% static '../static/vendedor/botn_regres.js' %}"></script>
+
+
+{% endblock %}

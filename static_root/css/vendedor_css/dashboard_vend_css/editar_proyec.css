@@ -1,0 +1,344 @@
+.Conten_title_data_actual_edit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #a113ba;
+  color: #fff;
+}
+
+.Conten_title_data_actual_edit a {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.Conten_title_data_actual_edit a:hover {
+  color: #ccc;
+}
+
+.title_data_actual_edit {
+  font-size: 1rem;
+  margin: auto;
+}
+
+
+.content_body{
+  min-height: 100vh;
+}
+
+
+/* Estilos generales */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  background-color: #ffffff;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.card {
+  border: none;
+  background-color: #fff;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.card-text {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 10px;
+  margin: 5px;
+  padding-bottom: 10px;
+}
+
+hr {
+  margin: 5px 0;
+  border: none;
+  border-top: 1px solid #ddd;
+}
+
+ul.list-unstyled {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.list-unstyled li {
+  margin-bottom: 10px;
+}
+
+ul.list-unstyled li strong {
+  font-weight: bold;
+  margin-right: 10px;
+
+}
+
+/* Estilos para pantallas móviles */
+@media (max-width: 767px) {
+  .container {
+    width: 100%;
+    padding: 10px 0px;
+  }
+
+  .card{
+    width: 100%;
+  }
+
+  .card-title {
+    font-size: 14px;
+    margin-top: 0.5rem;
+    margin-bottom: 10px;
+
+  }
+
+  .card-text {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  ul.list-unstyled li strong {
+    margin-right: 3px;
+  }
+}
+
+
+@media (max-width: 450px) {
+
+  .title_data_actual_edit {
+    max-width: 70%;
+    font-size: 0.8rem;
+  }
+
+
+  ul.list-unstyled li {
+    font-size: 0.8rem;
+  }
+  
+
+  ul.list-unstyled li strong {
+    
+    margin-right: 10px;
+    font-size: 0.8rem;
+  
+  }
+
+
+  .card-title {
+    font-size: 1rem;
+
+  }
+  
+
+}
+
+
+
+
+
+
+
+
+
+
+.content_title_crear_proye{
+    width: 100%;
+    display: block;
+
+}
+
+.text_sub_titulo{
+    width: 35%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Estilos generales del formulario */
+.form_crear_proye {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+.content_input_crear_proye{
+    display: block;
+}
+  
+  /* Estilos para los elementos de entrada */
+.input_crear_proye {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+}
+  
+  /* Estilos para el select */
+.select_crear_proye {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E") no-repeat right 10px center/8px 8px;
+}
+  
+  /* Estilos para el textarea */
+.textarea_crear_proye {
+    width: 100%;
+    height: 7rem;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+}
+  
+  /* Estilos para las etiquetas de los elementos de entrada */
+.label_input_crear_proye,
+.label_select_crear_proye,
+.label_textarea_crear_proye {
+    display: block;
+    width: 100%;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+  
+  /* Estilos para el botón */
+.btn_crear_proye {
+    width: 100%;
+    background-color: #0077ff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.btn_crear_proye:hover{
+    background-color: #00b209;
+
+}
+  
+  /* Estilos para el título del formulario */
+.title_crear_proye {
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+  
+  /* Estilos para el contenedor del formulario */
+.content_crear_proyec {
+    padding: 50px;
+}
+  
+  /* Estilos para el contenedor del título */
+.content_title_crear_proye {
+    margin-bottom: 40px;
+}
+  
+  /* Estilos para el contenedor de los elementos de entrada */
+.content_input_crear_proye {
+    display: block;
+
+}
+  
+  /* Estilos para el contenedor del select */
+.content_select_crear_proye {
+    display: block;
+    position: relative;
+}
+  
+  /* Estilos para el contenedor del botón */
+.content_btn_crear_proye {
+    text-align: center;
+}
+  
+  /* Estilos para el mensaje de error */
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+  
+  /* Estilos para adaptar el formulario a pantallas pequeñas */
+@media screen and (max-width: 600px) {
+    .content_crear_proyec {
+        padding: 20px;
+    }
+    .title_crear_proye {
+        font-size: 24px;
+    }
+
+    .text_sub_titulo{
+        width: 90%;
+        font-size: 0.7rem
+    }
+    
+    .form_crear_proye {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .content_input_crear_proye {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .label_input_crear_proye, .label_select_crear_proye, .label_textarea_crear_proye {
+        display: block;
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+    .input_crear_proye, .select_crear_proye, .textarea_crear_proye {
+        width: 100%;
+        font-size: 16px;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+    .select_option_crear_proye {
+        font-size: 16px;
+        color: #999;
+    }
+    .btn_crear_proye {
+        font-size: 18px;
+        padding: 10px 20px;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: #fff;
+        cursor: pointer;
+    }
+}

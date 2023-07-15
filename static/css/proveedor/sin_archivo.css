@@ -1,0 +1,42 @@
+/* Estilos para la sección de contenido sin archivo */
+.content_sin-archivo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+  }
+  
+  /* Estilos para el contenido dentro de la sección sin archivo */
+  .sub_content_sin-archivo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Estilos para la imagen dentro del contenido sin archivo */
+  .cj_image_sin-archivo {
+    font-size: 5rem;
+    color: #a9a9a9;
+  }
+  
+  /* Estilos para el mensaje dentro del contenido sin archivo */
+  .mesage_sin-archivo {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #a3a3a3;
+  }
+  
+  /* Estilos para pantallas pequeñas */
+  @media screen and (max-width: 768px) {
+    /* Reducir tamaño de fuente para la imagen */
+    .cj_image_sin-archivo {
+      font-size: 3rem;
+    }
+    
+    /* Reducir tamaño de fuente para el mensaje */
+    .mesage_sin-archivo {
+      font-size: 1.2rem;
+    }
+  }
+  

@@ -1,0 +1,101 @@
+/* Estilos generales */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+}
+
+/* Estilos del formulario */
+
+.contenedor_form_perfil_pg-inicial {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+}
+
+.contenedor_titulo_form_perfil_pg-inicial {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.titulo_form_perfil_pg-inicial {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333333;
+}
+
+.formulario_form_perfil_pg-inicial {
+    display: flex;
+    flex-direction: column;
+}
+
+.caja_text_form_perfil_pg-inicial {
+    margin-bottom: 20px;
+}
+
+.num_input_form_perfil_pg-inicial {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    border: solid 1px rgb(140, 139, 139);
+    border-radius: 5px;
+}
+
+
+
+.div_btn_form_perfil_pg-inicial {
+    display: flex;
+    justify-content: center;
+}
+
+.btn_form_perfil_pg-inicial {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4b86f2;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 25px;
+    transition: background-color 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.btn_form_perfil_pg-inicial:hover {
+    background-color: #3366cc;
+}
+
+.btn_form_perfil_pg-inicial i {
+    margin-left: 5px;
+}
+
+
+@media screen and (max-width: 768px) {
+    body {
+        
+        background-color: #ffffff;
+    }
+}
+
+
+@media screen and (max-width: 470px) {
+    body {
+        
+        background-color: #ffffff;
+    }
+
+    .contenedor_form_perfil_pg-inicial {
+
+        box-shadow: 0 2px 4px rgba(255, 255, 255, 0.2);
+
+    }
+}

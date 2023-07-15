@@ -1,0 +1,131 @@
+/* Estilos generales */
+.cj-content_table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: 3rem 0;
+    background-color: rgb(5, 11, 62);
+    border: solid 5px  rgb(4, 113, 255);
+    border-radius: 10px;
+}
+
+  .cj_title_ventaja{
+    width: 100%;
+    display: flex;
+  }
+  
+  .cj_title_ventaja h2 {
+    font-size: 2.5em;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    color: aliceblue;
+    width: 40%;
+    
+  }
+  
+  .content_table {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 20px;
+  }
+  
+  .table {
+    
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .table p {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+
+
+  @media screen and (max-width: 1366px) {
+
+    .content_table {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 20px;
+    }
+
+   
+    .cj_title_ventaja h2 {
+      font-size: 1.7rem;
+      width: 90%;
+              
+    }
+  
+    .table p {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+            
+  }
+
+
+
+  @media screen and (max-width: 1280px) {
+
+    .cj-content_table {
+      border: solid 3px  rgb(4, 113, 255);
+    }
+  
+
+    .content_table {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+   
+    .cj_title_ventaja h2 {
+      font-size: 1.5rem;
+              
+    }
+  
+    .table p {
+      margin: 0;
+      font-size: 1rem;
+    }
+            
+  }
+
+
+    /* Estilos responsivos */
+@media screen and (max-width: 790px) {
+
+  .cj-content_table {
+    border: solid 4px  rgb(4, 113, 255);
+  }
+    
+  .cj_title_ventaja h2 {
+    font-size: 1.7rem;
+    width: 90%;
+            
+  }
+
+  .table p {
+    margin: 0;
+    font-size: 1.1rem;
+  }
+          
+}
+  
+  /* Estilos responsivos */
+  @media screen and (max-width: 600px) {
+    .content_table {
+      grid-template-columns: 1fr;
+    }
+
+    .cj_title_ventaja h2 {
+        font-size: 24px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        color: aliceblue;
+        width: 90%;
+        
+      }
+      
+  }
+  

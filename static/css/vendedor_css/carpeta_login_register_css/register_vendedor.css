@@ -1,0 +1,188 @@
+.contenedor-registro_vendedor{
+    display: flex;
+    width: 90%;
+    height: auto;
+    margin: auto;
+   /* border: solid blue;*/
+    
+}
+
+.contenedor-registro_vendedor .sub_contenedor-registro_vendedor{
+    display: block;
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    position: relative;
+    /*border: solid blue;*/
+
+}
+
+.cj-titulo_reg_vendedor{
+    display: flex;
+    width: auto;
+
+    margin: 20px auto 20px auto;
+}
+
+.titulo_registro_vendedor{
+    margin: auto;
+    color: rgb(52, 51, 51);
+}
+
+
+.sub_contenedor-registro_vendedor .form_registro_vendedor{
+    border-radius: 5px;
+    width: 100%;
+    max-width: 400px;
+    height: 90%;
+    margin: auto;
+   /* border: solid blue;*/
+    position: relative;
+
+}
+
+.control_form_vendedor{
+    width: calc(100% - 20px);
+    font-size: 1rem;
+    padding: .6em .3em;
+    margin-left: 3px;
+    margin-top: -1rem;
+    border-radius: 5px;
+    border: solid 1px rgb(190, 190, 188);
+    outline: #00ff62;
+
+}
+
+
+.btn-eyes_vendedor{
+  display: flex;
+  top: 0px;
+  right: 40px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.btn-eyes_vendedor i {
+    font-size: 16px;
+    color: #666;
+    margin-top: 20px;
+  }
+
+
+.cj-fecha_nacimiento_vendedor{
+    width: 100%;
+    height: auto;
+    margin-top: -0.5rem;
+}
+
+.text-nacimiento_vendedor{
+    font-size: 0.8rem;
+}
+
+.sub_cj_fecha_nacimiento_vendedor{
+    width: 100%;
+}
+
+.year_select_vendedor{
+    width: 32%;
+    padding: 0.4rem 0.5rem;
+    border-color: rgb(160, 160, 160);
+    border-radius: 5px;
+    
+}
+
+.mes_select_vendedor{
+    width: 32%;
+    padding: 0.4rem 0.5rem;
+    border-color: rgb(160, 160, 160);
+    border-radius: 5px;
+}
+
+.day_select_vendedor{
+    width: 32%;
+    padding: 0.4rem 0.5rem;
+    border-color: rgb(160, 160, 160);
+    border-radius: 5px;
+}
+
+.password2_vendedor{
+    margin-top: -0.6rem;
+}
+
+.password_vendedor .btn-eyes_vendedor{
+    position: relative;
+    margin-top: 0.5rem;
+    margin-left: -10px;
+}
+
+.password2_vendedor .btn-eyes_vendedor{
+    position: relative;
+    margin-top: 0.5rem;
+    margin-left: -10px;
+}
+
+.btn_registro_vendedor{
+    width: 100%;
+    font-size: 1rem;
+    padding: .6em;
+    text-align: center;
+    border-radius: 5px;
+    border: solid 1px rgb(0, 255, 229);
+    background-color: rgb(0, 123, 255);
+    color: white;
+    font-weight: bold;
+    font-size: large;
+
+}
+
+.btn_registro_vendedor:hover{
+    background-color: rgb(1, 190, 7);
+
+}
+
+
+.cj_btn_redirec_login{
+    width: 100%;
+    display: flex;
+    margin-top: 2rem;
+}
+
+.btn_redirec_login{
+    width: auto;
+    padding: .6em;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #00c34b;
+    color: #fff;
+    margin: auto;
+}
+    
+
+@media (max-width: 800px) {
+    .password2_vendedor{
+        margin-top: 0rem;
+    }
+      
+    
+}
+
+
+@media (max-width: 768px) {
+      
+    .btn-eyes_vendedor i {
+        margin-top: 0px;
+    }
+}
+
+
+
+@media (max-width: 450px) {
+    .btn-eyes_vendedor{
+        margin-left: -20px;
+
+    }
+      
+}
+    
+    

@@ -1,0 +1,49 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/proveedor/sin_archivo.css' %}">
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/vendedor_css/dashboard_vend_css/lista_proveedore/lista_prov_afiliado.css' %}">
+
+<div class="Conten_title_data_actual_edit">
+	<div class="">
+        <a href="{% url 'vista_perfil_vend' codigo_unico_vend=profile.codigo_unico_vendedor %}"><i class="fa-solid fa-arrow-left-long"></i></a>
+    </div>
+    
+    <h2 class="title_data_actual_edit">Afiliaciones</h2>
+	<p></p>
+</div>
+
+<div class="content_prov_lista">
+  
+    <div class="sub_content_prov_lista">
+      {% for proveedor in proveedores %}
+      <div class="target_prov_lista">
+        <img src="{{proveedor.image.url}}" alt="{{proveedor.nombre_empresa}}" class="imge_perfil_prov_lista">
+        <div class="cj-text_resul_perfil_prov_afiliado">
+          <h3 class="cj-text_prov_lista">{{ proveedor.nombre_empresa }}</h3>
+          <div class="cj-text_liservis_prov_afiliado">
+            {% for servicio in proveedor.servicio.all %}
+              <p class="liservis_afiliado">.{{servicio.nombre_servicio}}</p>
+            {% endfor %}
+          </div>
+        </div>
+        <a href="{% url 'Crear_nuevo_proyecto' codigo_unico=proveedor.codigo_unico_proveedor%}" class="btn_ver_proveedor">Crear proyecto</a>
+      </div>
+      {% empty %}
+      <section class="content_sin-archivo">
+        <div class="sub_content_sin-archivo">
+            <div class="cj_image_sin-archivo">
+                <i class="fa-regular fa-rectangle-list"></i>
+            </div>
+            <p class="mesage_sin-archivo">Actualmente no hay datos</p>
+        </div>
+    </section>
+      {% endfor %}
+    </div>
+</div>
+  
+{% endblock %}

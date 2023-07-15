@@ -1,0 +1,27 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+{% load static %}
+<div class="contenedor_form_edit_geo">
+  <div class="contenedor_titulo_form_edit_geo">
+      <h2 class="titulo_form_edit_geo">Area geografiaca de mis servicios</h2>
+      <div class="cj_data_edit_geo">                          
+        <h4 class="data_edit_geo">{{geo.geo_servicio}}</h4>
+    </div>
+  </div>
+  <div class="cj_form_edit_geo">
+      <form action="{% url 'editar_geo_prov' %}" method="post" enctype="multipart/form-data" class="formulario_edit_geo">
+      {% csrf_token %}               
+          <label for="provincias" class="label_input_edit_geo">Editar Geo:</label>
+          <select id="geo_servicios" name="geo_servicios" class="input_edit_geo"></select>
+
+          <div class="div_btn_form_edit_geo">
+              <button type="submit" class="btn_form_edit_geo" id="">Guardar cambio</button>
+          </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="{% static '../static/config_iniciales/geo_servicios.js' %}"></script>
+
+{% endblock %}

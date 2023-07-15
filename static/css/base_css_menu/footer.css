@@ -1,0 +1,44 @@
+
+
+/* Estilos generales */
+.footer {
+    background-color: #fafafa;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+ 
+}
+  
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+.footer-menu {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 10px;
+}
+  
+.footer-menu li {
+    display: inline-block;
+    margin-right: 10px;
+}
+  
+.footer-menu li a {
+    text-decoration: none;
+    color: #999;
+}
+  
+.footer-logo {
+    color: #999;
+}
+  
+.footer-logo::before {
+    content: "\00a9";
+    margin-right: 5px;
+}
+
+
+

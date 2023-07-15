@@ -1,0 +1,252 @@
+/* Estilos para el título */
+.Conten_title_data_actual_edit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #148450;
+    color: #fff;
+  }
+  
+  .Conten_title_data_actual_edit a {
+    font-size: 1.2rem;
+    color: #fff;
+  }
+  
+  .Conten_title_data_actual_edit a:hover {
+    color: #ccc;
+  }
+  
+  .title_data_actual_edit {
+    font-size: 1rem;
+    margin: 0;
+  }
+  
+  
+  
+  
+  .content_body{
+    min-height: 100vh;
+  }
+  
+  
+  /* Estilos para la tabla */
+  .contenedor_data_solic {
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  .table_data_solic {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  
+  .heat_data_solic th {
+    font-size: 14px;
+    font-weight: bold;
+    text-align: left;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .body_data_solic td {
+    font-size: 14px;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .fa{
+  
+    margin-left: 30%;
+  }
+  
+  .icon_eye .fa-eye{
+    color: rgb(1, 190, 52);
+    font-size: 1.2rem;
+  }
+  
+  a .fa-pen-to-square{
+    color:rgb(255, 102, 0);
+  }
+  
+  
+  a .fa-trash-can{
+    color: rgb(255, 31, 31);
+  }
+  
+  
+  @media (max-width: 535px) {
+  
+    .title_solic_proyect {
+      width: 70%;
+      font-size: 1rem;
+  
+      margin: 0.7rem auto;
+      
+    }
+  
+    .contenedor_data_solic {
+      display: none;
+    }
+  
+  }
+  
+  
+  
+  
+  
+  /*Contenido mobil*/
+  
+  .content_data_solic_mobil{
+    display: block;
+    width: 100%;
+    margin-top: 2rem;
+  }
+  
+  .content_data_solic_mobil {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .targeta_content_data_solic_mobil {
+    width: 100%;
+    max-width: 534px;
+    margin: 10px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 5px 0px 0px 5px rgba(0, 85, 255, 0.100);
+    border-radius: 20px;
+  }
+  
+  .mobil_tech{
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.134);
+  }
+  
+  .nombr_proyec_data_solic_mobil,
+  .servi_proyec_data_solic_mobil,
+  .codi_proyec_data_solic_mobil,
+  .options_proyec_data_solic_mobil {
+    display: block;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px;
+  }
+  
+  .nombr_proyec_data_solic_mobil hr{
+    border-color: #35353526;
+    margin: 0.2rem 0;
+  }
+  
+  .servi_proyec_data_solic_mobil,
+  .codi_proyec_data_solic_mobil,
+  .options_proyec_data_solic_mobil {
+    display: flex;
+  }
+  
+  .nombr_proyec_data_solic_mobil label,
+  .servi_proyec_data_solic_mobil label,
+  .codi_proyec_data_solic_mobil label {
+    font-weight: bold;
+    margin-right: 10px;
+    font-size: 12px;
+  }
+
+  p{
+    font-size: 12px;
+  }
+  
+  .options_proyec_data_solic_mobil{
+    display: block;
+  }
+  
+  .options_proyec_data_solic_mobil div {
+    font-size: 18px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  .content_title_opcion_proyec_data_solic_mobil{
+    width: 100%;
+    display: flex;
+  }
+  
+  .options_proyec_data_solic_mobil hr{
+    border-color: #35353526;
+    margin: 0.4rem 0;
+    
+  }
+  
+  .title_opcion_proyec_data_solic_mobil{
+    margin: 0.3rem auto;
+  
+  }
+  
+  
+  .icons_opcion_proyec_data_solic_mobil{
+    display: flex;
+    width: 80%;
+    margin: 0.3rem 10%;
+    justify-content: space-between;
+    font-size: 1.5rem;
+  }
+  
+  
+  .icons_opcion_proyec_data_solic_mobil a{
+    width: auto;
+    text-decoration: none;
+    
+  }
+  
+  a:focus {
+    outline: none;
+  }
+  
+  
+ 
+  a .fa-eye{
+    margin: 0rem 0.7rem;
+    color: green;
+  }
+
+  
+  
+  
+  
+  @media (max-width: 534px) {
+    .targeta_content_data_solic_mobil {
+      width: 100%;
+      margin: 10px 0;
+      max-width: 100%;
+    }
+  }
+  
+  
+  @media (min-width: 535px) {
+    
+    .content_data_solic_mobil{
+      display: none;
+    }
+  
+  }
+
+
+
+  @media (max-width: 300px) {
+
+  .nombr_proyec_data_solic_mobil label,
+  .servi_proyec_data_solic_mobil label,
+  .codi_proyec_data_solic_mobil label {
+    font-weight: bold;
+    margin-right: 10px;
+    font-size: 10px;
+  }
+
+  p{
+    font-size: 10px;
+  }
+  }
+  

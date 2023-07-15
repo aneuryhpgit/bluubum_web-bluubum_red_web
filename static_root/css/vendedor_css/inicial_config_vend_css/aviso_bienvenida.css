@@ -1,0 +1,139 @@
+/* Estilos generales */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+  
+  body .containerPrincipal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+  }
+  
+  /* Estilos del contenido principal */
+  
+  .containerPrincipal .contenedorInfoIni {
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 600px;
+    width: 100%;
+    margin: 3rem auto;
+  }
+  
+  .titulo {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .titleIni {
+    color: #333;
+    font-size: 28px;
+  }
+  
+  .informacion {
+    margin-bottom: 20px;
+    display: block;
+  }
+  
+  .subtitulo {
+    width: 100%;
+    display: flex;
+    margin-bottom: 10px;
+  }
+  
+  .subtitulo h2 {
+    color: #555;
+    font-size: 20px;
+    width: 80%;
+    margin: auto auto;
+  }
+  
+  .parf1 {
+    display: flex;
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 10px;
+    width: 80%;
+    margin: auto;
+  }
+
+  .content_info{
+    width: 50%;
+    margin: auto;
+  }
+  
+
+  .parf {
+    color: #555;
+    font-size: 14px;
+    margin-left: 20px;
+    width: 80%;
+    margin-left: 10%;
+  }
+  
+  .content-btn {
+    text-align: center;
+  }
+  
+  .formulario-info {
+    display: inline-block;
+  }
+  
+  .btn-informacionIni {
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .btn-informacionIni:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Estilos responsivos */
+  
+  @media screen and (max-width: 768px) {
+    .containerPrincipal {
+      padding: 20px;
+    }
+  
+    .contenedorInfoIni {
+      max-width: none;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .titleIni {
+      font-size: 24px;
+    }
+  
+    h2 {
+      font-size: 18px;
+    }
+
+    .contenedorInfoIni {
+      width: 100%;
+    }
+
+    .content_info{
+      width: 86%;
+      margin: auto;
+    }
+    
+  
+    .parf {
+      width: 100%;
+      font-size: 14px;
+      margin-left: 5px;
+    }
+  }
+  

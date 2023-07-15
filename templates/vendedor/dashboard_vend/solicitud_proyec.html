@@ -1,0 +1,157 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/proveedor/sin_archivo.css' %}">
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/modall/dlete_modal.css' %}">
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/vendedor_css/dashboard_vend_css/solic_proyect.css' %}">
+
+
+<div class="Conten_title_data_actual_edit">
+	<div class="">
+        <a href="{% url 'vista_perfil_vend' codigo_unico_vend=profile.codigo_unico_vendedor %}"><i class="fa-solid fa-arrow-left-long"></i></a>
+    </div>
+    
+    <h2 class="title_data_actual_edit">Solicitud de proyectos pendiente por aprobacion</h2>
+	<p></p>
+</div>
+
+
+<div class="content_body">
+{% if solic_proyect %}
+<div class="contenedor_data_solic">
+	<table class="table_data_solic">
+		<thead class="heat_data_solic">
+			<tr>
+				<th>Proyecto</th>
+				<th>Servicio</th>
+				<th>Codigo</th>
+				<th>Fecha solicitud</th>
+				<th>Detalles</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
+			</tr>
+		</thead>
+		<tbody class="body_data_solic">
+            {% for data in solic_proyect %}
+			<tr>
+				<td >{{data.nombre_proyecto}}</td>
+				<td >{{data.servicio.nombre_servicio}}</td>
+				<td >{{data.codigo_unico_proyect}}</td>
+				<td >{{data.fecha_solicitud}}</td>
+				<td ><a href="{% url 'details_proyect' codigo_unico=data.codigo_unico_proyect %}" class="icon_eye"><i class="fa fa-eye"></i></a></td>
+                <td ><a href="{% url 'edit_proyect_vend' codigo_unico=data.codigo_unico_proyect %}"><i class="fa-regular fa-pen-to-square"></i></a></td>
+                <td ><a href="#" class="modal-btn" 
+					data-product-delete="{% url 'eliminar_proyecto' data.id %}">
+					<i class="fa-solid fa-trash-can"></i></a>
+				</td>
+			</tr>
+            {% endfor %}
+		</tbody>
+	</table>
+</div>
+
+
+<div id="modal_eliminar" class="modal_eliminar">
+    <div class="modal-content_eliminar">
+		<button id="modal-close" onclick="closeModal()" class="btn_close">Close</button>
+       <div class="modal_imagen">
+            <i class="fa-solid fa-trash-can"></i>
+		    <p>Estas seguro de que deceas eliminar este proyecto ?</p>
+       </div>
+  
+      <div class="botones_selecion_eliminar">
+        
+            <div class="boton_redireccion-detalles">
+                <a href="" id="modal-BTNeliminarServicio">Eliminar</a>
+            </div>
+	    </div>        
+    </div>
+        
+</div>
+
+
+
+
+
+
+
+<div class="content_data_solic_mobil">
+	{% for datamobil in solic_proyect %}
+	<div class="targeta_content_data_solic_mobil">
+		<div class="mobil_tech nombr_proyec_data_solic_mobil">
+			<label for="" class="label_mobil_data_solic">Nombre proyecto</label><hr><p>{{datamobil.nombre_proyecto}}</p>
+		</div>
+		<div class="mobil_tech servi_proyec_data_solic_mobil">
+			<label for="" class="label_mobil_data_solic">Servicio:</label><p>{{datamobil.servicio.nombre_servicio}}</p>
+		</div>
+		<div class="mobil_tech codi_proyec_data_solic_mobil">
+			<label for="" class="label_mobil_data_solic">Codigo proyecto:</label><p>{{datamobil.codigo_unico_proyect}}</p>
+		</div>
+		<div class="mobil_tech codi_proyec_data_solic_mobil">
+			<label for="" class="label_mobil_data_solic">Fecha de solicitud:</label><p>{{datamobil.fecha_solicitud}}</p>
+		</div>
+        <div class="mobil_tech options_proyec_data_solic_mobil">
+			<div class="content_title_opcion_proyec_data_solic_mobil" style=" outline: none;">
+				<label for="" class="title_opcion_proyec_data_solic_mobil" >Opciones</label>
+				
+			</div>
+			<hr>
+			<div class="icons_opcion_proyec_data_solic_mobil">
+			    <div class="detail">
+					<a href="{% url 'details_proyect' codigo_unico=datamobil.codigo_unico_proyect %}"><i class="fa fa-eye"></i></a>
+				</div>
+			    <div class="edict"><a href="{% url 'edit_proyect_vend' codigo_unico=datamobil.codigo_unico_proyect %}"><i class="fa-regular fa-pen-to-square"></i></a></div>
+			    <div class="delete">
+					<a href="#" class="modal-btn" 
+					data-product-delete="{% url 'eliminar_proyecto' datamobil.id %}"><i class="fa-solid fa-trash-can"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	{% endfor %}
+</div>
+
+</div>
+
+
+
+<div id="modal_eliminar" class="modal_eliminar">
+    <div class="modal-content_eliminar">
+		<button id="modal-close" onclick="closeModal()" class="btn_close">Close</button>
+       <div class="modal_imagen">
+            <i class="fa-solid fa-trash-can"></i>
+		    <p>Estas seguro de que deceas eliminar este proyecto ?</p>
+       </div>
+  
+      <div class="botones_selecion_eliminar">
+        
+            <div class="boton_redireccion-detalles">
+                <a href="" id="modal-BTNeliminarServicio">Eliminar</a>
+            </div>
+	    </div>        
+    </div>
+        
+</div>
+
+
+{% else %}
+<section class="content_sin-archivo">
+    <div class="sub_content_sin-archivo">
+        <div class="cj_image_sin-archivo">
+            <i class="fa-regular fa-rectangle-list"></i>
+        </div>
+        <p class="mesage_sin-archivo">Actualmente no hay datos</p>
+    </div>
+</section>
+{% endif %}
+
+
+<script src="{% static '../static/modall/delete_servicio.js' %}"></script>
+
+{% endblock %}

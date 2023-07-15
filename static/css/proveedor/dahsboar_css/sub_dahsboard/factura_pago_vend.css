@@ -1,0 +1,161 @@
+/* Estilos generales */
+* {
+    box-sizing: border-box;
+}
+  
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+  
+  /* Encabezado */
+.Conten_title_envi_cotiz {
+    background-color: #f08c00;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+
+}
+  
+.cj_btn_regres_envi_cotiz {
+    background-color: #41cd00;
+    font-size: 1.5rem;
+    padding: 0.2rem 0.4rem;
+    border-radius: 5px;
+
+}
+
+.btn_regres_envi_cotiz{
+    color: #fff;
+}
+
+  
+.title_data_envi_cotiz {
+    color: #fff;
+    margin: auto;
+    font-size: 1.5rem;
+}
+  
+
+
+
+
+
+
+
+
+
+
+
+.container_envi_cotiz {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 50px;
+}
+  
+  .card_envi_cotiz {
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    padding: 20px;
+  }
+  
+  .card-title_envi_cotiz {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .card-text_envi_cotiz {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .row_envi_cotiz::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  .col-md-6_envi_cotiz {
+    width: 50%;
+    float: left;
+    padding-right: 15px;
+    padding-left: 15px;
+    box-sizing: border-box;
+  }
+
+
+  
+  .list-unstyled_envi_cotiz {
+    padding-left: 0;
+    list-style: none;
+  }
+  
+  .list-unstyled_envi_cotiz li {
+    margin-bottom: 10px;
+  }
+  
+  .cj_info_pago {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .cj_direccion,
+  .cj_metodo_pago {
+    flex: 1;
+    padding-right: 15px;
+    padding-left: 15px;
+    box-sizing: border-box;
+  }
+
+  .title_direc{
+    
+  }
+  
+  @media (max-width: 768px) {
+    .col-md-6_envi_cotiz {
+      width: 100%;
+      float: none;
+    }
+  
+    .cj_direccion,
+    .cj_metodo_pago {
+      flex: none;
+      width: 100%;
+    }
+  }
+  
+
+
+
+
+/* Estilos para el formulario */
+.form_envi_cotiz {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+  /* Estilos para el botón */
+  .btn_envi_cotiz {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    background-color: #006fe5;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .btn_envi_cotiz:hover {
+    background-color: #00af06;
+  }
+  

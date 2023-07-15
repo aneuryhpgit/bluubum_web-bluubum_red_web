@@ -1,0 +1,84 @@
+/* Estilos para el título */
+.Conten_title_data_actual_edit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #000000;
+    color: #fff;
+  }
+  
+  .Conten_title_data_actual_edit a {
+    font-size: 1.2rem;
+    color: #fff;
+  }
+  
+  .Conten_title_data_actual_edit a:hover {
+    color: #ccc;
+  }
+  
+  .title_data_actual_edit {
+    font-size: 1rem;
+    margin: 0;
+  }
+
+
+
+
+
+
+  /* Estilos generales */
+.dashboard_configuracion_vend {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    min-height: 70vh;
+  }
+  
+  .sub_dashboard {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .config-item {
+    margin-bottom: 20px;
+  }
+  
+  /* Estilos para dispositivos móviles */
+  @media (max-width: 767px) {
+    .sub_dashboard {
+      padding: 0 15px;
+    }
+  }
+  
+  /* Estilos para tabletas y escritorios */
+  @media (min-width: 768px) {
+    .sub_dashboard {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 20px;
+    }
+  }
+  
+  /* Estilos para enlaces y encabezados */
+  .config-item a {
+    display: block;
+    text-decoration: none;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f7f7f7;
+    transition: background-color 0.3s ease;
+  }
+  
+  .config-item a:hover {
+    background-color: #e7e7e7;
+  }
+  
+  .config-item h2 {
+    margin: 0;
+    font-size: 1rem;
+    color: #333;
+    font-weight: 500;
+  }
+  

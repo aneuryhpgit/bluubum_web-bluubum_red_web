@@ -1,0 +1,99 @@
+{% extends 'layout/base.html' %}
+
+{% load humanize %}
+
+{% block content %}
+{% load static %}
+
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/proveedor/sin_archivo.css' %}">
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/proveedor/dahsboar_css/sub_dahsboard/cancelado_list_proyect.css' %}">
+
+<section class="content_head_pedidos">
+    <div class="cj_btn_regresar">
+        <a href="{% url 'dashboard_prov' %}" class="btn_regres"><i class="fa-solid fa-arrow-left-long"></i></a>
+    </div>
+
+    <div class="contain_title_head_pedidos">
+        <h2>Proyecto cancelado</h2>
+        <p class="sub_title_head">Lista de proyectos cancelados</p>
+    </div>
+
+</section>
+
+{% if proyecto_cancelado %}
+<div class="content_dashboar_pedidos">
+    <div class="sub_dashboar_pedidos">
+        <div class="dashboar_pedidos">
+            <table>
+                <tr>
+                  <th>ID</th>
+                  <th>Nombre del proyecto</th>
+                  <th>Codigo proyecto</th>
+                  <th>Provincia</th>
+                  <th>Presupuesto</th>
+                  <th>Comision</th>
+                  <th>Nombre vendedor</th>
+                  <th>Whatssap vendedor</th>
+                  <th>Whatssap cliente</th>
+                  <th>Fecha aprobacion</th>
+                  <th>Fecha inicio</th>
+                  <th>Ver</th>
+                </tr>
+                
+                {% for proyect in proyecto_cancelado %}
+                    
+                    <tr>
+                        {% with counter=forloop.counter0|add:1 %}
+                          <tr id="fila_{{ counter }}">
+                            <td>{{ counter }}</td>
+                    {% if proyect.nombre_proyecto != Null %}
+                        <td class="nombre_proyecto_td">{{proyect.nombre_proyecto}}</td>
+                        <td>{{proyect.codigo_unico_proyect}}</td>
+                        <td>{{proyect.provincia_proyec}}</td>
+                        <td>$ {{proyect.precio|floatformat:2|intcomma }}</td>
+                        <td>$ {{proyect.comision_plataform|floatformat:2|intcomma }}</td>
+                        <td>{{proyect.vendedor.user.username}}</td>
+                        <td>
+                            <a href="https://wa.me/{{proyect.contact_vendedor.numeroWhatsapp_afiliado}}" target="_blank" class="btn_whats">
+                                {{proyect.contact_vendedor.numeroWhatsapp_afiliado}} <i class="fa-brands fa-whatsapp"></i>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="https://wa.me/{{proyect.whatsapp}}" target="_blank" class="btn_whats">
+                                {{proyect.whatsapp}} <i class="fa-brands fa-whatsapp"></i>
+                            </a>
+                        </td>
+                        <td>{{proyect.fecha_aprobacion|date:"Y/m/d"}}</td>
+                        <td>{{proyect.fecha_estimada_inicio|date:"Y/m/d"}}</td>
+                        <td>
+                            <a href="{% url 'proyecto_detail_prov' codigo_unico=proyect.codigo_unico_proyect %}" class="btn_delete">
+                                <i class="fa-regular fa-eye"></i>
+                            </a>
+                        </td>
+
+                    {% endif %}
+                        
+                    {% endwith %}   
+                    
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+
+{% else %}
+<section class="content_sin-archivo">
+    <div class="sub_content_sin-archivo">
+        <div class="cj_image_sin-archivo">
+            <i class="fa-regular fa-rectangle-list"></i>
+        </div>
+        <p class="mesage_sin-archivo">Actualmente no tienes proyectos cancelado</p>
+    </div>
+</section>
+{% endif %}
+
+
+
+{% endblock %}

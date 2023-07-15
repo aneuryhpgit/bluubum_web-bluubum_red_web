@@ -1,0 +1,71 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/proveedor/dahsboar_css/perfil.css' %}">
+
+
+
+
+
+<div class="conten_dt_perfil">
+    <div class="conatent_logo_name_perfil">
+        <img src="{{proveedor.image.url}}" class="img_perfil">
+    </div>
+
+    <div class="conten_name_empresa">
+        <h1 class="name_empres">{{ proveedor.nombre_empresa }}</h1>
+        {% for ubi in ubicacion%}
+        <p class="data_empresa_perfil">{{ ubi.provicia }} {{ubi.ciudad}} <br>{{ubi.calle}} {{ ubi.numero }}</p>
+        {% endfor %}
+        {% for geo in geoservi %}
+        <p class="data_empresa_perfil"><spam class="span_geo">Geo-servicio:</spam> {{ geo.geo_servicio }} </p>
+        {% endfor %}
+        
+        
+        {% if not esta_afiliado  %}
+            <form method="post" action="{% url 'afiliarme' %}">
+                {% csrf_token %}
+                <input type="hidden" name="proveedor_id" value="{{ proveedor.id }}">
+                <button type="submit" class="anunc_afiliado_anote">Afiliate</button>
+            </form>
+        {% elif esta_afiliado %}
+            <div class="cj_anunc_afiliado">
+                <p class="anunc_afiliado">Afiliado</p>
+            </div>
+        {% endif %}
+
+    </div>      
+</div>   
+
+<div class="content_body">
+<div class="titulo_perfil">
+    <h2>Servicios</h2>
+</div>
+
+<div class="galery_perfil">
+    {% for servicio in servicios %}
+    <div class="targeta">    
+    {% if servicio.imagen_servicio.url != NULL %}
+        <a href="/post_vista/{{servicio.slug}}">
+            <img src="{{ servicio.imagen_servicio.url}}">
+            <h3>{{ servicio.nombre_servicio }}</h3>
+            <hr>
+            <h3 class="valor_comision">Comision: {{ servicio.Comicion }} %</h3>
+        </a>
+    {% endif %}
+
+    {% if request.user == proveedor.user %}
+        <a href="{% url 'editar_servicio' servicio.pk %}">Editar</a>
+    {% endif %}
+    </div>
+   {% empty %}
+   <p>No hay servicios disponibles</p>
+   {% endfor %}
+</div>
+</div>
+<script src="{% static '../static/registro_proveedor/btn_regres.js' %}"></script>
+
+{% endblock %}

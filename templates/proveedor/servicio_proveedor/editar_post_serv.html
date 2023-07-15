@@ -1,0 +1,106 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/proveedor/dahsboar_css/editar_post.css' %}">
+
+<div class="cj-btn_regresar">
+    <a href="{% url 'creador_post_serv' %}" class="btn_regresar"><i class="fa-solid fa-arrow-left-long"></i></a>
+</div>
+
+<section class="caja_lp">
+    <div class="cj_titulo_lp">
+        <h3 class="titulo_lp">Editar post</h3>
+    </div>
+    <div class="caja_tabal_lp">
+        <table>
+            <tr>
+              <th>Imagen1</th>
+              <th>Imagen2</th>
+              <th>Imagen3</th>
+              <th>Imagen4</th>
+              <th>Titulo</th>
+              <th>Descripcion</th>
+              <th>Servicio</th>
+            </tr>
+            
+                <tr class="table_datos">
+                {% if editor.imagen_serv.url != NULL %}
+                    <td><img src="{{ editor.imagen_serv.url }}" alt="" class="imagen_lp"></td>
+                {% else %}
+                    <td><img src="static/image_utileria/img-simbol.jpg" alt="" class="imagen_lp"></td>
+                {% endif %}
+                {% if editor.imagen_serv_dos.url != NULL %}
+                    <td><img src="{{ editor.imagen_serv_dos.url }}" alt="" class="imagen_lp"></td>
+                {% else %}
+                    <td><img src="static/image_utileria/img-simbol.jpg" alt="" class="imagen_lp"></td>
+                {% endif %}
+                {% if editor.imagen_serv_tres.url != NULL %}
+                    <td><img src="{{ editor.imagen_serv_tres.url }}" alt="" class="imagen_lp"></td>
+                {% else %}
+                    <td><img src="static/image_utileria/img-simbol.jpg" alt="" class="imagen_lp"></td>
+                {% endif %}
+                {% if editor.imagen_serv_cuatro.url != NULL %}
+                    <td><img src="{{ editor.imagen_serv_cuatro.url }}" alt="" class="imagen_lp"></td>
+                {% else %}
+                    <td><img src="media/image_utileria/img-simbol.jpg" alt="" class="imagen_lp"></td>
+                {% endif %}
+                    <td>{{ editor.titulo }}</td>
+                    <td class="cj_detail_post_edit">
+                        <div class="detail_post_edit">
+                        {{ editor.archivo_contenido }}
+                        </div>
+                    </td>
+                    <td>{{ editor.servicio.nombre_servicio }}</td>
+                </tr>
+        </table>
+    </div>
+
+</section>
+
+
+<div class="contenedor_cp">
+    
+    <div class="formulario_cp">
+        <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+            <label for="">Editar Post</label><br>
+        <div class="galeria_edit_image">
+            <div class="file-select targeta_galery" id="src-file1">
+                <img src="{% static '../media/image_utileria/img-simbol.jpg' %}" alt="" id="img-preview" class="image_preview_edit_serv">
+                <input type="file" class="subirImg" multiple id="file" name="imagen_serv" >
+                <label for="file" id="file" class="label_btn_cp">Subir imagen 1</label>
+            </div>
+            <div class="file-select targeta_galery" id="src-file2">
+                <img src="{% static '../media/image_utileria/img-simbol.jpg' %}" alt="" id="img-preview_dos" class="image_preview_edit_serv">
+                <input type="file" class="subirImg" multiple id="file_dos" name="imagen_serv_dos" >
+                <label for="file2" id="file_dos" class="label_btn_cp">Subir imagen 2</label>
+            </div>
+            <div class="file-select targeta_galery" id="src-file3">
+                <img src="{% static '../media/image_utileria/img-simbol.jpg' %}" alt="" id="img-preview_tre" class="image_preview_edit_serv">
+                <input type="file" class="subirImg" multiple id="file3" name="imagen_serv_tres" >
+                <label for="file3" id="file_tre" class="label_btn_cp">Subir imagen 3</label>
+            </div>
+            <div class="file-select targeta_galery" id="src-file4">
+                <img src="{% static '../media/image_utileria/img-simbol.jpg' %}" alt="" id="img-preview_cu" class="image_preview_edit_serv">
+                <input type="file" class="subirImg" multiple name="imagen_serv_cuatro" aria-label="Archivo" id="file4">
+                <label for="file4" id="file_cu" class="label_btn_cp">Subir imagen 4</label>
+            </div>
+        </div>
+            <label for="titulo">Título:</label>
+            <input type="text" name="titulo" id="titulo"  class="titulo_post"><br>
+            <label for="archivo_contenido">Contenido:</label>
+            <textarea name="archivo_contenido" id="archivo_contenido"  
+            cols="50" rows="10" class="contenido_text" maxlength="1000"></textarea>
+            
+            <div class="div_btn">
+                <button type="submit" class="btn_cp" id="">Guardar cambio</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="{% static '../static/registro_proveedor/post_and_serv/img_preview_edit_post.js' %}"></script>
+
+{% endblock %}

@@ -1,0 +1,99 @@
+/* Estilos para la ventana modal */
+.modal_eliminar {
+    display: none; /* Oculta la ventana modal por defecto */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4); /* Fondo semi-transparente */
+  }
+
+  .btn_close{
+    padding: 0.3rem;
+    border: none;
+    border-radius: 5px;
+    background-color: black;
+    color: #fff;
+  }
+  
+  .modal-content_eliminar {
+    background-color: #fefefe;
+    margin: 15% auto; /* Centra la ventana modal en la pantalla */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra */
+  }
+  
+  .modal_imagen {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .modal_imagen i {
+    font-size: 50px;
+    color: #e74c3c;
+    margin-bottom: 2rem;
+  }
+  
+  .botones_selecion_eliminar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .botones_selecion_eliminar button {
+    
+    background-color: #ccc;
+    border: none;
+    color: #333;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .boton_redireccion-detalles{
+    display: flex;
+    width: 100%;
+  }
+  
+  .boton_redireccion-detalles a {
+
+    background-color: #e74c3c;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease; /* Agrega una transición suave */
+    margin: auto;
+  }
+  
+  .boton_redireccion-detalles a:hover {
+    background-color: #c0392b;
+  }
+  
+  @media screen and (max-width: 768px) {
+    /* Estilos para pantallas pequeñas */
+    .modal-content_eliminar {
+      margin: 30% auto;
+    }
+  
+    .botones_selecion_eliminar {
+      flex-direction: column;
+    }
+  
+    .botones_selecion_eliminar button {
+      margin-bottom: 10px;
+    }
+  }
+  

@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.caj-alert-show{
+    display: flex;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.alert-danger-show {
+    width: 90%;
+    max-width: 400px;
+    background-color: #fefefe;
+    margin: auto auto;
+    padding: 4px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.13);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    border-radius: 4px;   
+}
+
+
+.alert-danger-show .icono-show{
+    display: flex;
+    width: 100%;
+    padding: 0.5rem 0;
+}
+
+.circle_icono{
+    display: flex;
+    width: 7rem;
+    height: 7rem;
+    border: solid 3px red;
+    margin: auto auto;
+    border-radius: 50%;
+}
+
+/*cuando el circulo es de alerta correcta*/
+.bien{
+    border: solid 3px rgb(0, 140, 255);
+
+}
+
+/*Iconos*/
+.circle_icono p{
+    display: flex;
+    font-size: 4rem;
+    line-height: 1.5;
+    margin: auto auto;
+    color: red;
+    object-fit: contain;
+    padding-top: -1rem;
+}
+
+
+.circle_icono .fa-thumbs-up{
+    display: flex;
+    font-size: 4rem;
+    line-height: 1.5;
+    margin: auto auto;
+    color: rgb(0, 98, 255);
+    object-fit: contain;
+    padding-top: -1rem;
+}
+
+
+/*caja de texto*/
+.alert-danger-show .caja-masage-show {
+    display: flex;
+    width: 98%;
+    padding: 4px;
+    margin: 0.5rem auto;
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 255, 0.167);
+}
+
+.mesage-show{
+    display: flex;
+    width: auto;
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin: auto auto;
+}
+
+
+/*botones*/
+.cja-btn-show{
+    display: flex;
+    width: 100%;
+    margin: 1rem 0;
+}
+
+/*en caso de que tenga redireccion*/
+
+.btn-show{
+    width: 6rem;
+    font-size: 1rem;
+    padding: 0.4rem;
+    margin: auto auto;
+    border-radius: 4px;
+    border: solid 0.5px;
+}
+
+
+a {
+    text-decoration: none;
+    margin: auto auto;
+}
+/* en caso de que tenga redireccion */
+
+a .btn-reidrec{
+    width: 6rem;
+    font-size: 1rem;
+    padding: 0.4rem;
+    margin: auto auto;
+    border-radius: 4px;
+    border: solid 0.5px;
+}
+
+.btn-reidrec{
+    background-color: rgb(0, 123, 255);
+    color: white;
+    box-shadow: 2px 2px 2px rgba(0, 0, 255, 0.295);
+
+}
+
+
+.btn-left{
+    background-color: rgb(255, 0, 47);
+    color: white;
+}

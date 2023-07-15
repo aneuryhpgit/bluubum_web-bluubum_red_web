@@ -1,0 +1,90 @@
+/* Estilos para la página de bienvenida */
+
+/* Fondo y colores */
+body {
+    background-color: #f8f8f8;
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+
+/* Títulos */
+h1 {
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+
+
+/* Contenido */
+.cj_contenido{
+    display: flex;
+    width: 100%;
+}
+
+.sub_cj-contenido {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.sub_cj-contenido .contenido {
+    width: 100%;
+    font-size: 1rem;
+    line-height: 1.2;
+    margin-top: 1rem;
+
+}
+
+.cj_content_finb{
+    display: flex;
+    width: 100%;
+    margin-top: 0.8rem;
+}
+
+.cj_content_finb .contenido_fin {
+    width: 90%;
+    font-size: 1rem;
+    text-align: center;
+    margin: auto;
+}
+
+/* Botón */
+
+.cj-btn_bienv{
+    display: flex;
+    width: 100%;
+    margin-top: 1.2rem;
+}
+
+.cj-btn_bienv a {
+    display: block;
+    width: 30%;
+    margin: 0 auto;
+    
+    padding: 1rem 2rem;
+    border-radius: 3rem;
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+
+a:hover {
+    background-color: #0062cc;
+}
+
+
+@media screen and (max-width: 768px) {
+
+    /* Contenido */
+    .sub_cj-contenido {
+        width: 96%;
+
+    }
+
+    
+
+}

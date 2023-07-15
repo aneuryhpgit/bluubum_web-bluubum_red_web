@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="{% static '../static/css/vendedor_css/inicial_config_vend_css/aviso_bienvenida.css' %}">
+
+
+    <title>Bluubum</title>
+</head>
+<body>
+    <div class="contentPricipal">
+
+        <div class="contenedorInfoIni">
+            <div class="titulo subContenedorInfoIni">
+                <h1 class="titleIni">Bluubum</h1>
+            </div>
+            <div class="informacio subContenedorInfoIni">
+                <div class="subtitulo">
+                    <h2>Informacion</h2>
+                </div>
+            
+                <div class="info1">
+                    <div class="content_info">
+                        <p class="parf1">
+                            Haz terminado la configuracion de tu cuenta.
+                        </p>
+                        <ul>
+                            <li class="parf">
+                                Evita crear falsos proyectos.
+                            </li>
+                            <li class="parf">
+                                Evita entorpecer en las labores de los tecnicos proveedores.
+                            </li>
+                            <li class="parf">
+                                Manten el respeto con clientes y proveedores.
+                            </li>
+                            <li class="parf"> 
+                                Evita incumplir los términos y condiciones. 
+                                Bluubum se reserva el derecho de la suspensión 
+                                o eliminación de tu cuenta si infringes los términos del acuerdo.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="content-btn">
+                <form action="{% url 'info_inic_vend' %}" method="post" class="formulario-info">
+                {% csrf_token %}
+                    <div class="conten-btn-form">
+                        <button class="btn-informacionIni" name="btn-informacionIni">Aceptar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

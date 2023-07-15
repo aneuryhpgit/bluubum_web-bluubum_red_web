@@ -1,0 +1,108 @@
+.contenedor_form_perfil_pg-inicial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+  }
+  
+  .contenedor_titulo_form_perfil_pg-inicial {
+    text-align: center;
+  }
+  
+  .titulo_form_perfil_pg-inicial {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .formulario_form_perfil_pg-inicial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .caja_text_form_perfil_pg-inicial {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  .caja_text_form_perfil_pg-inicial label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .caja_text_form_perfil_pg-inicial input[type="text"],
+  .caja_text_form_perfil_pg-inicial select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+  
+  .caja_text_form_perfil_pg-inicial select {
+    appearance: none;
+    background-color: #fff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='6'%3E%3Cpath d='M6 6L0 0h12z'/%3E%3C/svg%3E");
+    background-position: right 10px center;
+    background-repeat: no-repeat;
+    background-size: 8px 6px;
+    padding-right: 30px;
+  }
+  
+  #txtfileTitulo {
+    margin-top: 5px;
+  }
+  
+  .btn-pago {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    cursor: pointer;
+    margin-bottom: 0.3rem;
+  }
+  
+  .btn-pago:hover {
+    background-color: #0069d9;
+  }
+  
+  .div_btn_form_perfil_pg-inicial {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+  }
+  
+  .btn_form_perfil_pg-inicial {
+    display: inline-block;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    color: #fff;
+    background-color: #28a745;
+    cursor: pointer;
+  }
+  
+  .btn_form_perfil_pg-inicial:hover {
+    background-color: #218838;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .formulario_form_perfil_pg-inicial {
+      max-width: 90%;
+    }
+  }
+  
